@@ -2,6 +2,6 @@
 
 <p align="center"><img src="https://i.imgur.com/XT7w71O.png"></p>
 
-<p align="justify">Kansai book là một dự án giáo dục nhằm chia sẻ kiến thức đặc biệt là về tiếng Nhật cũng như các cơ hội việc làm ở Nhật. Lấy ý tưởng từ stackoverflow, người dùng có thể đăng bài học, câu hỏi và các người khác đánh giá, chỉnh sửa.</p>
+<p align="justify">Kansai book is an educational project to share knowledge especially about Japanese as well as employment opportunities in Japan. Get ideas from stackoverflow, users can post lessons, questions and others reviews, edits.</p>
 
 <p>BKFA Team 2018</p>
