@@ -55,7 +55,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="admin/topic/add" class="nav-link">
+                            <a href="admin/topic/create" class="nav-link">
                                 <i class="fa fa-plus-square nav-icon"></i>
                                 <p>Add New Topic</p>
                             </a>

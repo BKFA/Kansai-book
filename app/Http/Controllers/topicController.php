@@ -11,4 +11,13 @@ class topicController extends Controller
     public function getList() {
     	return view('admin.topic.list');
     }
+
+    public function getCreate() {
+    	return view('admin.topic.create');
+    }
+
+    public function getUpdate() {
+    	return view('admin.topic.update');
+    }
+
 }

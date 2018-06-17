@@ -59,18 +59,19 @@
 								<td>Update software</td>
 								<td>Update software</td>
 								<td>
-									<span class="badge bg-warning">
-										<a href="admin/topic/update/id" title="Update">Update</a>
-										<i class="fa fa-edit nav-icon"></i>	
-									</a>
-									</span>
+									<div class="m-sm-auto">
+										<a href="admin/topic/update/id" title="Update">
+											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
+											</button>
+										</a>
+									</div>
 								</td>            
 								<td>
-									<span class="badge bg-danger">
-										<a href="admin/topic/delete/id" title="Delete">Delete</a>
-										<i class="fa fa-trash nav-icon"></i>
-									</a>
-									</span>
+									<div class="m-sm-auto">
+										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Delete <h3 class="fa fa-edit nav-icon"></h3>	
+										</button>
+										@include('admin.topic.delete')
+									</div>
 								</td>
 							</tr>
 							<tr>
@@ -80,18 +81,19 @@
 								<td>Update software</td>
 								<td>Update software</td>
 								<td>
-									<span class="badge bg-warning">
-										<a href="admin/topic/update/id" title="Update">Update</a>
-										<i class="fa fa-edit nav-icon"></i>	
-									</a>
-									</span>
+									<div class="m-sm-auto">
+										<a href="admin/topic/update/id" title="Update">
+											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
+											</button>
+										</a>
+									</div>
 								</td>            
 								<td>
-									<span class="badge bg-danger">
-										<a href="admin/topic/delete/id" title="Delete">Delete</a>
-										<i class="fa fa-trash nav-icon"></i>
-									</a>
-									</span>
+									<div class="m-sm-auto">
+										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Delete <h3 class="fa fa-edit nav-icon"></h3>	
+										</button>
+										@include('admin.topic.delete')
+									</div>
 								</td>
 							</tr>
 							<tr>
@@ -101,18 +103,19 @@
 								<td>Update software</td>
 								<td>Update software</td>
 								<td>
-									<span class="badge bg-warning">
-										<a href="admin/topic/update/id" title="Update">Update</a>
-										<i class="fa fa-edit nav-icon"></i>	
-									</a>
-									</span>
+									<div class="m-sm-auto">
+										<a href="admin/topic/update/id" title="Update">
+											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
+											</button>
+										</a>
+									</div>
 								</td>            
 								<td>
-									<span class="badge bg-danger">
-										<a href="admin/topic/delete/id" title="Delete">Delete</a>
-										<i class="fa fa-trash nav-icon"></i>
-									</a>
-									</span>
+									<div class="m-sm-auto">
+										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Delete <h3 class="fa fa-edit nav-icon"></h3>	
+										</button>
+										@include('admin.topic.delete')
+									</div>
 								</td>
 							</tr>
 						</table>
