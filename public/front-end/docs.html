@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>
+        Documentation &middot; Application theme &middot; Official Bootstrap Themes
+    </title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="css/toolkit.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="css/application.css" rel="stylesheet">
+    <style>
+    /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+    /* this chunk of css is not part of the toolkit :) */
+
+    body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+    }
+    </style>
+</head>
+
+<body class="bob">
+    <div class="bon" id="app-growl"></div>
+    <nav class="ck pt adq py tk app-navbar">
+        <a class="e" href="index.html">
+<img src="img/brand-white.png" alt="brand">
+</a>
+        <button class="pp bpn vm" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="pq"></span>
+        </button>
+        <div class="collapse f" id="navbarResponsive">
+            <ul class="navbar-nav ahq">
+                <li class="pi">
+                    <a class="pg" href="index.html">Home <span class="adt">(current)</span></a>
+                </li>
+                <li class="pi">
+                    <a class="pg" href="profile.html">Profile</a>
+                </li>
+                <li class="pi">
+                    <a class="pg" data-toggle="modal" href="#msgModal">Messages</a>
+                </li>
+                <li class="pi active">
+                    <a class="pg" href="docs.html">Docs</a>
+                </li>
+                <li class="pi vm">
+                    <a class="pg" href="notifications.html">Notifications</a>
+                </li>
+                <li class="pi vm">
+                    <a class="pg" data-action="growl">Growl</a>
+                </li>
+                <li class="pi vm">
+                    <a class="pg" href="login.html">Logout</a>
+                </li>
+            </ul>
+            <form class="nn acx d-none vt">
+                <input class="form-control" type="text" data-action="grow" placeholder="Search">
+            </form>
+            <ul id="#js-popoverContent" class="nav navbar-nav acx aek d-none vt">
+                <li class="pi">
+                    <a class="g pg" href="notifications.html">
+                      <span class="h azy"></span>
+                    </a>
+                </li>
+                <li class="pi afb">
+                    <button class="cg bpo bpp boi" data-toggle="popover">
+                        <img class="us" src="img/avatar-dhg.png">
+                    </button>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav d-none" id="js-popoverContent">
+                <li class="pi"><a class="pg" href="#" data-action="growl">Growl</a></li>
+                <li class="pi"><a class="pg" href="login.html">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="cd fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="bpq" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="d">
+                    <h5 class="modal-title">Messages</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body afx js-modalBody">
+                    <div class="axw">
+                        <div class="bow cj ca js-msgGroup">
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-fat.jpg">
+                                    <div class="rw">
+                                        <strong>Jacob Thornton</strong> and <strong>1 other</strong>
+                                        <div class="bpg">
+                                            Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-mdo.png">
+                                    <div class="rw">
+                                        <strong>Mark Otto</strong> and <strong>3 others</strong>
+                                        <div class="bpg">
+                                            Brunch sustainable placeat vegan bicycle rights yeah…
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-dhg.png">
+                                    <div class="rw">
+                                        <strong>Dave Gamache</strong>
+                                        <div class="bpg">
+                                            Brunch sustainable placeat vegan bicycle rights yeah…
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-fat.jpg">
+                                    <div class="rw">
+                                        <strong>Jacob Thornton</strong> and <strong>1 other</strong>
+                                        <div class="bpg">
+                                            Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-mdo.png">
+                                    <div class="rw">
+                                        <strong>Mark Otto</strong> and <strong>3 others</strong>
+                                        <div class="bpg">
+                                            Brunch sustainable placeat vegan bicycle rights yeah…
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-dhg.png">
+                                    <div class="rw">
+                                        <strong>Dave Gamache</strong>
+                                        <div class="bpg">
+                                            Brunch sustainable placeat vegan bicycle rights yeah…
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-fat.jpg">
+                                    <div class="rw">
+                                        <strong>Jacob Thornton</strong> and <strong>1 other</strong>
+                                        <div class="bpg">
+                                            Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-mdo.png">
+                                    <div class="rw">
+                                        <strong>Mark Otto</strong> and <strong>3 others</strong>
+                                        <div class="bpg">
+                                            Brunch sustainable placeat vegan bicycle rights yeah…
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-dhg.png">
+                                    <div class="rw">
+                                        <strong>Dave Gamache</strong>
+                                        <div class="bpg">
+                                            Brunch sustainable placeat vegan bicycle rights yeah…
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="d-none afc js-conversation">
+                            <ul class="bow bpc">
+                                <li class="rv bpf afo">
+                                    <div class="rw">
+                                        <div class="bpd">
+                                            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+                                        </div>
+                                        <div class="bpe">
+                                            <small class="axc">
+                                              <a href="#">Dave Gamache</a> at 4:20PM
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <img class="us bos vb yb afi" src="img/avatar-dhg.png">
+                                </li>
+                                <li class="rv afo">
+                                    <img class="us bos vb yb aff" src="img/avatar-fat.jpg">
+                                    <div class="rw">
+                                        <div class="bpd">
+                                            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                                        </div>
+                                        <div class="bpd">
+                                            Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                                        </div>
+                                        <div class="bpd">
+                                            Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+                                        </div>
+                                        <div class="bpe">
+                                            <small class="axc">
+                                              <a href="#">Fat</a> at 4:28PM
+                                            </small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="rv afo">
+                                    <img class="us bos vb yb aff" src="img/avatar-mdo.png">
+                                    <div class="rw">
+                                        <div class="bpd">
+                                            Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
+                                        </div>
+                                        <div class="bpd">
+                                            Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                                        </div>
+                                        <div class="bpe">
+                                            <small class="axc">
+                                              <a href="#">Mark Otto</a> at 4:20PM
+                                            </small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="rv bpf afo">
+                                    <div class="rw">
+                                        <div class="bpd">
+                                            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+                                        </div>
+                                        <div class="bpe">
+                                            <small class="axc">
+                                              <a href="#">Dave Gamache</a> at 4:20PM
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <img class="us bos vb yb afi" src="img/avatar-dhg.png">
+                                </li>
+                                <li class="rv afo">
+                                    <img class="us bos vb yb aff" src="img/avatar-fat.jpg">
+                                    <div class="rw">
+                                        <div class="bpd">
+                                            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                                        </div>
+                                        <div class="bpd">
+                                            Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                                        </div>
+                                        <div class="bpd">
+                                            Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+                                        </div>
+                                        <div class="bpe">
+                                            <small class="axc">
+                                              <a href="#">Fat</a> at 4:28PM
+                                            </small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="rv afo">
+                                    <img class="us bos vb yb aff" src="img/avatar-mdo.png">
+                                    <div class="rw">
+                                        <div class="bpd">
+                                            Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
+                                        </div>
+                                        <div class="bpd">
+                                            Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                                        </div>
+                                        <div class="bpe">
+                                            <small class="axc">
+                                              <a href="#">Mark Otto</a> at 4:20PM
+                                            </small>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bw" id="content">
+        <div class="by">
+            <h1>Documentation</h1>
+            <p>Find out what's included in your Bootstrap theme and how to compile source files. Includes live examples and code snippets for every new component.</p>
+        </div>
+    </div>
+    <div class="by docs-content">
+        <h1 id="contents">Contents</h1>
+        <ul id="markdown-toc">
+            <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
+            <li><a href="#intro" id="markdown-toc-intro">Intro</a></li>
+            <li><a href="#whats-included" id="markdown-toc-whats-included">What’s included</a>
+                <ul>
+                    <li><a href="#getting-started" id="markdown-toc-getting-started">Getting started</a></li>
+                    <li><a href="#gulpfilejs" id="markdown-toc-gulpfilejs">Gulpfile.js</a></li>
+                    <li><a href="#theme-source-code" id="markdown-toc-theme-source-code">Theme source code</a></li>
+                </ul>
+            </li>
+            <li><a href="#custom-builds" id="markdown-toc-custom-builds">Custom builds</a></li>
+            <li><a href="#basic-template" id="markdown-toc-basic-template">Basic template</a></li>
+            <li><a href="#components" id="markdown-toc-components">Components</a>
+                <ul>
+                    <li><a href="#entypo" id="markdown-toc-entypo">Entypo</a>
+                        <ul>
+                            <li><a href="#available-icons" id="markdown-toc-available-icons">Available icons</a></li>
+                            <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#pill-buttons" id="markdown-toc-pill-buttons">Pill buttons</a></li>
+                    <li><a href="#avatar-list" id="markdown-toc-avatar-list">Avatar list</a></li>
+                    <li><a href="#growl" id="markdown-toc-growl">Growl</a></li>
+                    <li><a href="#profile-header" id="markdown-toc-profile-header">Profile header</a></li>
+                    <li><a href="#card-profile" id="markdown-toc-card-profile">Card profile</a></li>
+                    <li><a href="#card-link-list" id="markdown-toc-card-link-list">Card link list</a></li>
+                    <li><a href="#media-list-steam" id="markdown-toc-media-list-steam">Media list steam</a></li>
+                    <li><a href="#media-list-conversation" id="markdown-toc-media-list-conversation">Media list conversation</a></li>
+                    <li><a href="#media-list-users" id="markdown-toc-media-list-users">Media list users</a></li>
+                    <li><a href="#custom-modals" id="markdown-toc-custom-modals">Custom Modals</a></li>
+                    <li><a href="#custom-containers" id="markdown-toc-custom-containers">Custom containers</a></li>
+                </ul>
+            </li>
+            <li><a href="#plugins" id="markdown-toc-plugins">Plugins</a>
+                <ul>
+                    <li><a href="#image-grids" id="markdown-toc-image-grids">Image grids</a>
+                        <ul>
+                            <li><a href="#options" id="markdown-toc-options">Options</a></li>
+                            <li><a href="#javascript-api" id="markdown-toc-javascript-api">JavaScript API</a></li>
+                            <li><a href="#data-api" id="markdown-toc-data-api">Data Api</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#zoom" id="markdown-toc-zoom">Zoom</a>
+                        <ul>
+                            <li><a href="#data-api-1" id="markdown-toc-data-api-1">Data API</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <h1 id="intro">Intro</h1>
+        <p>Hey there! You’re looking at the docs for an Official Bootstrap Theme—thanks for your purchase! This theme has been lovingly crafted by Bootstrap’s founders and friends to help you build awesome projects on the web. Let’s dive in.</p>
+        <p>Each theme is designed as it’s own toolkit—a series of well designed, intuitive, and cohesive components—built on top of Bootstrap. If you’ve used Bootstrap itself, you’ll find this all super familiar, but with new aesthetics, new components, beautiful and extensive examples, and easy-to-use build tools and documentation.</p>
+        <p>Since this theme is based on Bootstrap, and includes nearly everything Bootstrap itself does, you’ll want to give the <a href="http://getbootstrap.com">official project documentation</a> a once over before continuing. There’s also <a href="bootstrap/index.html">the kitchen sink</a>—a one-page view of all Bootstrap’s components restyled by this theme.</p>
+        <p>For everything else, including compiling and using this Bootstrap theme, read through the docs below.</p>
+        <p>Thanks, and enjoy!</p>
+        <h1 id="whats-included">What’s included</h1>
+        <p>Within your Bootstrap theme you’ll find the following directories and files, grouping common resources and providing both compiled and minified distribution files, as well as raw source files.</p>
+        <figure class="a"><pre><code class="bqp" data-lang="bash">theme/
+          ├── v3
+          └── v4
+          ├── gulpfile.js
+          ├── package.json
+          ├── README.md
+          ├── docs/
+          ├── scss/
+          │   ├── bootstrap/
+          │   ├── custom/
+          │   ├── variables.scss
+          │   └── toolkit.scss
+          ├── js/
+          │   ├── bootstrap/
+          │   └── custom/
+          ├── fonts/
+          │   ├── bootstrap-entypo.eot
+          │   ├── bootstrap-entypo.svg
+          │   ├── bootstrap-entypo.ttf
+          │   ├── bootstrap-entypo.woff
+          │   └── bootstrap-entypo.woff2
+          └── dist/
+          ├── toolkit.css
+          ├── toolkit.css.map
+          ├── toolkit.min.css
+          ├── toolkit.min.css.map
+          ├── toolkit.js
+          └── toolkit.min.js
+        </code></pre></figure>
+        <h2 id="getting-started">Getting started</h2>
+        <p>At the top level of your bootstrap theme you’ll find a directory for each major Bootstrap version that’s supported (currently both <code class="bqq">v3</code> and <code class="bqq">v4</code>). Within each directory you have all the relevant files for that version.</p>
+        <p>To view your Bootstrap Theme documentation, simply find the docs directory and open index.html in your favorite browser.</p>
+        <figure class="a"><pre><code class="bqp" data-lang="bash"><span class="ab">$ </span>open docs/index.html</code></pre></figure>
+        <h2 id="gulpfilejs">Gulpfile.js</h2>
+        <p>If you’re after more customization we’ve also included a custom <a href="http://gulpjs.com">Gulp</a> file, which can be used to quickly re-compile a theme’s CSS and JS. You’ll need to install both <a href="https://nodejs.org/en/download/">Node</a> and Gulp before using our included <code class="bqq">gulpfile.js</code>.</p>
+        <p>Once node is installed, run the following npm command to install Gulp.</p>
+        <figure class="a"><pre><code class="bqp" data-lang="bash"><span class="ab">$ </span>npm install gulp -g</code></pre></figure>
+        <p>When you’re done, make sure you’ve installed the rest of the theme’s dependencies:</p>
+        <figure class="a"><pre><code class="bqp" data-lang="bash"><span class="ab">$ </span>npm install</code></pre></figure>
+        <p>Now, modify your source files and run <code class="bqq">gulp</code> to generate new local <code class="bqq">dist/</code> files automatically. <strong>Be aware that this replaces existing <code class="bqq">dist/</code> files</strong>, so proceed with caution.</p>
+        <h2 id="theme-source-code">Theme source code</h2>
+        <p>The <code class="bqq">scss/</code>, <code class="bqq">js/</code>, and <code class="bqq">fonts/</code> directories contain the source code for our CSS, JS, and icon fonts (respectively). Within the <code class="bqq">scss/</code> and <code class="bqq">js/</code> directories you’ll find two subdirectories:</p>
+        <ul>
+            <li><code class="bqq">bootstrap/</code>, which contains the most recently released version of Bootstrap (v4.0.0).</li>
+            <li><code class="bqq">custom/</code>, which contains all of the custom components and overrides authored specifically for this theme.</li>
+        </ul>
+        <p>The <code class="bqq">dist/</code> folder includes everything above, built into single CSS and JS files that can easily be integrated into your project.</p>
+        <p>The <code class="bqq">docs/</code> folder includes the source code for our documentation, as well as a handful of live examples.</p>
+        <p>The remaining files not specifically mentioned above provide support for packages, license information, and development.</p>
+        <h1 id="custom-builds">Custom builds</h1>
+        <p>Leverage the included source files and <code class="bqq">gulpfile.js</code> to customize your Bootstrap Theme for your exact needs. Change variables, exclude components, and more.</p>
+        <ul>
+            <li><code class="bqq">toolkit-*.scss</code> is the entry point for Sass files - to build your own custom build, simply modify your local custom files or edit the includes listed here. Note: some themes also rely on a shared <code class="bqq">components.scss</code> file, which you can find imported in your <code class="bqq">toolkit-*.scss</code>.</li>
+            <li><code class="bqq">variables.scss</code> is home to your theme’s variables. Note that your theme’s <code class="bqq">variables</code> file depends on and overrides an existing Bootstrap variable file (found in <code class="bqq">/scss/bootstrap/_variables.scss</code>).</li>
+        </ul>
+        <h1 id="basic-template">Basic template</h1>
+        <p>The basic template is a guideline for how to structure your pages when building with a Bootstrap Theme. Included below are all the necessary bits for using the theme’s CSS and JS, as well as some friendly reminders.</p>
+        <p>Copy the example below into a new HTML file to get started with it.</p>
+        <figure class="a"><pre><code class="bqr" data-lang="html"><span class="s">&lt;!DOCTYPE html&gt;</span>
+        <span class="aw">&lt;html</span> <span class="am">lang=</span><span class="al">"en"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;head&gt;</span>
+        <span class="n">&lt;!-- These meta tags come first. --&gt;</span>
+        <span class="aw">&lt;meta</span> <span class="am">charset=</span><span class="al">"utf-8"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;meta</span> <span class="am">http-equiv=</span><span class="al">"X-UA-Compatible"</span> <span class="am">content=</span><span class="al">"IE=edge"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;meta</span> <span class="am">name=</span><span class="al">"viewport"</span> <span class="am">content=</span><span class="al">"width=device-width, initial-scale=1"</span><span class="aw">&gt;</span>
+
+        <span class="aw">&lt;title&gt;</span>Bootstrap Theme Example<span class="aw">&lt;/title&gt;</span>
+
+        <span class="n">&lt;!-- Include the CSS --&gt;</span>
+        <span class="aw">&lt;link</span> <span class="am">href=</span><span class="al">"dist/toolkit.min.css"</span> <span class="am">rel=</span><span class="al">"stylesheet"</span><span class="aw">&gt;</span>
+
+        <span class="aw">&lt;/head&gt;</span>
+        <span class="aw">&lt;body&gt;</span>
+        <span class="aw">&lt;h1&gt;</span>Hello, world!<span class="aw">&lt;/h1&gt;</span>
+
+        <span class="n">&lt;!-- Include jQuery (required) and the JS --&gt;</span>
+        <span class="aw">&lt;script </span><span class="am">src=</span><span class="al">"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"</span><span class="aw">&gt;&lt;/script&gt;</span>
+        <span class="aw">&lt;script </span><span class="am">src=</span><span class="al">"dist/toolkit.min.js"</span><span class="aw">&gt;&lt;/script&gt;</span>
+        <span class="aw">&lt;/body&gt;</span>
+        <span class="aw">&lt;/html&gt;</span></code></pre></figure>
+        <h1 id="components">Components</h1>
+        <h2 id="entypo">Entypo</h2>
+        <p><a href="http://entypo.com">Entypo</a> is an awesome, high quality set of icon glyphs made by <a href="http://www.danielbruce.se">Daniel Bruce</a>. We’ve replaced Bootstrap’s default icon font, <a href="http://glyphicons.com">Glyhpicons</a>, with the complete Entypo set and Entypo social extension.</p>
+        <p>Simply use the new <code class="bqq">icon</code> class and an <code class="bqq">icon-{modifier}</code> on an inline element. See the examples below for more details.</p>
+        <h3 id="available-icons">Available icons</h3>
+        <p>Below are all the original and social icons from Entypo that you can choose from:</p>
+        <div class="bx">
+            <span class="h ayh"></span>
+            <span class="h ayi"></span>
+            <span class="h ayj"></span>
+            <span class="h ayk"></span>
+            <span class="h ayl"></span>
+            <span class="h ayo"></span>
+            <span class="h aym"></span>
+            <span class="h ayn"></span>
+            <span class="h ayp"></span>
+            <span class="h ayq"></span>
+            <span class="h ayr"></span>
+            <span class="h ays"></span>
+            <span class="h ayt"></span>
+            <span class="h ayu"></span>
+            <span class="h ayw"></span>
+            <span class="h ayx"></span>
+            <span class="h ayy"></span>
+            <span class="h ayz"></span>
+            <span class="h aza"></span>
+            <span class="h azb"></span>
+            <span class="h azc"></span>
+            <span class="h azd"></span>
+            <span class="h azi"></span>
+            <span class="h azj"></span>
+            <span class="h aze"></span>
+            <span class="h azf"></span>
+            <span class="h azg"></span>
+            <span class="h azh"></span>
+            <span class="h azk"></span>
+            <span class="h azl"></span>
+            <span class="h azm"></span>
+            <span class="h azn"></span>
+            <span class="h azo"></span>
+            <span class="h azp"></span>
+            <span class="h azq"></span>
+            <span class="h azr"></span>
+            <span class="h azt"></span>
+            <span class="h azv"></span>
+            <span class="h azw"></span>
+            <span class="h azy"></span>
+            <span class="h azz"></span>
+            <span class="h baa"></span>
+            <span class="h bab"></span>
+            <span class="h bac"></span>
+            <span class="h bad"></span>
+            <span class="h bae"></span>
+            <span class="h baf"></span>
+            <span class="h bag"></span>
+            <span class="h bah"></span>
+            <span class="h bai"></span>
+            <span class="h baj"></span>
+            <span class="h bak"></span>
+            <span class="h bal"></span>
+            <span class="h bam"></span>
+            <span class="h ban"></span>
+            <span class="h bao"></span>
+            <span class="h bap"></span>
+            <span class="h bct"></span>
+            <span class="h baq"></span>
+            <span class="h bar"></span>
+            <span class="h bas"></span>
+            <span class="h bat"></span>
+            <span class="h bau"></span>
+            <span class="h bbb"></span>
+            <span class="h bav"></span>
+            <span class="h baw"></span>
+            <span class="h bax"></span>
+            <span class="h bay"></span>
+            <span class="h baz"></span>
+            <span class="h ayd"></span>
+            <span class="h aye"></span>
+            <span class="h bba"></span>
+            <span class="h bbc"></span>
+            <span class="h bbd"></span>
+            <span class="h bbe"></span>
+            <span class="h bbf"></span>
+            <span class="h bbg"></span>
+            <span class="h bbh"></span>
+            <span class="h bbi"></span>
+            <span class="h bbj"></span>
+            <span class="h bbk"></span>
+            <span class="h bbl"></span>
+            <span class="h bbm"></span>
+            <span class="h bbn"></span>
+            <span class="h bbo"></span>
+            <span class="h bbp"></span>
+            <span class="h bbq"></span>
+            <span class="h bbr"></span>
+            <span class="h bbs"></span>
+            <span class="h bbt"></span>
+            <span class="h bbu"></span>
+            <span class="h bbv"></span>
+            <span class="h bbw"></span>
+            <span class="h bbx"></span>
+            <span class="h bby"></span>
+            <span class="h bbz"></span>
+            <span class="h bca"></span>
+            <span class="h bcb"></span>
+            <span class="h bcc"></span>
+            <span class="h bcd"></span>
+            <span class="h bcn"></span>
+            <span class="h bcf"></span>
+            <span class="h bcg"></span>
+            <span class="h bch"></span>
+            <span class="h bci"></span>
+            <span class="h bcj"></span>
+            <span class="h bck"></span>
+            <span class="h bcl"></span>
+            <span class="h bcm"></span>
+            <span class="h bco"></span>
+            <span class="h bcp"></span>
+            <span class="h bcq"></span>
+            <span class="h bcr"></span>
+            <span class="h bcs"></span>
+            <span class="h bcu"></span>
+            <span class="h bcv"></span>
+            <span class="h bcw"></span>
+            <span class="h bcx"></span>
+            <span class="h bcz"></span>
+            <span class="h bcy"></span>
+            <span class="h bda"></span>
+            <span class="h bdb"></span>
+            <span class="h bde"></span>
+            <span class="h bdc"></span>
+            <span class="h bdf"></span>
+            <span class="h bdd"></span>
+            <span class="h bdg"></span>
+            <span class="h bdj"></span>
+            <span class="h bdk"></span>
+            <span class="h bdl"></span>
+            <span class="h bdn"></span>
+            <span class="h bdo"></span>
+            <span class="h bdp"></span>
+            <span class="h bdq"></span>
+            <span class="h bdr"></span>
+            <span class="h bds"></span>
+            <span class="h bdt"></span>
+            <span class="h bdu"></span>
+            <span class="h bdw"></span>
+            <span class="h bdy"></span>
+            <span class="h bdx"></span>
+            <span class="h beb"></span>
+            <span class="h bec"></span>
+            <span class="h bed"></span>
+            <span class="h bee"></span>
+            <span class="h bef"></span>
+            <span class="h beg"></span>
+            <span class="h bek"></span>
+            <span class="h bel"></span>
+            <span class="h bem"></span>
+            <span class="h ben"></span>
+            <span class="h beo"></span>
+            <span class="h bep"></span>
+            <span class="h bet"></span>
+            <span class="h beq"></span>
+            <span class="h ber"></span>
+            <span class="h bes"></span>
+            <span class="h beu"></span>
+            <span class="h bew"></span>
+            <span class="h bex"></span>
+            <span class="h bey"></span>
+            <span class="h bfb"></span>
+            <span class="h bfh"></span>
+            <span class="h bfi"></span>
+            <span class="h bfk"></span>
+            <span class="h bfl"></span>
+            <span class="h bfn"></span>
+            <span class="h bfm"></span>
+            <span class="h bfp"></span>
+            <span class="h bfo"></span>
+            <span class="h bfq"></span>
+            <span class="h bfr"></span>
+            <span class="h bfv"></span>
+            <span class="h bfu"></span>
+            <span class="h bfw"></span>
+            <span class="h bfx"></span>
+            <span class="h bfy"></span>
+            <span class="h bga"></span>
+            <span class="h bfz"></span>
+            <span class="h bgd"></span>
+            <span class="h bge"></span>
+            <span class="h bgf"></span>
+            <span class="h bgg"></span>
+            <span class="h bgh"></span>
+            <span class="h bgi"></span>
+            <span class="h bgj"></span>
+            <span class="h bgm"></span>
+            <span class="h bgn"></span>
+            <span class="h bgo"></span>
+            <span class="h bgp"></span>
+            <span class="h bgq"></span>
+            <span class="h bgr"></span>
+            <span class="h bgs"></span>
+            <span class="h bgt"></span>
+            <span class="h bgu"></span>
+            <span class="h bgv"></span>
+            <span class="h bgy"></span>
+            <span class="h bgz"></span>
+            <span class="h bha"></span>
+            <span class="h bhc"></span>
+            <span class="h bhb"></span>
+            <span class="h bhe"></span>
+            <span class="h bhd"></span>
+            <span class="h bhf"></span>
+            <span class="h bhg"></span>
+            <span class="h bhh"></span>
+            <span class="h bhj"></span>
+            <span class="h bhk"></span>
+            <span class="h bhl"></span>
+            <span class="h bhm"></span>
+            <span class="h bhn"></span>
+            <span class="h bhq"></span>
+            <span class="h bhs"></span>
+            <span class="h bht"></span>
+            <span class="h bhu"></span>
+            <span class="h bhv"></span>
+            <span class="h bhw"></span>
+            <span class="h bhy"></span>
+            <span class="h bhz"></span>
+            <span class="h bia"></span>
+            <span class="h bib"></span>
+            <span class="h bic"></span>
+            <span class="h bid"></span>
+            <span class="h bie"></span>
+            <span class="h bif"></span>
+            <span class="h big"></span>
+            <span class="h bih"></span>
+            <span class="h bii"></span>
+            <span class="h bij"></span>
+            <span class="h bik"></span>
+            <span class="h bil"></span>
+            <span class="h bim"></span>
+            <span class="h bin"></span>
+            <span class="h bip"></span>
+            <span class="h biq"></span>
+            <span class="h bir"></span>
+            <span class="h bit"></span>
+            <span class="h biu"></span>
+            <span class="h biw"></span>
+            <span class="h bix"></span>
+            <span class="h bja"></span>
+            <span class="h bjb"></span>
+            <span class="h bjc"></span>
+            <span class="h bjd"></span>
+            <span class="h bje"></span>
+            <span class="h bjf"></span>
+            <span class="h bjg"></span>
+            <span class="h bji"></span>
+            <span class="h bjj"></span>
+            <span class="h bjh"></span>
+            <span class="h bjk"></span>
+            <span class="h bjn"></span>
+            <span class="h bjo"></span>
+            <span class="h bjr"></span>
+            <span class="h bju"></span>
+            <span class="h bjw"></span>
+            <span class="h bjx"></span>
+            <span class="h bjy"></span>
+            <span class="h bjz"></span>
+            <span class="h bka"></span>
+            <span class="h bkb"></span>
+            <span class="h bkc"></span>
+            <span class="h bkd"></span>
+            <span class="h bke"></span>
+            <span class="h bkf"></span>
+            <span class="h bkg"></span>
+            <span class="h bki"></span>
+            <span class="h bkj"></span>
+            <span class="h bkl"></span>
+            <span class="h bkm"></span>
+            <span class="h bkn"></span>
+            <span class="h bko"></span>
+            <span class="h bkp"></span>
+            <span class="h bkq"></span>
+            <span class="h bkr"></span>
+            <span class="h bks"></span>
+            <span class="h bkt"></span>
+            <span class="h bkz"></span>
+            <span class="h blb"></span>
+            <span class="h bla"></span>
+            <span class="h bld"></span>
+            <span class="h blg"></span>
+            <span class="h blh"></span>
+            <span class="h bli"></span>
+            <span class="h blj"></span>
+            <span class="h bll"></span>
+            <span class="h blk"></span>
+            <span class="h blm"></span>
+            <span class="h blp"></span>
+            <span class="h blq"></span>
+            <span class="h bls"></span>
+            <span class="h blt"></span>
+            <span class="h blv"></span>
+            <span class="h blu"></span>
+            <span class="h blw"></span>
+            <span class="h bmy"></span>
+            <span class="h bly"></span>
+            <span class="h blx"></span>
+            <span class="h blz"></span>
+            <span class="h bma"></span>
+            <span class="h bmc"></span>
+            <span class="h bmb"></span>
+            <span class="h bmd"></span>
+            <span class="h bme"></span>
+            <span class="h bmf"></span>
+            <span class="h bmg"></span>
+            <span class="h bmh"></span>
+            <span class="h bmi"></span>
+            <span class="h bmj"></span>
+            <span class="h bmk"></span>
+            <span class="h bml"></span>
+            <span class="h bmm"></span>
+            <span class="h bmn"></span>
+            <span class="h bmp"></span>
+            <span class="h bms"></span>
+            <span class="h bmv"></span>
+            <span class="h bmw"></span>
+            <span class="h bmx"></span>
+            <span class="h bmz"></span>
+            <span class="h bna"></span>
+            <span class="h bnb"></span>
+            <span class="h bnc"></span>
+            <span class="h bnd"></span>
+            <span class="h bne"></span>
+            <span class="h bnf"></span>
+            <span class="h bnk"></span>
+            <span class="h bno"></span>
+            <span class="h bnp"></span>
+            <span class="h bnq"></span>
+            <span class="h bnr"></span>
+        </div>
+        <div class="bx">
+            <span class="h ayg"></span>
+            <span class="h ayf"></span>
+            <span class="h ayv"></span>
+            <span class="h azs"></span>
+            <span class="h azu"></span>
+            <span class="h azx"></span>
+            <span class="h bce"></span>
+            <span class="h bdi"></span>
+            <span class="h bdh"></span>
+            <span class="h bdm"></span>
+            <span class="h bdv"></span>
+            <span class="h bea"></span>
+            <span class="h bdz"></span>
+            <span class="h beh"></span>
+            <span class="h bej"></span>
+            <span class="h bei"></span>
+            <span class="h bev"></span>
+            <span class="h bfa"></span>
+            <span class="h bez"></span>
+            <span class="h bfe"></span>
+            <span class="h bff"></span>
+            <span class="h bfg"></span>
+            <span class="h bfd"></span>
+            <span class="h bfc"></span>
+            <span class="h bfj"></span>
+            <span class="h bfs"></span>
+            <span class="h bft"></span>
+            <span class="h bgc"></span>
+            <span class="h bgb"></span>
+            <span class="h bgl"></span>
+            <span class="h bgk"></span>
+            <span class="h bgx"></span>
+            <span class="h bgw"></span>
+            <span class="h bhi"></span>
+            <span class="h bhp"></span>
+            <span class="h bho"></span>
+            <span class="h bhx"></span>
+            <span class="h bio"></span>
+            <span class="h bis"></span>
+            <span class="h biv"></span>
+            <span class="h biz"></span>
+            <span class="h biy"></span>
+            <span class="h bjm"></span>
+            <span class="h bjl"></span>
+            <span class="h bjq"></span>
+            <span class="h bjp"></span>
+            <span class="h bjt"></span>
+            <span class="h bjs"></span>
+            <span class="h bjv"></span>
+            <span class="h bkh"></span>
+            <span class="h bku"></span>
+            <span class="h bkw"></span>
+            <span class="h bkv"></span>
+            <span class="h bkx"></span>
+            <span class="h bky"></span>
+            <span class="h blc"></span>
+            <span class="h blf"></span>
+            <span class="h ble"></span>
+            <span class="h blo"></span>
+            <span class="h bln"></span>
+            <span class="h blr"></span>
+            <span class="h bmo"></span>
+            <span class="h bmr"></span>
+            <span class="h bmq"></span>
+            <span class="h bmu"></span>
+            <span class="h bmt"></span>
+            <span class="h bnh"></span>
+            <span class="h bng"></span>
+            <span class="h bnj"></span>
+            <span class="h bni"></span>
+            <span class="h bnn"></span>
+            <span class="h bnm"></span>
+            <span class="h bnl"></span>
+            <span class="h bns"></span>
+            <span class="h bnu"></span>
+            <span class="h bnt"></span>
+            <span class="h bnv"></span>
+            <span class="h bnx"></span>
+            <span class="h bnw"></span>
+            <span class="h bnz"></span>
+            <span class="h bny"></span>
+        </div>
+        <h3 id="examples">Examples</h3>
+        <p>Entypo icons can be placed in just about any other element, so long as they are a separate HTML element (e.g., a <code class="bqq">&lt;span&gt;</code>). See the examples below for how to put them to use.</p>
+        <div class="bv" data-example-id="">
+            <button class="cg ns" type="button">
+                <span class="h bmc"></span> Like
+            </button>
+            <button class="cg nq" type="button">
+                <span class="h bmc"></span> Liked!
+            </button>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;button</span> <span class="am">class=</span><span class="al">"btn btn-secondary"</span> <span class="am">type=</span><span class="al">"button"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;span</span> <span class="am">class=</span><span class="al">"icon icon-thumbs-up"</span><span class="aw">&gt;&lt;/span&gt;</span>
+        Like
+        <span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">class=</span><span class="al">"btn btn-primary"</span> <span class="am">type=</span><span class="al">"button"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;span</span> <span class="am">class=</span><span class="al">"icon icon-thumbs-up"</span><span class="aw">&gt;&lt;/span&gt;</span>
+        Liked!
+        <span class="aw">&lt;/button&gt;</span></code></pre></div>
+        <div class="bv" data-example-id="">
+            <ul class="nav pj">
+                <li class="pi">
+                    <a class="pg active" href="#">
+                    <span class="h baq"></span>
+                    Discussions
+                    </a>
+                </li>
+                <li class="pi">
+                    <a class="pg" href="#">
+                    <span class="h azy"></span>
+                    Notifications
+                    </a>
+                </li>
+                <li class="pi">
+                    <a class="pg" href="#">
+                    <span class="h bnc"></span>
+                    Members
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;ul</span> <span class="am">class=</span><span class="al">"nav nav-pills"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"nav-item"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">class=</span><span class="al">"nav-link active"</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;span</span> <span class="am">class=</span><span class="al">"icon icon-chat"</span><span class="aw">&gt;&lt;/span&gt;</span>
+        Discussions
+        <span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"nav-item"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">class=</span><span class="al">"nav-link"</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;span</span> <span class="am">class=</span><span class="al">"icon icon-bell"</span><span class="aw">&gt;&lt;/span&gt;</span>
+        Notifications
+        <span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"nav-item"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">class=</span><span class="al">"nav-link"</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;span</span> <span class="am">class=</span><span class="al">"icon icon-users"</span><span class="aw">&gt;&lt;/span&gt;</span>
+        Members
+        <span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;/ul&gt;</span></code></pre></div>
+        <h2 id="pill-buttons">Pill buttons</h2>
+        <p>Add <code class="bqq">.btn-pill</code> to any button to make them more rounded.</p>
+        <div class="bv" data-example-id="">
+            <button type="button" class="cg oi axu nq">Primary</button>
+            <button type="button" class="cg oi axu ns">Secondary</button>
+            <button type="button" class="cg oi axu nt">Success</button>
+            <button type="button" class="cg oi axu nu">Info</button>
+            <button type="button" class="cg oi axu nv">Warning</button>
+            <button type="button" class="cg oi axu nw">Danger</button>
+            <button type="button" class="cg oi axu oh">Link</button>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-lg btn-pill btn-primary"</span><span class="aw">&gt;</span>Primary<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-lg btn-pill btn-secondary"</span><span class="aw">&gt;</span>Secondary<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-lg btn-pill btn-success"</span><span class="aw">&gt;</span>Success<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-lg btn-pill btn-info"</span><span class="aw">&gt;</span>Info<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-lg btn-pill btn-warning"</span><span class="aw">&gt;</span>Warning<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-lg btn-pill btn-danger"</span><span class="aw">&gt;</span>Danger<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-lg btn-pill btn-link"</span><span class="aw">&gt;</span>Link<span class="aw">&lt;/button&gt;</span></code></pre></div>
+        <div class="bv" data-example-id="">
+            <button type="button" class="cg axu nq">Primary</button>
+            <button type="button" class="cg axu ns">Secondary</button>
+            <button type="button" class="cg axu nt">Success</button>
+            <button type="button" class="cg axu nu">Info</button>
+            <button type="button" class="cg axu nv">Warning</button>
+            <button type="button" class="cg axu nw">Danger</button>
+            <button type="button" class="cg axu oh">Link</button>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-pill btn-primary"</span><span class="aw">&gt;</span>Primary<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-pill btn-secondary"</span><span class="aw">&gt;</span>Secondary<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-pill btn-success"</span><span class="aw">&gt;</span>Success<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-pill btn-info"</span><span class="aw">&gt;</span>Info<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-pill btn-warning"</span><span class="aw">&gt;</span>Warning<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-pill btn-danger"</span><span class="aw">&gt;</span>Danger<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-pill btn-link"</span><span class="aw">&gt;</span>Link<span class="aw">&lt;/button&gt;</span></code></pre></div>
+        <div class="bv" data-example-id="">
+            <button type="button" class="cg ok axu nq">Primary</button>
+            <button type="button" class="cg ok axu ns">Secondary</button>
+            <button type="button" class="cg ok axu nt">Success</button>
+            <button type="button" class="cg ok axu nu">Info</button>
+            <button type="button" class="cg ok axu nv">Warning</button>
+            <button type="button" class="cg ok axu nw">Danger</button>
+            <button type="button" class="cg ok axu oh">Link</button>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-sm btn-pill btn-primary"</span><span class="aw">&gt;</span>Primary<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-sm btn-pill btn-secondary"</span><span class="aw">&gt;</span>Secondary<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-sm btn-pill btn-success"</span><span class="aw">&gt;</span>Success<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-sm btn-pill btn-info"</span><span class="aw">&gt;</span>Info<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-sm btn-pill btn-warning"</span><span class="aw">&gt;</span>Warning<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-sm btn-pill btn-danger"</span><span class="aw">&gt;</span>Danger<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-sm btn-pill btn-link"</span><span class="aw">&gt;</span>Link<span class="aw">&lt;/button&gt;</span></code></pre></div>
+        <div class="bv" data-example-id="">
+            <button type="button" class="cg axo axu nq">Primary</button>
+            <button type="button" class="cg axo axu ns">Default</button>
+            <button type="button" class="cg axo axu nt">Success</button>
+            <button type="button" class="cg axo axu nu">Info</button>
+            <button type="button" class="cg axo axu nv">Warning</button>
+            <button type="button" class="cg axo axu nw">Danger</button>
+            <button type="button" class="cg axo axu oh">Link</button>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-xs btn-pill btn-primary"</span><span class="aw">&gt;</span>Primary<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-xs btn-pill btn-secondary"</span><span class="aw">&gt;</span>Default<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-xs btn-pill btn-success"</span><span class="aw">&gt;</span>Success<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-xs btn-pill btn-info"</span><span class="aw">&gt;</span>Info<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-xs btn-pill btn-warning"</span><span class="aw">&gt;</span>Warning<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-xs btn-pill btn-danger"</span><span class="aw">&gt;</span>Danger<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn btn-xs btn-pill btn-link"</span><span class="aw">&gt;</span>Link<span class="aw">&lt;/button&gt;</span></code></pre></div>
+        <h2 id="avatar-list">Avatar list</h2>
+        <p>Join a series of icons into a single horizontal grouping.</p>
+        <div class="bv" data-example-id="">
+            <ul class="bol">
+                <li class="bom">
+                    <img class="us" src="img/avatar-dhg.png" />
+                </li>
+                <li class="bom">
+                    <img class="us" src="img/avatar-mdo.png" />
+                </li>
+                <li class="bom">
+                    <img class="us" src="img/avatar-fat.jpg" />
+                </li>
+            </ul>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;ul</span> <span class="am">class=</span><span class="al">"avatar-list"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"avatar-list-item"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"rounded-circle"</span> <span class="am">src=</span><span class="al">"img/avatar-dhg.png"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"avatar-list-item"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"rounded-circle"</span> <span class="am">src=</span><span class="al">"img/avatar-mdo.png"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"avatar-list-item"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"rounded-circle"</span> <span class="am">src=</span><span class="al">"img/avatar-fat.jpg"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;/ul&gt;</span></code></pre></div>
+        <h2 id="growl">Growl</h2>
+        <p>Use the Growl plugin to turn any Bootstrap alert into an OS X style notification. Growls are fixed to the top right of your viewport and can be dismissed, just like normal Bootstrap alerts.</p>
+        <div class="bv" data-example-id="">
+            <div class="bon boo">
+                <div class="alert alert-dark bop" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <strong>Well done!</strong> You successfully read this important alert message.
+                </div>
+            </div>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"growl growl-static"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"alert alert-dark alert-dismissable"</span> <span class="am">role=</span><span class="al">"alert"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"close"</span> <span class="am">data-dismiss=</span><span class="al">"alert"</span> <span class="am">aria-label=</span><span class="al">"Close"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;span</span> <span class="am">aria-hidden=</span><span class="al">"true"</span><span class="aw">&gt;</span>×<span class="aw">&lt;/span&gt;</span>
+        <span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;strong&gt;</span>Well done!<span class="aw">&lt;/strong&gt;</span> You successfully read this important alert message.
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span></code></pre></div>
+        <h2 id="profile-header">Profile header</h2>
+        <p>Simple profile headers to show off a user’s profile information</p>
+        <div class="bv" data-example-id="">
+            <div class="boq avz" style="background-image: url(img/iceland.jpg); ">
+                <div class="do">
+                    <div class="bor">
+                        <img class="us bos" src="img/avatar-dhg.png" />
+                        <h3 class="bou">Dave Gamache</h3>
+                        <p class="bot">I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.</p>
+                    </div>
+                </div>
+                <nav class="bov">
+                    <ul class="nav ph xm">
+                        <li class="pi">
+                            <a class="pg active" href="#">Photos</a>
+                        </li>
+                        <li class="pi">
+                            <a class="pg" href="#">Others</a>
+                        </li>
+                        <li class="pi">
+                            <a class="pg" href="#">Anothers</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"profile-header text-center"</span> <span class="am">style=</span><span class="al">"background-image: url(img/iceland.jpg); "</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"container-fluid"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"container-inner"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"rounded-circle media-object"</span> <span class="am">src=</span><span class="al">"img/avatar-dhg.png"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;h3</span> <span class="am">class=</span><span class="al">"profile-header-user"</span><span class="aw">&gt;</span>Dave Gamache<span class="aw">&lt;/h3&gt;</span>
+        <span class="aw">&lt;p</span> <span class="am">class=</span><span class="al">"profile-header-bio"</span><span class="aw">&gt;</span>I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.<span class="aw">&lt;/p&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;nav</span> <span class="am">class=</span><span class="al">"profile-header-nav"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;ul</span> <span class="am">class=</span><span class="al">"nav nav-tabs justify-content-center"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"nav-item"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">class=</span><span class="al">"nav-link active"</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Photos<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"nav-item"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">class=</span><span class="al">"nav-link"</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Others<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"nav-item"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">class=</span><span class="al">"nav-link"</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Anothers<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;/ul&gt;</span>
+        <span class="aw">&lt;/nav&gt;</span>
+        <span class="aw">&lt;/div&gt;</span></code></pre></div>
+        <h2 id="card-profile">Card profile</h2>
+        <p>Feature a user’s profile with the <code class="bqq">.card-profile</code> variant.</p>
+        <div class="bv" data-example-id="">
+            <div class="aew">
+                <div class="dp">
+                    <div class="fm">
+                        <div class="pz bpi">
+                            <div class="qf" style="background-image: url(https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-15/11312291_348657648678007_1202941362_n.jpg);"></div>
+                            <div class="qa axl">
+                                <img class="bpj" src="img/avatar-fat.jpg" />
+                                <h5 class="qb">Jacob Thornton</h5>
+                                <p class="afo">Big belly rude boy, million dollar hustler. Unemployed.</p>
+                                <button class="cg nz ok">
+                                    <span class="h ayi"></span> Follow
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fm">
+                        <div class="pz bpi">
+                            <div class="qf" style="background-image: url(https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/11240760_365538423656311_112029877_n.jpg);"></div>
+                            <div class="qa axl">
+                                <img class="bpj" src="img/avatar-mdo.png" />
+                                <h5 class="qb">Mark Otto</h5>
+                                <p class="afo">GitHub and Bootstrap. Formerly at Twitter. Huge nerd.</p>
+                                <button class="cg nz ok">
+                                    <span class="h ayi"></span> Follow
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"mt-2"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"row"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"col-lg-6"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"card card-profile"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"card-header"</span> <span class="am">style=</span><span class="al">"background-image: url(https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xfa1/t51.2885-15/11312291_348657648678007_1202941362_n.jpg);"</span><span class="aw">&gt;&lt;/div&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"card-body text-xs-center"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"card-profile-img"</span> <span class="am">src=</span><span class="al">"img/avatar-fat.jpg"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;h5</span> <span class="am">class=</span><span class="al">"card-title"</span><span class="aw">&gt;</span>Jacob Thornton<span class="aw">&lt;/h5&gt;</span>
+        <span class="aw">&lt;p</span> <span class="am">class=</span><span class="al">"mb-4"</span><span class="aw">&gt;</span>Big belly rude boy, million dollar hustler. Unemployed.<span class="aw">&lt;/p&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">class=</span><span class="al">"btn btn-outline-primary btn-sm"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;span</span> <span class="am">class=</span><span class="al">"icon icon-add-user"</span><span class="aw">&gt;&lt;/span&gt;</span> Follow
+        <span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"col-lg-6"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"card card-profile"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"card-header"</span> <span class="am">style=</span><span class="al">"background-image: url(https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/11240760_365538423656311_112029877_n.jpg);"</span><span class="aw">&gt;&lt;/div&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"card-body text-xs-center"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"card-profile-img"</span> <span class="am">src=</span><span class="al">"img/avatar-mdo.png"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;h5</span> <span class="am">class=</span><span class="al">"card-title"</span><span class="aw">&gt;</span>Mark Otto<span class="aw">&lt;/h5&gt;</span>
+        <span class="aw">&lt;p</span> <span class="am">class=</span><span class="al">"mb-4"</span><span class="aw">&gt;</span>GitHub and Bootstrap. Formerly at Twitter. Huge nerd.<span class="aw">&lt;/p&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">class=</span><span class="al">"btn btn-outline-primary btn-sm"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;span</span> <span class="am">class=</span><span class="al">"icon icon-add-user"</span><span class="aw">&gt;&lt;/span&gt;</span> Follow
+        <span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span></code></pre></div>
+        <h2 id="card-link-list">Card link list</h2>
+        <p>Simple card modifier for link lists.</p>
+        <div class="bv" data-example-id="">
+            <div class="pz bpm">
+                <div class="qa">
+                    © 2018 Bootstrap
+                    <a href="#">About</a>
+                    <a href="#">Help</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Ads </a>
+                    <a href="#">Info</a>
+                    <a href="#">Brand</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Status</a>
+                    <a href="#">Apps</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">Advertise</a>
+                </div>
+            </div>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"card card-link-list"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"card-body"</span><span class="aw">&gt;</span>
+        © 2018 Bootstrap
+
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>About<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Help<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Terms<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Privacy<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Cookies<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Ads <span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Info<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Brand<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Blog<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Status<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Apps<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Jobs<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Advertise<span class="aw">&lt;/a&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span></code></pre></div>
+        <h2 id="media-list-steam">Media list steam</h2>
+        <div class="bv" data-example-id="">
+            <ul class="bow box afh">
+                <li class="rv b agz">
+                    <img class="bos aff yb" src="img/avatar-mdo.png" />
+                    <div class="rw">
+                        <div class="bpb">
+                            <small class="acx axc">34 min</small>
+                            <h6>Mark Otto</h6>
+                        </div>
+                        <p>
+                            Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum.
+                        </p>
+                        <img class="boz" src="img/instagram_17.jpg" />
+                        <ul class="bow">
+                            <li class="rv">
+                                <img class="bos aff yb" src="img/avatar-dhg.png" />
+                                <div class="rw">
+                                    <strong>Dave Gamache: </strong> Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                                </div>
+                            </li>
+                            <li class="rv afd">
+                                <img class="bos aff yb" src="img/avatar-fat.jpg" />
+                                <div class="rw">
+                                    <strong>Jacob Thornton: </strong> Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;ul</span> <span class="am">class=</span><span class="al">"media-list media-list-stream mb-3"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"media list-group-item p-4"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"media-object mr-3 align-self-start"</span> <span class="am">src=</span><span class="al">"img/avatar-mdo.png"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-body"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-heading"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;small</span> <span class="am">class=</span><span class="al">"float-right text-muted"</span><span class="aw">&gt;</span>34 min<span class="aw">&lt;/small&gt;</span>
+        <span class="aw">&lt;h6&gt;</span>Mark Otto<span class="aw">&lt;/h6&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;p&gt;</span>
+        Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum.
+        <span class="aw">&lt;/p&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"media-body-inline-img"</span> <span class="am">src=</span><span class="al">"img/instagram_17.jpg"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;ul</span> <span class="am">class=</span><span class="al">"media-list"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"media"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"media-object mr-3 align-self-start"</span> <span class="am">src=</span><span class="al">"img/avatar-dhg.png"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-body"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;strong&gt;</span>Dave Gamache: <span class="aw">&lt;/strong&gt;</span>
+        Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"media mt-3"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"media-object mr-3 align-self-start"</span> <span class="am">src=</span><span class="al">"img/avatar-fat.jpg"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-body"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;strong&gt;</span>Jacob Thornton: <span class="aw">&lt;/strong&gt;</span>
+        Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;/ul&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;/ul&gt;</span></code></pre></div>
+        <h2 id="media-list-conversation">Media list conversation</h2>
+        <div class="bv" data-example-id="">
+            <ul class="bow bpc bqs">
+                <li class="rv bpf afo">
+                    <div class="rw">
+                        <div class="bpd">
+                            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+                        </div>
+                        <div class="bpe">
+                            <small class="axc">
+                            <a href="#">Dave Gamache</a> at 4:20PM
+                            </small>
+                        </div>
+                    </div>
+                    <img class="us bos afi" src="img/avatar-dhg.png" />
+                </li>
+                <li class="rv afo">
+                    <img class="us bos aff" src="img/avatar-fat.jpg" />
+                    <div class="rw">
+                        <div class="bpd">
+                            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                        </div>
+                        <div class="bpd">
+                            Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                        </div>
+                        <div class="bpd">
+                            Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+                        </div>
+                        <div class="bpe">
+                            <small class="axc">
+                            <a href="#">Fat</a> at 4:28PM
+                            </small>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;ul</span> <span class="am">class=</span><span class="al">"media-list media-list-conversation c-w-md"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"media media-current-user mb-4"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-body"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-body-text"</span><span class="aw">&gt;</span>
+        Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-footer"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;small</span> <span class="am">class=</span><span class="al">"text-muted"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Dave Gamache<span class="aw">&lt;/a&gt;</span> at 4:20PM
+        <span class="aw">&lt;/small&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"rounded-circle media-object ml-3"</span> <span class="am">src=</span><span class="al">"img/avatar-dhg.png"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"media mb-4"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"rounded-circle media-object mr-3"</span> <span class="am">src=</span><span class="al">"img/avatar-fat.jpg"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-body"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-body-text"</span><span class="aw">&gt;</span>
+        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-body-text"</span><span class="aw">&gt;</span>
+        Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-body-text"</span><span class="aw">&gt;</span>
+        Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-footer"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;small</span> <span class="am">class=</span><span class="al">"text-muted"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;a</span> <span class="am">href=</span><span class="al">"#"</span><span class="aw">&gt;</span>Fat<span class="aw">&lt;/a&gt;</span> at 4:28PM
+        <span class="aw">&lt;/small&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;/ul&gt;</span></code></pre></div>
+        <h2 id="media-list-users">Media list users</h2>
+        <div class="bv" data-example-id="">
+            <ul class="bow cj ca">
+                <li class="b">
+                    <div class="rv ady">
+                        <img class="bos us aff" src="img/avatar-fat.jpg" />
+                        <div class="rw yd">
+                            <button class="cg nz ok acx">
+                                <span class="h ayi"></span> Follow
+                            </button>
+                            <strong>Jacob Thornton</strong>
+                            <small>@fat - San Francisco</small>
+                        </div>
+                    </div>
+                </li>
+                <li class="b">
+                    <div class="rv ady">
+                        <img class="bos us aff" src="img/avatar-dhg.png" />
+                        <div class="rw yd">
+                            <button class="cg nz ok acx">
+                                <span class="h ayi"></span> Follow
+                            </button>
+                            <strong>Dave Gamache</strong>
+                            <small>@dhg - Palo Alto</small>
+                        </div>
+                    </div>
+                </li>
+                <li class="b">
+                    <div class="rv ady">
+                        <img class="bos us aff" src="img/avatar-mdo.png" />
+                        <div class="rw yd">
+                            <button class="cg nz ok acx">
+                                <span class="h ayi"></span> Follow
+                            </button>
+                            <strong>Mark Otto</strong>
+                            <small>@mdo - San Francisco</small>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;ul</span> <span class="am">class=</span><span class="al">"media-list media-list-users list-group"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"list-group-item"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media w-100"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"media-object rounded-circle mr-3"</span> <span class="am">src=</span><span class="al">"img/avatar-fat.jpg"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-body align-self-center"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">class=</span><span class="al">"btn btn-outline-primary btn-sm float-right"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;span</span> <span class="am">class=</span><span class="al">"icon icon-add-user"</span><span class="aw">&gt;&lt;/span&gt;</span> Follow
+        <span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;strong&gt;</span>Jacob Thornton<span class="aw">&lt;/strong&gt;</span>
+        <span class="aw">&lt;small&gt;</span>@fat - San Francisco<span class="aw">&lt;/small&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"list-group-item"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media w-100"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"media-object rounded-circle mr-3"</span> <span class="am">src=</span><span class="al">"img/avatar-dhg.png"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-body align-self-center"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">class=</span><span class="al">"btn btn-outline-primary btn-sm float-right"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;span</span> <span class="am">class=</span><span class="al">"icon icon-add-user"</span><span class="aw">&gt;&lt;/span&gt;</span> Follow
+        <span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;strong&gt;</span>Dave Gamache<span class="aw">&lt;/strong&gt;</span>
+        <span class="aw">&lt;small&gt;</span>@dhg - Palo Alto<span class="aw">&lt;/small&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;li</span> <span class="am">class=</span><span class="al">"list-group-item"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media w-100"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">class=</span><span class="al">"media-object rounded-circle mr-3"</span> <span class="am">src=</span><span class="al">"img/avatar-mdo.png"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"media-body align-self-center"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">class=</span><span class="al">"btn btn-outline-primary btn-sm float-right"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;span</span> <span class="am">class=</span><span class="al">"icon icon-add-user"</span><span class="aw">&gt;&lt;/span&gt;</span> Follow
+        <span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;strong&gt;</span>Mark Otto<span class="aw">&lt;/strong&gt;</span>
+        <span class="aw">&lt;small&gt;</span>@mdo - San Francisco<span class="aw">&lt;/small&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/li&gt;</span>
+        <span class="aw">&lt;/ul&gt;</span></code></pre></div>
+        <h2 id="custom-modals">Custom Modals</h2>
+        <p>Support for multiple, stackable modal bodies and scrolling bodies using the new <code class="bqq">.modal-body-scroller</code> modifier.</p>
+        <div class="bv" data-example-id="">
+            <div class="cd">
+                <div class="modal-dialog bqt">
+                    <div class="modal-content">
+                        <div class="d">
+                            <h4 class="modal-title">Medium Modal</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body axw">
+                            <p>Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                            <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+                            <p>Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.</p>
+                            <p>Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+                            <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+                            <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.</p>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" class="form-control" placeholder="Message" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"modal"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"modal-dialog modal-md"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"modal-content"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"modal-header"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;h4</span> <span class="am">class=</span><span class="al">"modal-title"</span><span class="aw">&gt;</span>Medium Modal<span class="aw">&lt;/h4&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"close"</span> <span class="am">data-dismiss=</span><span class="al">"modal"</span> <span class="am">aria-label=</span><span class="al">"Close"</span><span class="aw">&gt;&lt;span</span> <span class="am">aria-hidden=</span><span class="al">"true"</span><span class="aw">&gt;</span><span class="ar">&amp;times;</span><span class="aw">&lt;/span&gt;&lt;/button&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"modal-body modal-body-scroller"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;p&gt;</span>Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.<span class="aw">&lt;/p&gt;</span>
+
+        <span class="aw">&lt;p&gt;</span>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo.<span class="aw">&lt;/p&gt;</span>
+
+        <span class="aw">&lt;p&gt;</span>Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.<span class="aw">&lt;/p&gt;</span>
+
+        <span class="aw">&lt;p&gt;</span>Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.<span class="aw">&lt;/p&gt;</span>
+
+        <span class="aw">&lt;p&gt;</span>Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<span class="aw">&lt;/p&gt;</span>
+
+        <span class="aw">&lt;p&gt;</span>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo.<span class="aw">&lt;/p&gt;</span>
+
+        <span class="aw">&lt;p&gt;</span>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo.<span class="aw">&lt;/p&gt;</span>
+
+        <span class="aw">&lt;p&gt;</span>Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.<span class="aw">&lt;/p&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"modal-body"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;input</span> <span class="am">type=</span><span class="al">"text"</span> <span class="am">class=</span><span class="al">"form-control"</span> <span class="am">placeholder=</span><span class="al">"Message"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span></code></pre></div>
+        <p>Also, drop the regular footer for a new two-up set of actions using the <code class="bqq">.modal-actions</code> component.</p>
+        <div class="bv" data-example-id="">
+            <div class="cd">
+                <div class="modal-dialog sj">
+                    <div class="modal-content">
+                        <div class="d">
+                            <h4 class="modal-title">Small modal</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Modal body text...</p>
+                        </div>
+                        <div class="axx">
+                            <button type="button" class="oh axy" data-dismiss="modal">
+                                <strong>Continue</strong>
+                            </button>
+                            <button type="button" class="oh axy" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"modal"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"modal-dialog modal-sm"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"modal-content"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"modal-header"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;h4</span> <span class="am">class=</span><span class="al">"modal-title"</span><span class="aw">&gt;</span>Small modal<span class="aw">&lt;/h4&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"close"</span> <span class="am">data-dismiss=</span><span class="al">"modal"</span> <span class="am">aria-label=</span><span class="al">"Close"</span><span class="aw">&gt;&lt;span</span> <span class="am">aria-hidden=</span><span class="al">"true"</span><span class="aw">&gt;</span><span class="ar">&amp;times;</span><span class="aw">&lt;/span&gt;&lt;/button&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"modal-body"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;p&gt;</span>Modal body text...<span class="aw">&lt;/p&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"modal-actions"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn-link modal-action"</span> <span class="am">data-dismiss=</span><span class="al">"modal"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;strong&gt;</span>Continue<span class="aw">&lt;/strong&gt;</span>
+        <span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;button</span> <span class="am">type=</span><span class="al">"button"</span> <span class="am">class=</span><span class="al">"btn-link modal-action"</span> <span class="am">data-dismiss=</span><span class="al">"modal"</span><span class="aw">&gt;</span>Cancel<span class="aw">&lt;/button&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span></code></pre></div>
+        <h2 id="custom-containers">Custom containers</h2>
+        <p>We’ve introduced a new component for vertically aligning content with <code class="bqq">.container-content-middle</code> and <code class="bqq">.container-content-bottom</code>. This is particularly useful for sign in and other simple pages.</p>
+        <div class="bv" data-example-id="">
+            <div class="axz">
+                <div class="ayb">
+                    Vertically centered content.
+                </div>
+            </div>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"container-fill-height"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;div</span> <span class="am">class=</span><span class="al">"container-content-middle"</span><span class="aw">&gt;</span>
+        Vertically centered content.
+        <span class="aw">&lt;/div&gt;</span>
+        <span class="aw">&lt;/div&gt;</span></code></pre></div>
+        <h1 id="plugins">Plugins</h1>
+        <h2 id="image-grids">Image grids</h2>
+        <p>Use the image grid plugin to quickly layout multi sized images in a grid. For the image grid to work properly, it needs to get the raw image sizes (either from a data attribute, like <code class="bqq">data-width</code> and <code class="bqq">data-height</code> or you need to wait for image load before calling <code class="bqq">.imageGrid</code>).</p>
+        <h3 id="options">Options</h3>
+        <ul>
+            <li>padding: 10,</li>
+            <li>targetHeight: 300,</li>
+            <li>display: ‘inline-block’</li>
+        </ul>
+        <h3 id="javascript-api">JavaScript API</h3>
+        <div class="bv" data-example-id="">
+            $('.myGrid').imageGrid()
+        </div>
+        <div class="a"><pre><code class="bqu" data-lang="js"><span class="bqv">$</span><span class="bqw">(</span><span class="bn">'.myGrid'</span><span class="bqw">).</span><span class="bqv">imageGrid</span><span class="bqw">()</span></code></pre></div>
+        <h3 id="data-api">Data Api</h3>
+        <div class="bv" data-example-id="">
+            <div data-grid="images">
+                <img data-width="350" data-height="300" src="https://placehold.it/350x300/EEE04A/ffffff" />
+                <img data-width="420" data-height="320" src="https://placehold.it/420x320/5cb85c/ffffff" />
+                <img data-width="320" data-height="380" src="https://placehold.it/320x380/5bc0de/ffffff" />
+                <img data-width="472" data-height="500" src="https://placehold.it/472x500/f0ad4e/ffffff" />
+                <img data-width="540" data-height="360" src="https://placehold.it/540x360/FF3167/ffffff" />
+            </div>
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;div</span> <span class="am">data-grid=</span><span class="al">"images"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">data-width=</span><span class="al">"350"</span> <span class="am">data-height=</span><span class="al">"300"</span> <span class="am">src=</span><span class="al">"https://placehold.it/350x300/EEE04A/ffffff"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">data-width=</span><span class="al">"420"</span> <span class="am">data-height=</span><span class="al">"320"</span> <span class="am">src=</span><span class="al">"https://placehold.it/420x320/5cb85c/ffffff"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">data-width=</span><span class="al">"320"</span> <span class="am">data-height=</span><span class="al">"380"</span> <span class="am">src=</span><span class="al">"https://placehold.it/320x380/5bc0de/ffffff"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">data-width=</span><span class="al">"472"</span> <span class="am">data-height=</span><span class="al">"500"</span> <span class="am">src=</span><span class="al">"https://placehold.it/472x500/f0ad4e/ffffff"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;img</span> <span class="am">data-width=</span><span class="al">"540"</span> <span class="am">data-height=</span><span class="al">"360"</span> <span class="am">src=</span><span class="al">"https://placehold.it/540x360/FF3167/ffffff"</span><span class="aw">&gt;</span>
+        <span class="aw">&lt;/div&gt;</span></code></pre></div>
+        <h2 id="zoom">Zoom</h2>
+        <p>The zoom plugin provides simple image zoom functionality. Add a <code class="bqq">data-action="zoom"</code> attribute to any image you want to make zoomable. Zoomed images can be closed by scroll, <code class="bqq">esc</code>, or click. Use the meta key to open raw element in new tab.</p>
+        <h3 id="data-api-1">Data API</h3>
+        <div class="bv" data-example-id="">
+            <img data-action="zoom" style="width: 150px;" src="img/avatar-mdo.png" />
+        </div>
+        <div class="a"><pre><code class="bqr" data-lang="html"><span class="aw">&lt;img</span> <span class="am">data-action=</span><span class="al">"zoom"</span> <span class="am">style=</span><span class="al">"width: 150px;"</span> <span class="am">src=</span><span class="al">"img/avatar-mdo.png"</span><span class="aw">&gt;</span></code></pre></div>
+        <a class="docs-top" style="display: none" href="#">Back to top</a>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/toolkit.js"></script>
+    <script src="js/application.js"></script>
+    <script>
+    // execute/clear BS loaders for docs
+    $(function() {
+        while (window.BS && window.BS.loader && window.BS.loader.length) {
+            (window.BS.loader.pop())()
+        }
+    })
+    </script>
+</body>
+
+</html>

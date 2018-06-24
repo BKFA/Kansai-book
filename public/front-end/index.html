@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>BKFA | KansaiBook</title>
+    <link rel="Shortcut Icon" href="img/favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="css/toolkit.css" rel="stylesheet">
+    <link href="css/application.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+    /* this chunk of css is not part of the toolkit :) */
+
+    body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+    }
+    .fa{
+      font-size: 20px;
+      padding: 0px;
+     /* color: #fff;*/
+    }
+    </style>
+</head>
+
+<body class="bob">
+    <div class="bon" id="app-growl"></div>
+    <nav class="ck pt adq py tk app-navbar">
+        <a class="e" href="index.html">
+          <img src="img/brand-white.png" alt="brand">
+        </a>
+        <button class="pp bpn vm" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse f" id="navbarResponsive">
+            <ul class="navbar-nav ahq">
+                <li class="pi active">
+                    <a class="pg" href="index.html"><span class="fa fa-home"></span> Home<span class="adt">(current)</span></a>
+                </li>
+                <li class="pi">
+                    <a class="pg" href="profile.html"><span class="fa fa-pencil-square-o"></span> Answer</a>
+                </li>
+                <li class="pi">
+                    <a class="pg" href="docs.html"><span class="fa fa-file-text-o"></span> Documents</a>
+                </li>
+                <li class="pi">
+                  <style>
+                    .add-ques{
+                      background: #E6110C !important;
+                      border-radius: 7px; 
+                    }
+                    .add-ques:hover{
+                      background: #000 !important;
+                    }
+                  </style>
+                  <a class="pg add-ques" href="#" style=""><span class="fa fa-question-circle-o"></span> Add Question</a>
+                </li>
+                <li class="pi vm">
+                    <a class="pg" href="notifications.html">Notifications</a>
+                </li>
+                <li class="pi vm">
+                    <a class="pg" data-action="growl">Growl</a>
+                </li>
+                <li class="pi vm">
+                    <a class="pg" href="login.html">Logout</a>
+                </li>
+            </ul>
+            <form class="nn acx d-none vt">
+                <input class="form-control" type="text" data-action="grow" placeholder="Search">
+            </form>
+            <ul id="#js-popoverContent" class="nav navbar-nav acx aek d-none vt">
+                <style>
+                  .g{
+                    position: relative;
+                  }
+                  .label {
+                    position: absolute;
+                    top: -4px;
+                    right: 0px;
+                    text-align: center;
+                    font-size: 9px;
+                    padding: 2px 3px;
+                    line-height: .9;
+                    border-radius: 2px;
+                  }
+                  .label-warning{
+                    color: #fff !important;
+                    background-color: #f39c12 !important; 
+                  }
+                  .label-danger{
+                    color: #fff !important;
+                    background-color: #dd4b39 !important; 
+                  }
+                </style>
+                <li class="pi">
+                    <a class="g pg" data-toggle="modal" href="#msgModal"><i class="fa fa-comments-o"></i><span class="label label-danger">4</span></a>
+                </li>
+                <li class="pi">
+                    <a class="g pg" href="notifications.html"><i class="fa fa-bell-o"></i><span class="label label-warning">10</span></a>
+                </li>
+                <style>
+                    .dropdown-menu{
+                        text-align: center;
+                    }
+                    .list-item a{
+                        text-decoration: none;
+                    }
+                    .dropdown-menu a:hover{
+                        /*background: rgba(0, 0, 0, 0.5) !important;
+                        background-blend-mode: overlay;*/
+                        color: #fff !important;
+                    }
+                    .dropdown-item{
+                        color: #2913FF !important;
+                        padding: 5px 25px 5px 25px;
+                    }
+                    .lang{
+                        display: block;
+                        padding: 0.7rem 1rem;
+                        color: #fff !important;
+                    }
+                </style>
+                <li class="pi list-item">
+                    <a id="language" class="g lang dropdown-toggle" href="#" data-toggle="dropdown"><img src="img/vi.png" alt="Việt Nam" title="Việt Nam"> Việt Nam</a>
+                    <div id="language-item" class="dropdown-menu">
+                        <a onclick="click_en()" class="dropdown-item" href="#"><img src="img/en.png" alt="" title="English" /> English</a>
+                        <!-- <a onclick="click_vi()" class="dropdown-item" href="#"><img src="img/vi.png" alt="" title="Việt Nam" /> Việt Nam</a> -->
+                    </div>
+                </li>
+                <li class="pi afb list-item">
+                    <a class="cg bpo bpp boi dropdown-toggle" href="#" data-toggle="dropdown"><img class="us" src="img/avatar-dhg.png"></a>
+                    <div class="dropdown-menu" style="width: 150px !important">
+                        <a class="dropdown-item" href="#" data-action="growl" style="margin: 0 3px 0 3px"><span class="fa fa-user-circle-o" style="font-size: 16px; color: #05D741;"></span>&nbsp&nbsp Profile</a>
+                        <br><hr>
+                        <a class="dropdown-item" href="#" data-action="growl" style="margin: 0px 3px 0 3px;"><span class="fa fa-sign-out" style="font-size: 16px; color: #05D741;"></span>&nbsp&nbsp Logout</a>
+                        <!-- <hr>
+                        <div class="dropdown-item">
+                            <a class="dropdown-item" href="#" data-action="growl" style="margin: 0px 3px 0 3px;"><span class="fa fa-sign-out" style="font-size: 16px; color: #05D741;"></span>&nbsp&nbsp Logout</a>
+                        </div> -->
+                    </div>
+                    <button class="cg bpo bpp boi" data-toggle="popover">
+                        
+                    </button>
+                </li>
+            </ul>
+            <!-- <ul class="nav navbar-nav d-none" id="js-popoverContent">
+                <li class="pi"><a class="pg" href="#" data-action="growl">Growl</a></li>
+                <li class="pi"><a class="pg" href="login.html">Logout</a></li>
+            </ul> -->
+        </div>
+    </nav>
+    <div class="cd fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="bpq" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="d">
+                    <h5 class="modal-title">Messages</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body afx js-modalBody">
+                    <div class="axw">
+                        <div class="bow cj ca js-msgGroup">
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-fat.jpg">
+                                    <div class="rw">
+                                        <strong>Jacob Thornton</strong> and <strong>1 other</strong>
+                                        <div class="bpg">
+                                            Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-mdo.png">
+                                    <div class="rw">
+                                        <strong>Mark Otto</strong> and <strong>3 others</strong>
+                                        <div class="bpg">
+                                            Brunch sustainable placeat vegan bicycle rights yeah…
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-dhg.png">
+                                    <div class="rw">
+                                        <strong>Trọng Bình</strong>
+                                        <div class="bpg">
+                                            Brunch sustainable placeat vegan bicycle rights yeah…
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-fat.jpg">
+                                    <div class="rw">
+                                        <strong>Jacob Thornton</strong> and <strong>1 other</strong>
+                                        <div class="bpg">
+                                            Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-mdo.png">
+                                    <div class="rw">
+                                        <strong>Mark Otto</strong> and <strong>3 others</strong>
+                                        <div class="bpg">
+                                            Brunch sustainable placeat vegan bicycle rights yeah…
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-dhg.png">
+                                    <div class="rw">
+                                        <strong>Trọng Bình</strong>
+                                        <div class="bpg">
+                                            Brunch sustainable placeat vegan bicycle rights yeah…
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-fat.jpg">
+                                    <div class="rw">
+                                        <strong>Jacob Thornton</strong> and <strong>1 other</strong>
+                                        <div class="bpg">
+                                            Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-mdo.png">
+                                    <div class="rw">
+                                        <strong>Mark Otto</strong> and <strong>3 others</strong>
+                                        <div class="bpg">
+                                            Brunch sustainable placeat vegan bicycle rights yeah…
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="b rx">
+                                <div class="rv">
+                                    <img class="us bos vb yb aff" src="img/avatar-dhg.png">
+                                    <div class="rw">
+                                        <strong>Trọng Bình.</strong>
+                                        <div class="bpg">
+                                            Brunch sustainable placeat vegan bicycle rights yeah…
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="d-none afc js-conversation">
+                            <ul class="bow bpc">
+                                <li class="rv bpf afo">
+                                    <div class="rw">
+                                        <div class="bpd">
+                                            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+                                        </div>
+                                        <div class="bpe">
+                                            <small class="axc">
+                                              <a href="#">Trọng Bình</a> at 4:20PM
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <img class="us bos vb yb afi" src="img/avatar-dhg.png">
+                                </li>
+                                <li class="rv afo">
+                                    <img class="us bos vb yb aff" src="img/avatar-fat.jpg">
+                                    <div class="rw">
+                                        <div class="bpd">
+                                            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                                        </div>
+                                        <div class="bpd">
+                                            Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                                        </div>
+                                        <div class="bpd">
+                                            Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+                                        </div>
+                                        <div class="bpe">
+                                            <small class="axc">
+                                              <a href="#">Fat</a> at 4:28PM
+                                            </small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="rv afo">
+                                    <img class="us bos vb yb aff" src="img/avatar-mdo.png">
+                                    <div class="rw">
+                                        <div class="bpd">
+                                            Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
+                                        </div>
+                                        <div class="bpd">
+                                            Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                                        </div>
+                                        <div class="bpe">
+                                            <small class="axc">
+                                              <a href="#">Mark Otto</a> at 4:20PM
+                                            </small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="rv bpf afo">
+                                    <div class="rw">
+                                        <div class="bpd">
+                                            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+                                        </div>
+                                        <div class="bpe">
+                                            <small class="axc">
+                                              <a href="#">Trọng Bình</a> at 4:20PM
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <img class="us bos vb yb afi" src="img/avatar-dhg.png">
+                                </li>
+                                <li class="rv afo">
+                                    <img class="us bos vb yb aff" src="img/avatar-fat.jpg">
+                                    <div class="rw">
+                                        <div class="bpd">
+                                            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                                        </div>
+                                        <div class="bpd">
+                                            Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                                        </div>
+                                        <div class="bpd">
+                                            Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+                                        </div>
+                                        <div class="bpe">
+                                            <small class="axc">
+                                              <a href="#">Fat</a> at 4:28PM
+                                            </small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="rv afo">
+                                    <img class="us bos vb yb aff" src="img/avatar-mdo.png">
+                                    <div class="rw">
+                                        <div class="bpd">
+                                            Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
+                                        </div>
+                                        <div class="bpd">
+                                            Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                                        </div>
+                                        <div class="bpe">
+                                            <small class="axc">
+                                              <a href="#">Mark Otto</a> at 4:20PM
+                                            </small>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cd fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="bpr" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="d">
+                    <h4 class="modal-title">Users</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body afx">
+                    <div class="axw">
+                        <ul class="bow cj ca">
+                            <li class="b">
+                                <div class="rv ady">
+                                    <img class="bos vb yb aff" src="img/avatar-fat.jpg">
+                                    <div class="rw">
+                                        <button class="cg ns ok acx">
+                                            <span class="c bps"></span> Follow
+                                        </button>
+                                        <strong>Jacob Thornton</strong>
+                                        <p>@fat - San Francisco</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="b">
+                                <div class="rv ady">
+                                    <img class="bos vb yb aff" src="img/avatar-dhg.png">
+                                    <div class="rw">
+                                        <button class="cg ns ok acx">
+                                            <span class="c bps"></span> Follow
+                                        </button>
+                                        <strong>Trọng Bình</strong>
+                                        <p>@dhg - Palo Alto</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="b">
+                                <div class="rv ady">
+                                    <img class="bos vb yb aff" src="img/avatar-mdo.png">
+                                    <div class="rw">
+                                        <button class="cg ns ok acx">
+                                            <span class="c bps"></span> Follow
+                                        </button>
+                                        <strong>Mark Otto</strong>
+                                        <p>@mdo - San Francisco</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="by aha ahl">
+        <div class="dp">
+            <div class="fj">
+                <div class="pz bpi afo" style="border: none;">
+                    <!-- <div class="qf" style="background-image: url(img/iceland.jpg);"></div> -->
+                    <div class="qf" style="background: #f5f8fa; border: none; height: 50px; "></div>
+                    <div class="qa avz" style="border: 1px solid #dfdfdf;">
+                        <a href="profile/index.html">
+                          <img
+                            class="bpj"
+                            src="img/avatar-dhg.png">
+                        </a>
+                        <h6 class="qb">
+                          <a class="boa" href="profile/index.html">Trọng Bình</a>
+                        </h6>
+                        <p class="afo">I wish i was a little bit taller, wish i was a baller, wish i had <b style="color: red;">a girl</b>… also.</p>
+                        <ul class="bpk">
+                            <li class="bpl">
+                                <a href="#userModal" class="boa" data-toggle="modal">
+                                  Followers
+                                  <h6 class="aej">12</h6>
+                                </a>
+                            </li>
+                            <li class="bpl">
+                                <a href="#userModal" class="boa" data-toggle="modal">
+                                  Following
+                                  <h6 class="aej">1</h6>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pz vp vy afo">
+                    <div class="qa">
+                        <h6 class="afh">Public<small></small></h6>
+                        <ul class="dc axg">
+                            <li><span class="axc aff fa fa-tags" style="font-size: 16px;"></span><a href="#"> Tags</a></li>
+                            <li><span class="axc aff fa fa-link" style="font-size: 16px;"></span><a href="#"> Links</a></li>
+                            <li><span class="axc aff fa fa-users" style="font-size: 16px;"></span><a href="#"> Users</a></li>
+                            <li><span class="axc aff fa fa-briefcase" style="font-size: 16px;"></span><a href="#"> Jobs</a></li>
+                            <li><span class="axc aff fa fa-newspaper-o" style="font-size: 16px;"></span><a href="#">Tech News</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="fm">
+                <ul class="ca bow box afo">
+                    <li class="b agz">
+                        <h3 class="afh" style="text-align: center;">Top Questions</h3>
+                        <!-- <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Message">
+                            <div class="bpt">
+                                <button type="button" class="cg ns yf">
+                                    <span class="h bao"></span>
+                                </button>
+                            </div>
+                        </div> -->
+                    </li>
+                    <li class="rv b agz">
+                        <img class="bos vb yb aff" src="img/avatar-dhg.png">
+                        <div class="rw">
+                            <div class="bpb">
+                                <small class="acx axc">17/06/2018</small>
+                                <h6>Trọng Bình</h6>
+                            </div>
+                            <h4 class="afh">
+                                How to get auto data in PHP?
+                            </h4>
+                            <!-- <div class="boy" data-grid="images">
+                                <div style="display: none">
+                                    <img data-action="zoom" data-width="1050" data-height="700" src="img/unsplash_1.jpg">
+                                </div>
+                                <div style="display: none">
+                                    <img data-action="zoom" data-width="640" data-height="640" src="img/instagram_1.jpg">
+                                </div>
+                                <div style="display: none">
+                                    <img data-action="zoom" data-width="640" data-height="640" src="img/instagram_13.jpg">
+                                </div>
+                                <div style="display: none">
+                                    <img data-action="zoom" data-width="1048" data-height="700" src="img/unsplash_2.jpg">
+                                </div>
+                            </div> -->
+                            <!-- <ul class="bow afa">
+                                <li class="rv afh">
+                                    <img class="bos vb yb aff" src="img/avatar-fat.jpg">
+                                    <div class="rw">
+                                        <strong>Jacon Thornton: </strong> Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                                    </div>
+                                </li>
+                                <li class="rv">
+                                    <img class="bos vb yb aff" src="img/avatar-mdo.png">
+                                    <div class="rw">
+                                        <strong>Mark Otto: </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                    </div>
+                                </li>
+                            </ul> -->
+                        </div>
+                    </li>
+                    <!-- <li class="rv b agz">
+                        <img class="bos vb yb aff" src="img/avatar-fat.jpg">
+                        <div class="rw">
+                            <div class="bpd">
+                                <div class="bpb">
+                                    <small class="acx axc">12 min</small>
+                                    <h6>Jacob Thornton</h6>
+                                </div>
+                                <p>
+                                    Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                            </div>
+                        </div>
+                    </li> -->
+                    <!-- <li class="rv b agz">
+                        <img class="bos vb yb aff" src="img/avatar-mdo.png">
+                        <div class="rw">
+                            <div class="bpb">
+                                <small class="acx axc">34 min</small>
+                                <h6>Mark Otto</h6>
+                            </div>
+                            <p>
+                                Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                            </p>
+                            <div class="boy" data-grid="images">
+                                <img style="display: none" data-width="640" data-height="640" data-action="zoom" src="img/instagram_3.jpg">
+                            </div>
+                            <ul class="bow">
+                                <li class="rv">
+                                    <img class="bos vb yb aff" src="img/avatar-dhg.png">
+                                    <div class="rw">
+                                        <strong>Trọng Bình: </strong> Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="fj">
+                <div class="alert ro alert-dismissible d-none vy" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <a class="rj" href="profile/index.html">Visit your profile!</a> Check your self, you aren't looking well.
+                </div>
+                <div class="pz afo d-none vy">
+                    <div class="qa">
+                        <h6 class="afh">Hot Post</h6>
+                        <hr>
+                        <!-- <div data-grid="images" data-target-height="150">
+                            <img class="bos" data-width="640" data-height="640" data-action="zoom" src="img/instagram_2.jpg">
+                        </div> -->
+                        <style>
+                            .hot-post{
+                                margin-left: -20px;
+                            }
+                            .hot-post>li{
+                                padding: 2px;
+                            }
+                        </style>
+                        <ol class="hot-post">
+                          <li><a href="#">Stack Overflow homepage not.</a></li>
+                          <li><a href="#">Stack Overflow homepage not loading new questions new questions.</a></li>
+                          <li><a href="#">Stack Overflow homepage not loading new.</a></li>
+                          <li><a href="#">Stack Overflow homepage not loading new questions new questions new questions.</a></li>
+                          <li><a href="#">Stack Overflow.</a></li>
+                        </ol>
+                        <style>
+                            .read{
+                                margin: 0 0 0 70px;
+                            }
+                        </style>
+                        <button class="cg nz ok read">Read More <span class="fa fa-angle-double-right" style="font-size: 12px"></span></button>
+                    </div>
+                </div>
+                <style>
+                    .fa-user-plus{
+                        font-size: 14px;
+                    }
+                </style>
+                <div class="pz afo d-none vy">
+                    <div class="qa">
+                        <h6 class="afh">Hot Authors<small> | <a href="#">View All</a></small></h6>
+                        <ul class="bow box">
+                            <li class="rv afa">
+                                <img class="bos vb yb aff" src="img/avatar-fat.jpg">
+                                <div class="rw">
+                                    <strong>Jacob Thornton</strong> @fat
+                                    <div class="bpa">
+                                        <button class="cg nz ok">
+                                            <span class="fa fa-user-plus"></span> Follow</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="rv">
+                                <a class="bpu" href="#">
+                                  <img class="bos vb yb aff" src="img/avatar-mdo.png">
+                                </a>
+                                <div class="rw">
+                                    <strong>Mark Otto</strong> @mdo
+                                    <div class="bpa">
+                                        <button class="cg nz ok">
+                                            <span class="fa fa-user-plus"></span> Follow</button>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="qg">
+                        Follow them to receive great articles !!!
+                    </div>
+                </div>
+                <div class="pz bpm">
+                    <div class="qa">
+                        <h6 class="afh">Popular Tags<small></small></h6>
+                        <a href="#">About</a> |
+                        <a href="#">Help</a> |
+                        <a href="#">Terms</a> |
+                        <a href="#">Privacy</a> |
+                        <a href="#">Cookies</a> |
+                        <a href="#">Ads </a> |
+                        <a href="#">Info</a> |
+                        <a href="#">Brand</a> |
+                        <a href="#">Blog</a> |
+                        <a href="#">Status</a> |
+                        <a href="#">Apps</a> |
+                        <a href="#">Jobs</a> |
+                        <a href="#">Advertise</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/toolkit.js"></script>
+    <script src="js/application.js"></script>
+    <script>
+    // execute/clear BS loaders for docs
+    $(function() { while (window.BS && window.BS.loader && window.BS.loader.length) {
+        (window.BS.loader.pop())() } 
+    })
+
+    function click_vi() {
+        document.getElementById("language").innerHTML = "<img src='img/vi.png' alt='Việt Nam' title='Việt Nam'> Việt Nam";
+        document.getElementById("language-item").innerHTML = "<a onclick='click_en()' class='dropdown-item' href='#'><img src='img/en.png' alt='' title='English' /> English</a>";
+    }
+
+    function click_en() {
+        document.getElementById("language").innerHTML = "<img src='img/en.png' alt='English' title='English'> English";
+        document.getElementById("language-item").innerHTML = "<a onclick='click_vi()' class='dropdown-item' href='#'><img src='img/vi.png' alt='' title='Việt Nam' /> Việt Nam</a>";
+    }
+    </script>
+
+</body>
+
+</html>
