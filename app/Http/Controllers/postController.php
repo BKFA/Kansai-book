@@ -21,7 +21,7 @@ class postController extends Controller
     }
 
     public function postCreate() {
-
+    	
     }
 
     public function getUpdate() {

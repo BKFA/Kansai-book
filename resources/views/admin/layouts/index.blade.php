@@ -35,5 +35,6 @@
 
     <!-- REQUIRED SCRIPTS -->
     @yield('script')
+    <script src="ckeditor/ckeditor.js"></script>
 </body>
 </html>

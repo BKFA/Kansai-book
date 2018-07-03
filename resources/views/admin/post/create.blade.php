@@ -80,11 +80,12 @@
 							</div>
 							<div class="form-group">
 								<label>Description</label>
-								<textarea id="" name="description"  class="form-control" rows="5"></textarea>
+								<textarea id="demo" name="description"  class="form-control ckeditor" rows="1"></textarea>
 							</div>
 							<div class="form-group">
 								<label>Content Post</label>
-								<input class="form-control" type="text" placeholder="Please enter Content">
+								{{-- <input class="form-control" type="text" placeholder="Please enter Content"> --}}
+								<textarea id="demo" name="content" class="form-control ckeditor" rows="10"></textarea>
 							</div>
 							
 							<div class="form-group">
@@ -94,9 +95,8 @@
 										<input type="file" class="custom-file-input" id="imgpost" name="imgpost">
 										<label class="custom-file-label">Choose image</label>
 									</div>
-									<div class="input-group-append">
-										<span class="input-group-text" id="">Upload</span>
-									</div>
+									<div style="width: 100vw;" id="imgupload">	
+                    				</div>
 								</div>
 							</div>
 						</div>
@@ -130,5 +130,24 @@
 <script src="../libraryadmin/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../libraryadmin/dist/js/demo.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("input[name=file]").change(function(){
+        	$("#filename").html($("input[name=file]").val());
+        });
+        $("input[name=imgpost]").change(function(e) {
+	    	var file = e.originalEvent.srcElement.files[e.originalEvent.srcElement.files.length-1];
+			var img = document.createElement("img");
+			var reader = new FileReader();
+			reader.onloadend = function() {
+     			img.src = reader.result;
+			}
+			reader.readAsDataURL(file);
+			$("#imgupload").html(img);
+			img.width = "500";
+		});
+    });
+</script>
 
 @endsection
