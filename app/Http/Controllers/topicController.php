@@ -16,8 +16,16 @@ class topicController extends Controller
     	return view('admin.topic.create');
     }
 
+    public function postCreate() {
+
+    }
+
     public function getUpdate() {
     	return view('admin.topic.update');
+    }
+
+    public function postUpdate() {
+        
     }
 
 }
