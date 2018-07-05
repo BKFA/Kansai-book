@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Create New User</h1>
+                <h1 class="m-0 text-dark">Update User</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -50,6 +50,16 @@
 						{{session('notify')}}
 					</div>
 					@endif
+					<?php 
+						function checked($auth,$value){
+							$rs='';
+							if($auth==$value){
+								$rs='checked="checked"';
+							}
+							return $rs;
+
+						}
+					?>
 					<div class="card-header">
 						<h3 class="card-title">Form Update User</h3>
 					</div>
@@ -79,8 +89,9 @@
 								<input name="job" value="{{$updateUser->job}}" type="text" class="form-control" id="exampleInputJob1" placeholder="Enter Job">
 							</div>
 							<div class="form-group">
-								<label for="exampleInputAuth1">IDAuth</label>
-								<input name="idauth" value="{{$updateUser->idauth}}" type="text" class="form-control" id="exampleInputAuth1" placeholder="Enter Auth" required>
+								<label for="exampleInputAuth1">Auth</label>
+								<input type="radio" name="auth" value="NomalUser" <?php echo checked($updateUser->idauth,0)?>> Nomal User
+                                <input type="radio" name="auth" value="Admin" <?php echo checked($updateUser->idauth,1) ?>> Admin
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Point</label>
@@ -112,7 +123,7 @@
 								<button type="reset" class="btn btn-primary">Reset <i class="fa fa-refresh"></i></button>
 							</a>
 							<a href="admin/user/list">
-								<button type="cance" class="btn btn-primary">Cancel <i class="fa fa-cancel"></i></button>
+								<button type="cancel" class="btn btn-primary">Cancel <i class="fa fa-cancel"></i></button>
 							</a>
 						</div>
 					</form>

@@ -35,7 +35,12 @@ class userController extends Controller
     	$createUser->name=$request->name;
     	$createUser->age=$request->age;
     	$createUser->job=$request->job;
-    	$createUser->idauth=$request->idauth;
+    	if($request->auth=="Admin"){
+    		$createUser->idauth=1;
+    	}
+    	else {
+    		$createUser->idauth=0;	
+    	}
     	$createUser->point=$request->point;
     	$createUser->education=$request->education;
     	$createUser->address=$request->address;
@@ -60,7 +65,10 @@ class userController extends Controller
     	$updateUser->name=$request->name;
     	$updateUser->age=$request->age;
     	$updateUser->job=$request->job;
-    	$updateUser->idauth=$request->idauth;
+    	if($request->auth=="Admin"){
+    		$updateUser->idauth=1;
+    	}
+    	else $updateUser->idauth=0;
     	$updateUser->point=$request->point;
     	$updateUser->education=$request->education;
     	$updateUser->address=$request->address;

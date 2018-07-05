@@ -84,7 +84,8 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputAuth1">IDAuth</label>
-								<input name="idauth" type="text" class="form-control" id="exampleInputAuth1" placeholder="Enter Auth" required>
+								<input type="radio" name="auth" value="NomalUser" checked="checked"> Nomal User
+                                <input type="radio" name="auth" value="Admin"> Admin
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Point</label>
