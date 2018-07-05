@@ -23,9 +23,9 @@ class userController extends Controller
                 'email'=>'|email|unique:users,email',
             ],
             [
-                'username.max'=>'USERNAME KHÔNG ĐƯỢC VƯỢT QUÁ 30 KÝ TỰ',
-                'username.unique'=>'USERNAME ĐÃ TỒN TẠI',
-                'username.unique'=>'EMAIL ĐÃ TỒN TẠI',
+                'username.max'=>'USERNAME IS NOT EXCEEDING 30 SIGNS',
+                'username.unique'=>'USERNAME EXISTED',
+                'email.unique'=>'EMAIL EXISTED',
             ]
         );
     	$createUser = new users;
@@ -58,6 +58,15 @@ class userController extends Controller
     }
 
     public function postUpdate(Request $request,$iduser){
+        $this->validate($request,
+            [
+                'username'=>'|max:30|',
+               
+            ],
+            [
+                'username.max'=>'USERNAME IS NOT EXCEEDING 30 CHARECTERS',
+            ]
+        );
     	$updateUser = users::find($iduser);
     	$updateUser->username=$request->username;
     	$updateUser->password=bcrypt($request->password);

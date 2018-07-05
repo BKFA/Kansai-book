@@ -35,6 +35,20 @@
 
 <!-- Main content -->
 <section class="content">
+	@if(count($errors) > 0)
+		 	<br><br>
+          	<div class="alert alert-danger">
+              	@foreach($errors->all() as $err)
+                  	{{$err}}<br>
+              @endforeach()
+          </div>
+        @endif
+        @if(session('notify'))
+          	<br><br>
+          	<div class="alert alert-success"> 
+              	{{session('notify')}}
+          	</div>
+        @endif
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
@@ -44,80 +58,35 @@
 							<thead>
 							<tr>
 								<th>ID</th>
-								<th>Name</th>
-								<th>AnsiName</th>
-								<th>AnsiName</th>
-								<th>AnsiName</th>
+								<th>NameTopic</th>
+								<th>AnsiNameToppic</th>
 								<th>Update</th>
 								<th>Delete</th>
 							</tr>
 							</thead>
+							@foreach($Topic as $tp)
 							<tr>
-								<td>1</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>Update software</td>
+								<td>{{$tp->idtopic}}</td>
+								<td>{{$tp->nametopic}}</td>
+								<td>{{$tp->ansinametopic}}</td>
 								<td>
 									<div class="m-sm-auto">
-										<a href="admin/topic/update/id" title="Update">
+										<a href="" title="Update" data-toggle="modal" data-target="#EditModal{{$tp->idtopic}}">
 											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
 											</button>
 										</a>
+										 @include('admin.topic.update')
 									</div>
 								</td>            
 								<td>
 									<div class="m-sm-auto">
-										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Delete <h3 class="fa fa-edit nav-icon"></h3>	
+										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter{{$tp->idtopic}}">Delete <h3 class="fa fa-edit nav-icon"></h3>	
 										</button>
 										@include('admin.topic.delete')
 									</div>
 								</td>
 							</tr>
-							<tr>
-								<td>2</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>
-									<div class="m-sm-auto">
-										<a href="admin/topic/update/id" title="Update">
-											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
-											</button>
-										</a>
-									</div>
-								</td>            
-								<td>
-									<div class="m-sm-auto">
-										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Delete <h3 class="fa fa-edit nav-icon"></h3>	
-										</button>
-										@include('admin.topic.delete')
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>
-									<div class="m-sm-auto">
-										<a href="admin/topic/update/id" title="Update">
-											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
-											</button>
-										</a>
-									</div>
-								</td>            
-								<td>
-									<div class="m-sm-auto">
-										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Delete <h3 class="fa fa-edit nav-icon"></h3>	
-										</button>
-										@include('admin.topic.delete')
-									</div>
-								</td>
-							</tr>
+							@endforeach
 						</table>
 					</div>
 				</div>

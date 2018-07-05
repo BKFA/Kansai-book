@@ -83,7 +83,7 @@
 								<input name="job" type="text" class="form-control" id="exampleInputJob1" placeholder="Enter Job">
 							</div>
 							<div class="form-group">
-								<label for="exampleInputAuth1">IDAuth</label>
+								<label for="exampleInputAuth1">Auth</label>
 								<input type="radio" name="auth" value="NomalUser" checked="checked"> Nomal User
                                 <input type="radio" name="auth" value="Admin"> Admin
 							</div>
