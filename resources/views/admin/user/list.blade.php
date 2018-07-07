@@ -51,7 +51,7 @@
 						{{session('notify')}}
 					</div>
 					@endif
-					<?php 
+					<?php
 						function check($auth){
 							if($auth==1){
 								return "Admin";
@@ -59,21 +59,21 @@
 							else return "Nomal User";
 						}
 					?>
-					<div class="card-body" style="overflow: scroll;">
-						<table id="example1" class="table table-bordered" >
+					<div class="card-body">
+						<table id="example1" class="table table-responsive table-bordered" >
 							<thead>
 							<tr>
 								<th>ID</th>
 								<th>Name</th>
-								<th>UserName</th>
+								<th>User Name</th>
 								<th>Email</th>
 								<th>Age</th>
 								<th>Job</th>
-								<th>IDAuth</th>
-								<th>Education</th>
+								<th>Auth</th>
+								<th>Edu</th>
 								<th>Address</th>
-								<th>Japanlv</th>
-								<th>Englv</th>
+								<th>JpLv</th>
+								<th>EngLv</th>
 								<th>Update</th>
 								<th>Delete</th>
 							</tr>
@@ -83,7 +83,7 @@
 								<td>{{$us->iduser}}</td>
 								<td>{{$us->name}}</td>
 								<td>{{$us->username}}</td>
-								<td>{{$us->email}}</td>
+								<td>{{$us->iduser}}</td>
 								<td>{{$us->age}}</td>
 								<td>{{$us->job}}</td>
 								<td>{{check($us->idauth)}}</td>

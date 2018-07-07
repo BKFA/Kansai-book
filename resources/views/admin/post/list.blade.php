@@ -84,26 +84,26 @@
 								</td>
 								<td>
 									<div class="thumbnail">
-										<h6>{{cutString($p->title, 5)}}</h6>
-										<p>{{$p->title}}</p>
+										<h6>{{cutString($p->description, 5)}}</h6>
+										<p>{{$p->description}}</p>
 									</div>
 								</td>
 								<td>
 									<div class="thumbnail">
-										<h6>{{cutString($p->title, 5)}}</h6>
-										<p>{{$p->title}}</p>
+										<h6>{{cutString($p->contentpost, 5)}}</h6>
+										<p>{{$p->contentpost}}</p>
 									</div>
 								</td>
 								<td>
 									<div class="thumbnail">
-										<h6>{{cutString($p->title, 5)}}</h6>
-										<p>{{$p->title}}</p>
+										<h6>{{cutString($p->urlimage, 5)}}</h6>
+										<p>{{$p->urlimage}}</p>
 									</div>
 								</td>
 								<td>
 									<div class="thumbnail">
-										<h6>{{cutString($p->title, 5)}}</h6>
-										<p>{{$p->title}}</p>
+										<h6>{{cutString($p->view, 5)}}</h6>
+										<p>{{$p->view}}</p>
 									</div>
 								</td>
 								

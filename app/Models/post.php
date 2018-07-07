@@ -18,7 +18,7 @@ class post extends Model
     	return $this->belongsTo('App\Models\post','iduser','idpost');
     }
 
-    public function ratepost(){
+    public function updatepost(){
         return $this->hasMany('App\Models\updatepost','idpost','idupdatepost');
     }
 
