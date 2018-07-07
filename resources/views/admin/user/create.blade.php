@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Create New Topic</h1>
+                <h1 class="m-0 text-dark">Create New User</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -55,13 +55,59 @@
 					</div>
 					<!-- /.card-header -->
 					<!-- form start -->
-					<form action="admin/topic/create" method="POST" enctype="multipart/form-data">
+					<form action="admin/user/create" method="POST" enctype="multipart/form-data">
 						<input type="hidden" name="_token" value="{{csrf_token()}}">
 						<div class="card-body">
 							<div class="form-group">
-								<label for="exampleInputNametopic">New Name Topic</label>
-								<input name="nameTopic" type="nametopic" class="form-control" id="exampleInputNameTopic" placeholder="Enter new name topic" required>
+								<label for="exampleInputName1">Name</label>
+								<input name="name" type="text" class="form-control" id="exampleInputName1" placeholder="Enter Name" required>
 							</div>
+							<div class="form-group">
+								<label for="exampleInputUserName1">User Name</label>
+								<input name="username" type="text" class="form-control" id="exampleInputUserName1" placeholder="Enter User Name" required>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPassword1">Password</label>
+								<input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password" required>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Email address</label>
+								<input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputAge1">Age</label>
+								<input name="age" type="text" class="form-control" id="exampleInputAge1" placeholder="Enter email">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputJob1">Job</label>
+								<input name="job" type="text" class="form-control" id="exampleInputJob1" placeholder="Enter Job">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputAuth1">Auth</label>
+								<input type="radio" name="auth" value="NomalUser" checked="checked"> Nomal User
+                                <input type="radio" name="auth" value="Admin"> Admin
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Point</label>
+								<input name="point" type="text" class="form-control" id="exampleInputPoint1" placeholder="Enter Point" required>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEducation1">Education</label>
+								<input name="education" type="text" class="form-control" id="exampleInputEducation1" placeholder="Enter Education">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputAddress1">Address</label>
+								<input name="address" type="text" class="form-control" id="exampleInputAddress1" placeholder="Enter Address">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputJapanlv1">Japanese level</label>
+								<input name="japanlv" type="text" class="form-control" id="exampleInputJapanlv1" placeholder="Enter Japanese level">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEnglv1">English level</label>
+								<input name="englv" type="text" class="form-control" id="exampleInputEnglv1" placeholder="Enter English level">
+							</div>
+							
 						</div>
 						<!-- /.card-body -->
 
