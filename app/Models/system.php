@@ -8,4 +8,9 @@ class system extends Model
 {
     //
     protected $table = "system";
+    protected $primaryKey = 'idsystem';
+
+    protected $fillable = [
+        'idsystem', 'urllogo', 'urlslide',
+    ];
 }

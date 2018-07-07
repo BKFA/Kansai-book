@@ -14,8 +14,12 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    protected $table = 'users';
+    protected $primaryKey = 'iduser';
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'email', 'password', 'name', 'age', 'job', 'idauth', 'point', 'education', 'address', 'japanlv', 'englv',
     ];
 
     /**
@@ -26,4 +30,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function post(){
+        return $this->hasMany('App\Models\topic','idusers','idpost');
+    }
+    
+    public function comment(){
+        return $this->hasMany('App\Models\comment','idusers','idcomment');
+    }
+
+    public function subcomment(){
+        return $this->hasMany('App\Models\subcomment','iduser','idsubcomment');
+    }
 }

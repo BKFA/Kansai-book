@@ -16,7 +16,8 @@ class CreateTagTable extends Migration
         Schema::dropIfExists('tag');
         Schema::create('tag', function (Blueprint $table) {
             $table->increments('idtag');
-            $table->string('contenttag');
+            $table->string('tag');
+            $table->string('ansitag');
             $table->timestamps();
         });
     }

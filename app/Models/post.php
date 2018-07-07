@@ -8,6 +8,11 @@ class post extends Model
 {
     //
     protected $table = "post";
+    protected $primaryKey = 'idpost';
+
+    protected $fillable = [
+        'idpost', 'idtopic', 'iduser', 'title', 'ansititle', 'description', 'contentpost', 'urlimage', 'view', 'status', 'type', 'created_at', 'updated_at',
+    ];
 
     public function topic(){
     	return $this->belongsTo('App\Models\post', 'idtopic', 'idpost');
@@ -25,12 +30,9 @@ class post extends Model
         return $this->hasMany('App\Models\comment', 'idpost', 'idcomment');
     }
 
-    // public function ratepost(){
-    // 	return $this->hasMany('App\Models\ratepost', 'idpost', 'idratepost');
-    // }
-
-    // public function reportpost(){
-    // 	return $this->hasMany('App\Models\reportpost', 'idpost', 'idreportpost');
-    // }
+    public function tag()
+    {
+        return $this->belongsToMany('App\Models\tag', 'post_tag', 'idpost', 'idtag')->withTimestamps();
+    }
 
 }

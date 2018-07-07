@@ -29,6 +29,32 @@
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
+        <div class="row mb-2 ">
+            <div class="col-sm-12  row justify-content-center align-items-center">
+                <button type="button" class="btn-success btn" style="float: right;" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" ></i></button>
+
+                @include('admin.topic.add')
+
+            </div><!-- /.col -->
+            <div class="col-sm-12">
+            	@if(count($errors) > 0)
+				 	<div class="p-3 mb-3 rounded alert rounded box-shadow" style="background: #EE7C60 !important; font-size: 14px; margin-top: 10px;">
+	            		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	                    <strong>
+		                    @foreach($errors->all() as $err)
+			                  	{{$err}}<br>
+			              	@endforeach()
+	                	</strong>
+	            	</div>
+		        @endif
+		        @if(session('thongbao'))
+		          	<div class="p-3 mb-3 rounded alert rounded box-shadow" style="background: #7DF5B4 !important; font-size: 14px; margin-top: 10px;">
+	            		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	                    <strong>{{session('thongbao')}}</strong>
+	            	</div>
+		        @endif
+		    </div><!-- /.col -->
+        </div><!-- /.row -->
     </div><!-- /.container-fluid -->
 </div>
 <!-- /.content-header -->
@@ -46,78 +72,33 @@
 								<th>ID</th>
 								<th>Name</th>
 								<th>AnsiName</th>
-								<th>AnsiName</th>
-								<th>AnsiName</th>
 								<th>Update</th>
 								<th>Delete</th>
 							</tr>
 							</thead>
-							<tr>
-								<td>1</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>
-									<div class="m-sm-auto">
-										<a href="admin/topic/update/id" title="Update">
-											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
+							@if(sizeof($topics) > 0)
+            					@foreach($topics as $topic)
+            					<tr>
+									<td>{{ $topic->idtopic}}</td>
+									<td>{{ $topic->nametopic}}</td>
+									<td>{{ $topic->ansinametopic}}</td>
+									<td>
+										<div class="m-sm-auto ">
+												<button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#updateModal{{ $topic->idtopic}}"><span class="fa fa-edit"></span>	
+												</button>
+												@include('admin.topic.update')
+										</div>
+									</td>            
+									<td>
+										<div class="m-sm-auto">
+											<button type="button" title="Delete" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delModal{{$topic->idtopic}}"> <span class="fa fa-trash"></span>	
 											</button>
-										</a>
-									</div>
-								</td>            
-								<td>
-									<div class="m-sm-auto">
-										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Delete <h3 class="fa fa-edit nav-icon"></h3>	
-										</button>
-										@include('admin.topic.delete')
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>
-									<div class="m-sm-auto">
-										<a href="admin/topic/update/id" title="Update">
-											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
-											</button>
-										</a>
-									</div>
-								</td>            
-								<td>
-									<div class="m-sm-auto">
-										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Delete <h3 class="fa fa-edit nav-icon"></h3>	
-										</button>
-										@include('admin.topic.delete')
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>Update software</td>
-								<td>
-									<div class="m-sm-auto">
-										<a href="admin/topic/update/id" title="Update">
-											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
-											</button>
-										</a>
-									</div>
-								</td>            
-								<td>
-									<div class="m-sm-auto">
-										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Delete <h3 class="fa fa-edit nav-icon"></h3>	
-										</button>
-										@include('admin.topic.delete')
-									</div>
-								</td>
-							</tr>
+											@include('admin.topic.delete')
+										</div>
+									</td>
+								</tr>
+            					@endforeach
+            				@endif
 						</table>
 					</div>
 				</div>

@@ -20,6 +20,8 @@ class CreateSubcommentTable extends Migration
             $table->integer('idcomment')->unsigned();
             $table->foreign('idcomment')->references('idcomment')->on('comment')->onDelete('cascade');
             $table->string('contentsubcomment');
+            $table->integer('like')->default(0);
+            $table->integer('dislike')->default(0);
             $table->integer('status')->default(1);
             $table->timestamps();
         });

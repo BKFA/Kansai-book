@@ -8,4 +8,10 @@ class advertisement extends Model
 {
     //
     protected $table = "advertisement"; 
+    protected $primaryKey = 'idadvertisement';
+
+    protected $fillable = [
+        'idadvertisement', 'urladvertisement',
+    ];
+
 }

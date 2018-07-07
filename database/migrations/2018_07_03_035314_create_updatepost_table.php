@@ -26,7 +26,8 @@ class CreateUpdatepostTable extends Migration
             $table->integer('contentupdatepost');
             $table->string('urlimage')->nullable();
             $table->integer('view')->default(0);
-            $table->integer('status')->default(1);
+            $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('type')->default(1);
             $table->timestamps();
         });
     }

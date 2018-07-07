@@ -23,10 +23,8 @@ Route::group(['prefix'=>'admin'],function(){
 	});
 
 	Route::group(['prefix'=>'topic'],function(){
-		Route::get('list','topicController@getList');
-		Route::get('create','topicController@getCreate');
-		Route::post('create','topicController@postCreate');
-		Route::get('update/{idtopic}','topicController@getUpdate');
+		Route::get('list','topicController@getListTopic');
+		Route::post('add','topicController@postAdd');
 		Route::post('update/{idtopic}','topicController@postUpdate');
 		Route::get('delete/{idtopic}','topicController@getDelete');
 	});

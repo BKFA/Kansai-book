@@ -21,6 +21,8 @@ class CreateCommentTable extends Migration
             $table->integer('idpost')->unsigned();
             $table->foreign('idpost')->references('idpost')->on('post')->onDelete('cascade');
             $table->string('contentcomment');
+            $table->integer('like')->default(0);
+            $table->integer('dislike')->default(0);
             $table->integer('status')->default(1);
             $table->timestamps();
         });

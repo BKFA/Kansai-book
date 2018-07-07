@@ -16,17 +16,18 @@ class CreatePostTable extends Migration
         Schema::dropIfExists('post');
         Schema::create('post', function (Blueprint $table) {
             $table->increments('idpost');
-            $table->integer('idtopic')->unsigned();
+            $table->integer('idtopic')->unsigned()->nullable();
             $table->foreign('idtopic')->references('idtopic')->on('topic')->onDelete('cascade');
             $table->integer('iduser')->unsigned();
             $table->foreign('iduser')->references('iduser')->on('users')->onDelete('cascade');
             $table->string('title');
             $table->string('ansititle')->unique();
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->integer('contentpost');
             $table->string('urlimage')->nullable();
             $table->integer('view')->default(0);
-            $table->integer('status')->default(1);
+            $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('type')->default(1);
             $table->timestamps();
         });
     }

@@ -40,27 +40,12 @@
                 </li>
 
                 <li class="nav-item has-treeview">
-                    <a href="javascript:void(0)" class="nav-link">
+                    <a href="admin/topic/list" class="nav-link">
                         <i class="nav-icon fa fa-bar-chart"></i>
                         <p>
                             Topics
-                        <i class="fa fa-angle-left right"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="admin/topic/list" class="nav-link">
-                                <i class="fa fa-list nav-icon"></i>
-                                <p>List Topics</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="admin/topic/create" class="nav-link">
-                                <i class="fa fa-plus-square nav-icon"></i>
-                                <p>Add New Topic</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
                 <li class="nav-item has-treeview">
