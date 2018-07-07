@@ -20,7 +20,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">List Topics</h1>
+                <h1 class="m-0 text-dark">List Users</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -35,52 +35,75 @@
 
 <!-- Main content -->
 <section class="content">
-	@if(count($errors) > 0)
-		 	<br><br>
-          	<div class="alert alert-danger">
-              	@foreach($errors->all() as $err)
-                  	{{$err}}<br>
-              @endforeach()
-          </div>
-        @endif
-        @if(session('notify'))
-          	<br><br>
-          	<div class="alert alert-success"> 
-              	{{session('notify')}}
-          	</div>
-        @endif
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card">
-					<div class="card-body">
-						<table id="example1" class="table table-bordered">
+					@if(count($errors) > 0)
+					<div class="alert alert-danger">
+						@foreach($errors->all() as $err)
+						{{$err}}<br>
+						@endforeach()
+					</div>
+					@endif
+					@if(session('notify'))
+					<div class="alert alert-success"> 
+						{{session('notify')}}
+					</div>
+					@endif
+					<?php 
+						function check($auth){
+							if($auth==1){
+								return "Admin";
+							}
+							else return "Nomal User";
+						}
+					?>
+					<div class="card-body" style="overflow: scroll;">
+						<table id="example1" class="table table-bordered" >
 							<thead>
 							<tr>
 								<th>ID</th>
-								<th>NameTopic</th>
-								<th>AnsiNameToppic</th>
+								<th>Name</th>
+								<th>UserName</th>
+								<th>Email</th>
+								<th>Age</th>
+								<th>Job</th>
+								<th>IDAuth</th>
+								<th>Education</th>
+								<th>Address</th>
+								<th>Japanlv</th>
+								<th>Englv</th>
 								<th>Update</th>
 								<th>Delete</th>
 							</tr>
 							</thead>
-							@foreach($topic as $tp)
+							@foreach ($user as $us)
 							<tr>
-								<td>{{$tp->idtopic}}</td>
-								<td>{{$tp->nametopic}}</td>
-								<td>{{$tp->ansinametopic}}</td>
+								<td>{{$us->iduser}}</td>
+								<td>{{$us->name}}</td>
+								<td>{{$us->username}}</td>
+								<td>{{$us->email}}</td>
+								<td>{{$us->age}}</td>
+								<td>{{$us->job}}</td>
+								<td>{{check($us->idauth)}}</td>
+								<td>{{$us->education}}</td>
+								<td>{{$us->address}}</td>
+								<td>{{$us->japanlv}}</td>
+								<td>{{$us->englv}}</td>
 								<td>
 									<div class="m-sm-auto">
-										<button type="button" title="Update" class="btn btn-block btn-warning btn-sm" data-toggle="modal" data-target="#EditModal{{$tp->idtopic}}">Update <h3 class="fa fa-edit nav-icon"></h3>	
-										</button>
-										 @include('admin.topic.update')
+										<a href="admin/user/update/{{$us->iduser}}" title="Update">
+											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
+											</button>
+										</a>
 									</div>
 								</td>            
 								<td>
 									<div class="m-sm-auto">
-										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter{{$tp->idtopic}}">Delete <h3 class="fa fa-edit nav-icon"></h3>	
+										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter{{$us->iduser}}">Delete <h3 class="fa fa-edit nav-icon"></h3>	
 										</button>
-										@include('admin.topic.delete')
+										@include('admin.user.delete')
 									</div>
 								</td>
 							</tr>
