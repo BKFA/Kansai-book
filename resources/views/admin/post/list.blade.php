@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="../libraryadmin/dist/css/adminlte.min.css">
 <!-- Google Font: Source Sans Pro -->
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+<link rel="stylesheet" href="../libraryadmin/plugins/thumbnail/thumbnail.css">
 @endsection
 
 @section('content')
@@ -37,10 +38,10 @@
 <section class="content">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-12">
 				<div class="card">
 					<div class="card-body">
-						<table id="example1" class="table table-bordered">
+						<table id="example1" class="table table-bordered table-striped">
 							<thead>
 							<tr>
 								<th>ID</th>
@@ -55,16 +56,56 @@
 								<th>Delete</th>
 							</tr>
 							</thead>
+							@php $i=0 @endphp
 							@foreach ($post as $p)
 							<tr>
-								<td>1</td>
-								<td>{{$p->idtopic->nametopic}}</td>
-								<td>{{$p->iduser->username}}</td>
-								<td>{{$p->title}}</td>
-								<td>{{$p->description}}</td>
-								<td>{{$p->contentpost}}</td>
-								<td>{{$p->urlimage}}</td>
-								<td>{{$p->view}}</td>
+								<td>
+									<div class="thumbnail">
+										<h6>@php echo ++$i; @endphp</h6>
+									</div>
+								</td>
+								<td>
+									<div class="thumbnail">
+										<h6>{{cutString($p->title, 5)}}</h6>
+										<p>{{$p->title}}</p>
+									</div>
+								</td>
+								<td>
+									<div class="thumbnail">
+										<h6>{{cutString($p->title, 5)}}</h6>
+										<p>{{$p->title}}</p>
+									</div>
+								</td>
+								<td>
+									<div class="thumbnail">
+										<h6>{{cutString($p->title, 5)}}</h6>
+										<p>{{$p->title}}</p>
+									</div>
+								</td>
+								<td>
+									<div class="thumbnail">
+										<h6>{{cutString($p->title, 5)}}</h6>
+										<p>{{$p->title}}</p>
+									</div>
+								</td>
+								<td>
+									<div class="thumbnail">
+										<h6>{{cutString($p->title, 5)}}</h6>
+										<p>{{$p->title}}</p>
+									</div>
+								</td>
+								<td>
+									<div class="thumbnail">
+										<h6>{{cutString($p->title, 5)}}</h6>
+										<p>{{$p->title}}</p>
+									</div>
+								</td>
+								<td>
+									<div class="thumbnail">
+										<h6>{{cutString($p->title, 5)}}</h6>
+										<p>{{$p->title}}</p>
+									</div>
+								</td>
 								
 								<td>
 									<div class="m-sm-auto">

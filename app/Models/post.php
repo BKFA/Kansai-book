@@ -8,21 +8,22 @@ class post extends Model
 {
     //
     protected $table = "post";
+    protected $primaryKey = "idpost";
 
     public function topic(){
-    	return $this->belongsTo('App\Models\post', 'idtopic', 'idpost');
+    	return $this->belongsTo('App\Models\post','idtopic','idpost');
     }
 
     public function user(){
-    	return $this->belongsTo('App\Models\post', 'iduser', 'idpost');
+    	return $this->belongsTo('App\Models\post','iduser','idpost');
     }
 
     public function ratepost(){
-        return $this->hasMany('App\Models\updatepost', 'idpost', 'idupdatepost');
+        return $this->hasMany('App\Models\updatepost','idpost','idupdatepost');
     }
 
     public function comment(){
-        return $this->hasMany('App\Models\comment', 'idpost', 'idcomment');
+        return $this->hasMany('App\Models\comment','idpost','idcomment');
     }
 
     // public function ratepost(){

@@ -8,8 +8,9 @@ class topic extends Model
 {
     //
     protected $table = "topic";
+    protected $primaryKey = "idtopic";
 
     public function post(){
-    	return $this->hasMany('App\Models\post', 'idtopic', 'idpost');
+    	return $this->hasMany('App\Models\post','idtopic','idpost');
     }
 }

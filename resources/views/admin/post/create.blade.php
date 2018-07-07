@@ -55,12 +55,12 @@
 					</div>
 					<!-- /.card-header -->
 					<!-- form start -->
-					<form action="admin/topic/create" method="POST" enctype="multipart/form-data">
+					<form action="admin/post/create" method="POST" enctype="multipart/form-data">
 						<input type="hidden" name="_token" value="{{csrf_token()}}">
 						<div class="card-body">
 							<div class="form-group">
 								<label>Topic</label>
-								<select class="form-control select2" style="width: 100%;">
+								<select class="form-control select2" name="topic" style="width: 100%;">
 									@foreach ($topic as $t)
 			                        	<option value="{{$t->idtopic}}">{{$t->nametopic}}</option>
 			                        @endforeach
@@ -68,7 +68,7 @@
 							</div>
 							<div class="form-group">
 								<label>User Upload</label>
-								<select class="form-control select2" style="width: 100%;">
+								<select class="form-control select2" name="userupload" style="width: 100%;">
 									@foreach ($user as $u)
 			                        	<option value="{{$u->iduser}}">{{$u->name}}</option>
 			                        @endforeach
@@ -76,15 +76,14 @@
 							</div>
 							<div class="form-group">
 								<label>Title</label>
-								<input class="form-control" type="text" placeholder="Please enter Title">
+								<input class="form-control" name="title" type="text" placeholder="Please enter Title">
 							</div>
 							<div class="form-group">
 								<label>Description</label>
-								<textarea id="demo" name="description"  class="form-control ckeditor" rows="1"></textarea>
+								<textarea id="demo" name="description" name="description" class="form-control ckeditor" rows="1"></textarea>
 							</div>
 							<div class="form-group">
 								<label>Content Post</label>
-								{{-- <input class="form-control" type="text" placeholder="Please enter Content"> --}}
 								<textarea id="demo" name="content" class="form-control ckeditor" rows="10"></textarea>
 							</div>
 							
@@ -133,8 +132,8 @@
 
 <script>
     $(document).ready(function(){
-        $("input[name=file]").change(function(){
-        	$("#filename").html($("input[name=file]").val());
+        $("input[name=imgpost]").change(function(){
+        	$("#imgpost").html($("input[name=imgpost]").val());
         });
         $("input[name=imgpost]").change(function(e) {
 	    	var file = e.originalEvent.srcElement.files[e.originalEvent.srcElement.files.length-1];
