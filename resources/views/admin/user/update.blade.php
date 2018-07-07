@@ -122,8 +122,8 @@
 							<a href="">
 								<button type="reset" class="btn btn-primary">Reset <i class="fa fa-refresh"></i></button>
 							</a>
-							<a href="">
-								<button type="cancel" class="btn btn-secondary">Cancel <i class="fa fa-cancel"></i></button>
+							<a href="admin/user/list">
+								<button type="button" class="btn btn-secondary">Cancel <i class="fa fa-cancel"></i></button>
 							</a>
 						</div>
 					</form>

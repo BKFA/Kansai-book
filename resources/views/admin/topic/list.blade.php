@@ -64,17 +64,15 @@
 								<th>Delete</th>
 							</tr>
 							</thead>
-							@foreach($Topic as $tp)
+							@foreach($topic as $tp)
 							<tr>
 								<td>{{$tp->idtopic}}</td>
 								<td>{{$tp->nametopic}}</td>
 								<td>{{$tp->ansinametopic}}</td>
 								<td>
 									<div class="m-sm-auto">
-										<a href="" title="Update" data-toggle="modal" data-target="#EditModal{{$tp->idtopic}}">
-											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
-											</button>
-										</a>
+										<button type="button" title="Update" class="btn btn-block btn-warning btn-sm" data-toggle="modal" data-target="#EditModal{{$tp->idtopic}}">Update <h3 class="fa fa-edit nav-icon"></h3>	
+										</button>
 										 @include('admin.topic.update')
 									</div>
 								</td>            

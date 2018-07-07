@@ -60,11 +60,7 @@
 						<div class="card-body">
 							<div class="form-group">
 								<label for="exampleInputNametopic">New Name Topic</label>
-								<input name="createNameTopic" type="nametopic" class="form-control" id="exampleInputNameTopic" placeholder="Enter new name topic">
-							</div>
-							<div class="form-group">
-								<label for="exampleInputAnsiNameTopic">New AnsiName Topic</label>
-								<input name="createAnsinameTopic" type="ansinametopic" class="form-control" id="exampleInputAnsiNameTopic" placeholder="Enter new ansiname topic">
+								<input name="nameTopic" type="nametopic" class="form-control" id="exampleInputNameTopic" placeholder="Enter new name topic" required>
 							</div>
 						</div>
 						<!-- /.card-body -->

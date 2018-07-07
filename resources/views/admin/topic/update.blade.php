@@ -15,13 +15,7 @@
                         <div class="form-group row">
                             <label for="txtNameTopic" class="col-sm-2 col-form-label">Name Topic</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="updateNameTopic" name="updateNameTopic" value="{{$tp->nametopic}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="txttxtAnsinameTopic" class="col-sm-2 col-form-label">Name Topic</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="updateSuaVien" name="updateansiNameTopic" value="{{$tp->ansinametopic}}">
+                                <input type="text" class="form-control" id="updateNameTopic" name="nameTopic" value="{{$tp->nametopic}}" required>
                             </div>
                         </div>
                         <div class="modal-footer">

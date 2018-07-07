@@ -7,25 +7,33 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\users;
 class userController extends Controller
 {
+    // display list user
     public function getList() {
     	$user=users::all();
     	return view('admin.user.list',['user'=>$user]);
     }
 
+    // call to view new create user
     public function getCreate(){
     	return view('admin.user.create');
     }
 
+    // new create user
     public function postCreate(Request $request){
     	$this->validate($request,
             [
-                'username'=>'|max:30|unique:users,username',
+                'username'=>'|max:30|unique:users,username', 
+                'password'=>'|min:8|max:32',
                 'email'=>'|email|unique:users,email',
+                'point'=>'|integer',
             ],
             [
-                'username.max'=>'USERNAME IS NOT EXCEEDING 30 SIGNS',
+                'username.max'=>'USERNAME IS NOT EXCEEDING 30 CHARECTERS',
+                'password.min'=>'PASSWORD MUST HAVE AT LEAST 8 CHARECTERS',
+                'password.max'=>'PASSWORD MUST HAVE AT MOST 32 CHARECTERS',
                 'username.unique'=>'USERNAME EXISTED',
                 'email.unique'=>'EMAIL EXISTED',
+                'point.integer'=>'POINT MUST BE NUMBER',
             ]
         );
     	$createUser = new users;
@@ -52,19 +60,25 @@ class userController extends Controller
 
     }
 
+    // call to view update a user
     public function getUpdate($iduser){
     	$updateUser=users::find($iduser);
     	return view('admin.user.update',['updateUser'=>$updateUser]);
     }
 
+    // update a user
     public function postUpdate(Request $request,$iduser){
         $this->validate($request,
             [
                 'username'=>'|max:30|',
-               
+                'password'=>'|min:8|max:32',
+                'point'=>'|integer',
             ],
             [
                 'username.max'=>'USERNAME IS NOT EXCEEDING 30 CHARECTERS',
+                'password.min'=>'PASSWORD MUST HAVE AT LEAST 8 CHARECTERS',
+                'password.max'=>'PASSWORD MUST HAVE AT MOST 32 CHARECTERS',
+                'point.integer'=>'POINT MUST BE NUMBER',
             ]
         );
     	$updateUser = users::find($iduser);
@@ -88,9 +102,10 @@ class userController extends Controller
     	return redirect('admin/user/list')->with('notify','Update Successful :'.$request->name);
     }
 
+    //delete a user
     public function getDelete($iduser){
     	$deleteUser=users::find($iduser);
-    	$nameUser=$deleteUser->name;
+    	$nameUser=$deleteUser->name; // Get to nameuser delete
     	$deleteUser->delete();
     	return redirect('admin/user/list')->with('notify','Delete Successful : '.$nameUser);
     }
