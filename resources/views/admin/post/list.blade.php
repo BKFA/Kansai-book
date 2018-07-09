@@ -40,8 +40,20 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="card">
-					<div class="card-body">
-						<table id="example1" class="table table-bordered table-striped">
+					@if(count($errors) > 0)
+					<div class="alert alert-danger">
+						@foreach($errors->all() as $err)
+						{{$err}}<br>
+						@endforeach()
+					</div>
+					@endif
+					@if(session('notify'))
+					<div class="alert alert-success"> 
+						{{session('notify')}}
+					</div>
+					@endif
+					<div class="card-body table-responsive">
+						<table id="example1" class="table table-bordered table-striped text-center">
 							<thead>
 							<tr>
 								<th>ID</th>
@@ -66,50 +78,91 @@
 								</td>
 								<td>
 									<div class="thumbnail">
-										<h6>{{cutString($p->title, 5)}}</h6>
+										<h6>{{cutString($p->topic->nametopic,20)}}</h6>
+										<p>{{$p->topic->nametopic}}</p>
+									</div>
+								</td>
+								<td>
+									<div class="thumbnail">
+										<h6>{{cutString($p->user->username,20)}}</h6>
+										<p>{{$p->user->username}}</p>
+									</div>
+								</td>
+								<td>
+									<div class="thumbnail">
+										<h6>{{cutString($p->title,20)}}</h6>
 										<p>{{$p->title}}</p>
 									</div>
 								</td>
 								<td>
-									<div class="thumbnail">
-										<h6>{{cutString($p->title, 5)}}</h6>
-										<p>{{$p->title}}</p>
+									<div class="mrg-top-15">
+										<button type="button" title="See More" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal1{{$p->idpost}}">
+											{{cutString($p->description, 20)}} ... <h3 class="fa fa-eye nav-icon"></h3>	
+										</button>
+
+                                        <!-- Modal -->
+										<div class="modal fade" id="myModal1{{$p->idpost}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+										    <div class="modal-dialog modal-dialog-centered" role="document">
+										        <div class="modal-content">
+										            <div class="modal-header">
+										                <h5 class="modal-title" id="exampleModalCenterTitle"><strong>Description {{$p->title}}</strong></h5>
+										                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										                    <span aria-hidden="true">&times;</span>
+										                </button>
+										            </div>
+										            <div class="modal-body">
+										                <div class="container" align="left">
+										                    <h6>{{$p->description}}</h6>
+										                </div>
+										            </div>
+										        </div>
+										    </div>
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="mrg-top-15">
+										<button type="button" title="See More" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal2{{$p->idpost}}">
+											{{cutString($p->contentpost, 20)}} ... <h3 class="fa fa-eye nav-icon"></h3>	
+										</button>
+
+                                        <!-- Modal -->
+										<div class="modal fade" id="myModal2{{$p->idpost}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+										    <div class="modal-dialog modal-dialog-centered" role="document">
+										        <div class="modal-content">
+										            <div class="modal-header">
+										                <h5 class="modal-title" id="exampleModalCenterTitle"><strong>Content {{$p->title}}</strong></h5>
+										                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										                    <span aria-hidden="true">&times;</span>
+										                </button>
+										            </div>
+										            <div class="modal-body">
+										                <div class="container" align="left">
+										                    <h6>{{$p->contentpost}}</h6>
+										                </div>
+										            </div>
+										        </div>
+										    </div>
+										</div>
 									</div>
 								</td>
 								<td>
 									<div class="thumbnail">
-										<h6>{{cutString($p->title, 5)}}</h6>
-										<p>{{$p->title}}</p>
+										<img src="upload/images/imgpost/{{$p->urlimage}}" width="60" height="40" >
+                                        <span>
+                                            <img src="upload/images/imgpost/{{$p->urlimage}}" with="200" height="150" title="Image {{$p->urlimage}}">
+                                        </span>
 									</div>
 								</td>
 								<td>
-									<div class="thumbnail">
-										<h6>{{cutString($p->description, 5)}}</h6>
-										<p>{{$p->description}}</p>
-									</div>
-								</td>
-								<td>
-									<div class="thumbnail">
-										<h6>{{cutString($p->contentpost, 5)}}</h6>
-										<p>{{$p->contentpost}}</p>
-									</div>
-								</td>
-								<td>
-									<div class="thumbnail">
-										<h6>{{cutString($p->urlimage, 5)}}</h6>
-										<p>{{$p->urlimage}}</p>
-									</div>
-								</td>
-								<td>
-									<div class="thumbnail">
-										<h6>{{cutString($p->view, 5)}}</h6>
+									<div>
 										<p>{{$p->view}}</p>
 									</div>
 								</td>
 								
 								<td>
 									<div class="m-sm-auto">
-										<a href="admin/post/update/id" title="Update">
+										<a href="admin/post/update/{{$p->idpost}}" title="Update">
 											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
 											</button>
 										</a>
@@ -117,7 +170,7 @@
 								</td>            
 								<td>
 									<div class="m-sm-auto">
-										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Delete <h3 class="fa fa-edit nav-icon"></h3>	
+										<button type="button" title="Delete {{cutString($p->title, 40)}}" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Delete <h3 class="fa fa-edit nav-icon"></h3>	
 										</button>
 										@include('admin.post.delete')
 									</div>

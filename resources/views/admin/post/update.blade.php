@@ -50,54 +50,69 @@
 					</div>
 					@endif
 					<div class="card-header">
-						<h3 class="card-title">Form Update</h3>
+						<h3 class="card-title">Form Create</h3>
 					</div>
 					<!-- /.card-header -->
 					<!-- form start -->
-					<form action="admin/topic/create" method="POST" enctype="multipart/form-data">
+					<form action="admin/post/update/{{$post->idpost}}" method="POST" enctype="multipart/form-data">
 						<input type="hidden" name="_token" value="{{csrf_token()}}">
 						<div class="card-body">
 							<div class="form-group">
-								<label>Minimal</label>
-								<select class="form-control select2" style="width: 100%;">
-									<option selected="selected">Alabama</option>
-									<option>Alaska</option>
-									<option>California</option>
-									<option>Delaware</option>
-									<option>Tennessee</option>
-									<option>Texas</option>
-									<option>Washington</option>
+								<label>Topic</label>
+								<select class="form-control select2" name="topic" style="width: 100%;">
+									@foreach ($topic as $t)
+			                        	<option
+											@if($post->topic->idtopic === $t->idtopic)
+												{{'selected'}}
+											@endif
+			                        		value="{{$t->idtopic}}">{{$t->nametopic}}
+			                        	</option>
+			                        @endforeach
 								</select>
 							</div>
 							<div class="form-group">
-								<label for="exampleInputEmail1">Email address</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+								<label>User Upload</label>
+								<select class="form-control select2" name="userupload" style="width: 100%;">
+									@foreach ($user as $u)
+			                        	<option
+											@if($post->user->iduser === $u->iduser)
+												{{'selected'}}
+											@endif
+			                        		value="{{$u->iduser}}">{{$u->username}}
+			                        	</option>
+			                        @endforeach
+								</select>
 							</div>
 							<div class="form-group">
-								<label for="exampleInputPassword1">Password</label>
-								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+								<label>Title</label>
+								<input class="form-control" name="title" type="text" placeholder="Please enter Title" value="{{$post->title}}">
 							</div>
 							<div class="form-group">
-								<label for="exampleInputFile">File input</label>
+								<label>Description</label>
+								<textarea id="demo" name="description" name="description" class="form-control ckeditor" rows="1">{{$post->description}}</textarea>
+							</div>
+							<div class="form-group">
+								<label>Content Post</label>
+								<textarea id="demo" name="content" class="form-control ckeditor" rows="10">{{$post->contentpost}}</textarea>
+							</div>
+							
+							<div class="form-group">
+								<label>Image</label>
 								<div class="input-group">
 									<div class="custom-file">
-										<input type="file" class="custom-file-input" id="exampleInputFile">
-										<label class="custom-file-label" for="exampleInputFile">Choose file</label>
+										<input type="file" class="custom-file-input" id="imgpost" name="imgpost">
+										<label class="custom-file-label">{{$post->urlimage}}</label>
 									</div>
-									<div class="input-group-append">
-										<span class="input-group-text" id="">Upload</span>
-									</div>
+									<div style="width: 100vw;" id="imgupload">
+										<img src="upload/images/imgpost/{{$post->urlimage}}" width="400px">
+                    				</div>
 								</div>
-							</div>
-							<div class="form-check">
-								<input type="checkbox" class="form-check-input" id="exampleCheck1">
-								<label class="form-check-label" for="exampleCheck1">Check me out</label>
 							</div>
 						</div>
 						<!-- /.card-body -->
 
 						<div class="card-footer">
-							<button type="submit" class="btn btn-primary">Update <i class="fa fa-pencil-square"></i></button>
+							<button type="submit" class="btn btn-primary">Update <i class="fa fa-location-arrow"></i></button>
 							<button type="reset" class="btn btn-primary">Reset <i class="fa fa-refresh"></i></button>
 						</div>
 					</form>
@@ -126,5 +141,24 @@
 <script src="../libraryadmin/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../libraryadmin/dist/js/demo.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("input[name=imgpost]").change(function(){
+        	$("#imgpost").html($("input[name=imgpost]").val());
+        });
+        $("input[name=imgpost]").change(function(e) {
+	    	var file = e.originalEvent.srcElement.files[e.originalEvent.srcElement.files.length-1];
+			var img = document.createElement("img");
+			var reader = new FileReader();
+			reader.onloadend = function() {
+     			img.src = reader.result;
+			}
+			reader.readAsDataURL(file);
+			$("#imgupload").html(img);
+			img.width = "500";
+		});
+    });
+</script>
 
 @endsection

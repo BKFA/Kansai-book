@@ -11,11 +11,11 @@ class post extends Model
     protected $primaryKey = "idpost";
 
     public function topic(){
-    	return $this->belongsTo('App\Models\post','idtopic','idpost');
+    	return $this->belongsTo('App\Models\topic','idtopic',''); 
     }
 
     public function user(){
-    	return $this->belongsTo('App\Models\post','iduser','idpost');
+    	return $this->belongsTo('App\Models\User','iduser','');
     }
 
     public function updatepost(){
