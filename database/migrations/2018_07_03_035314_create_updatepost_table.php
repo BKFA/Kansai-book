@@ -23,7 +23,7 @@ class CreateUpdatepostTable extends Migration
             $table->string('title');
             $table->string('ansititle')->unique();
             $table->string('description');
-            $table->integer('contentupdatepost');
+            $table->longText('contentupdatepost');
             $table->string('urlimage')->nullable();
             $table->integer('view')->default(0);
             $table->integer('status')->default(1);

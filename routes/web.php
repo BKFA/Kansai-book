@@ -40,13 +40,13 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('delete/{idtopic}','postController@getDelete');
 	});
 
-	Route::group(['prefix'=>'tag'],function(){
-		Route::get('list','tagController@getList');
-		Route::get('create','tagController@getCreate');
-		Route::post('create','tagController@postCreate');
-		Route::get('update/{idtag}','tagController@getUpdate');
-		Route::post('update/{idtag}','tagController@postUpdate');
-		Route::get('delete/{idtag}','tagController@getDelete');
+	Route::group(['prefix'=>'advertisement'],function(){
+		Route::get('list','advertisementController@getList');
+		Route::get('create','advertisementController@getCreate');
+		Route::post('create','advertisementController@postCreate');
+		Route::get('update/{idadvertisement}','advertisementController@getUpdate');
+		Route::post('update/{idadvertisement}','advertisementController@postUpdate');
+		Route::get('delete/{idadvertisement}','advertisementController@getDelete');
 	});
 
 	Route::group(['prefix'=>'user'],function(){

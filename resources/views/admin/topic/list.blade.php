@@ -36,19 +36,17 @@
 <!-- Main content -->
 <section class="content">
 	@if(count($errors) > 0)
-		 	<br><br>
-          	<div class="alert alert-danger">
-              	@foreach($errors->all() as $err)
-                  	{{$err}}<br>
-              @endforeach()
-          </div>
-        @endif
-        @if(session('notify'))
-          	<br><br>
-          	<div class="alert alert-success"> 
-              	{{session('notify')}}
-          	</div>
-        @endif
+		<div class="alert alert-danger">
+			@foreach($errors->all() as $err)
+				{{$err}}<br>
+			@endforeach()
+		</div>
+	@endif
+	@if(session('notify'))
+		<div class="alert alert-success"> 
+			{{session('notify')}}
+		</div>
+	@endif
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
@@ -71,7 +69,7 @@
 								<td>{{$tp->ansinametopic}}</td>
 								<td>
 									<div class="m-sm-auto">
-										<button type="button" title="Update" class="btn btn-block btn-warning btn-sm" data-toggle="modal" data-target="#EditModal{{$tp->idtopic}}">Update <h3 class="fa fa-edit nav-icon"></h3>	
+										<button type="button" title="Update" class="btn btn-block btn-warning btn-sm" data-toggle="modal" data-target="#UpdateModal{{$tp->idtopic}}">Update <h3 class="fa fa-edit nav-icon"></h3>	
 										</button>
 										 @include('admin.topic.update')
 									</div>

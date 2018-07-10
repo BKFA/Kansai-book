@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="EditModal{{$tp->idtopic}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="UpdateModal{{$tp->idtopic}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -13,13 +13,13 @@
                     <form action="admin/topic/update/{{$tp->idtopic}}" method="POST">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="form-group row">
-                            <label for="txtNameTopic" class="col-sm-2 col-form-label">Name Topic</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="updateNameTopic" name="nameTopic" value="{{$tp->nametopic}}" required>
+                            <label for="txtNameTopic" class="col-sm-3 col-form-label">Name Topic</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="updateNameTopic" name="nametopic" value="{{$tp->nametopic}}" required>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="reset" class="btn btn-secondary" >Cancel</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
                             <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>

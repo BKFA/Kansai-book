@@ -89,7 +89,7 @@
                     </ul>
                 </li>
 
-                <li class="nav-item has-treeview">
+                {{-- <li class="nav-item has-treeview">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fa fa-tags"></i>
                         <p>
@@ -111,7 +111,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li class="nav-header">USERS</li>
                 <li class="nav-item">
@@ -138,7 +138,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-treeview">
+                {{-- <li class="nav-item has-treeview">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fa fa-envelope-o"></i>
                         <p>
@@ -160,7 +160,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 <li class="nav-item has-treeview">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fa fa-commenting"></i>
@@ -197,20 +197,20 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/mailbox/mailbox.html" class="nav-link">
+                            <a href="admin/advertisement/list" class="nav-link">
                                 <i class="fa fa-list nav-icon"></i>
                                 <p>List Advertisements</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/mailbox/compose.html" class="nav-link">
+                            <a href="admin/advertisement/create" class="nav-link">
                                 <i class="fa fa-plus-square nav-icon"></i>
                                 <p>Add Advertisement</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-treeview">
+                {{-- <li class="nav-item has-treeview">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fa fa-picture-o"></i>
                         <p>
@@ -232,7 +232,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

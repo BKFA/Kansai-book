@@ -4,6 +4,8 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="../libraryadmin/plugins/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="../libraryadmin/plugins/iCheck/all.css">
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <!-- Theme style -->
@@ -50,16 +52,7 @@
 						{{session('notify')}}
 					</div>
 					@endif
-					<?php 
-						function checked($auth,$value){
-							$rs='';
-							if($auth==$value){
-								$rs='checked="checked"';
-							}
-							return $rs;
-
-						}
-					?>
+					
 					<div class="card-header">
 						<h3 class="card-title">Form Update User</h3>
 					</div>
@@ -74,11 +67,20 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputUserName1">User Name</label>
-								<input name="username" value="{{$updateUser->username}}" type="text" class="form-control" id="exampleInputUserName1" placeholder="Enter User Name" required>
+								<input name="username" value="{{$updateUser->username}}" type="text" class="form-control" id="exampleInputUserName1" placeholder="Enter User Name" disabled="">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email address</label>
-								<input name="email" value="{{$updateUser->email}}" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required>
+								<input name="email" value="{{$updateUser->email}}" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" disabled="">
+							</div>
+							<div class="form-group">
+								<input type="checkbox" class="icheckbox_minimal-red" id="changePassword" name="changePassword">
+								<label for="exampleInputPassword1">Password</label>
+								<input name="password" type="password" class="form-control password" id="exampleInputPassword1" placeholder="Enter Password" disabled="">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPassword1">Confirm Password</label>
+								<input name="confirmpassword" type="password" class="form-control password" id="exampleInputPassword1" placeholder="Confirm Password" disabled="">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputAge1">Age</label>
@@ -90,8 +92,23 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputAuth1">Auth</label>
-								<input type="radio" name="auth" value="NomalUser" <?php echo checked($updateUser->idauth,0)?>> Nomal User
-                                <input type="radio" name="auth" value="Admin" <?php echo checked($updateUser->idauth,1) ?>> Admin
+								<br>
+								<label>
+									<input
+										type="radio" class="minimal-red" name="auth" value="0"
+										@if ($updateUser->idauth == 0)	
+			                            	{{"checked"}}
+			                            @endif
+									> Nomal User
+								</label>
+								<label>
+									<input 
+										type="radio" class="minimal-red" name="auth" value="1"
+										@if ($updateUser->idauth == 1)	
+			                            	{{"checked"}}
+			                            @endif
+			                        > Admin
+								</label>
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Point</label>
@@ -150,5 +167,31 @@
 <script src="../libraryadmin/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../libraryadmin/dist/js/demo.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="../libraryadmin/plugins/iCheck/icheck.min.js"></script>
+
+<script>
+	$(function() {
+		$('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+            checkboxClass: 'icheckbox_minimal-red',
+            radioClass: 'iradio_minimal-red'
+        })
+    });
+
+    $(document).ready(function(){
+		$("#changePassword").change(function(){
+			if($(this).is(":checked")) {
+				$(".password").removeAttr('disabled');
+			}
+			else {
+				$(".password").attr('disabled','');
+			}
+		});
+	});
+</script>
+
+<script>
+	
+</script>
 
 @endsection

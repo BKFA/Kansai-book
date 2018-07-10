@@ -23,7 +23,7 @@ class CreatePostTable extends Migration
             $table->string('title');
             $table->string('ansititle')->unique();
             $table->string('description');
-            $table->integer('contentpost');
+            $table->longText('contentpost');
             $table->string('urlimage')->nullable();
             $table->integer('view')->default(0);
             $table->integer('status')->default(1);

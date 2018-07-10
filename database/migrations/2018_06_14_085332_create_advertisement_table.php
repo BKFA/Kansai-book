@@ -16,6 +16,8 @@ class CreateAdvertisementTable extends Migration
         Schema::dropIfExists('advertisement');
         Schema::create('advertisement', function (Blueprint $table) {
             $table->increments('idadvertisement');
+            $table->string('nameadvertisement');
+            $table->string('urlimage');
             $table->string('urladvertisement');
             $table->timestamps();
         });
