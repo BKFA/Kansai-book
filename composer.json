@@ -19,7 +19,8 @@
     },
     "autoload": {
         "files": [
-        "app/Function/string.php"
+        "app/Function/string.php",
+         "app/Function/checkextension.php"
         ],
         "classmap": [
             "database/seeds",

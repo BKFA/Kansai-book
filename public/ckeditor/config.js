@@ -8,11 +8,11 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	config.uiColor = '#FFF';
 	
-	config.height = 700;
+	config.height = 400;
 	
 	config.toolbarCanCollapse = true;
 	
-	config.filebrowserBrowseUrl = 'http://[tên miền của bạn]/ckfinder/ckfinder.html';
+	config.filebrowserBrowseUrl = 'http://localhost:8000/ckfinder/ckfinder.html';
  
 	config.filebrowserImageBrowseUrl = '/ckfinder/ckfinder.html?type=Images';
 	 

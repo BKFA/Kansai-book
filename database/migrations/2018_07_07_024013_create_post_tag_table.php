@@ -14,7 +14,7 @@ class CreatePostTagTable extends Migration
     public function up()
     {
         Schema::create('post_tag', function (Blueprint $table) {
-            // $table->increments('idposttag');
+            $table->increments('idposttag');
             $table->integer('idpost')->unsigned();
             $table->foreign('idpost')->references('idpost')->on('post')->onDelete('cascade');
             $table->integer('idtag')->unsigned();

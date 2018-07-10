@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -19,7 +20,7 @@ class User extends Authenticatable
     protected $primaryKey = 'iduser';
 
     protected $fillable = [
-        'username', 'email', 'password', 'name', 'age', 'job', 'idauth', 'point', 'education', 'address', 'japanlv', 'englv',
+        'username', 'email', 'password', 'name', 'age', 'job', 'role', 'point', 'education', 'address',
     ];
 
     /**
@@ -32,14 +33,14 @@ class User extends Authenticatable
     ];
 
     public function post(){
-        return $this->hasMany('App\Models\topic','idusers','idpost');
+        return $this->hasMany('App\Models\post','iduser','idpost');
     }
     
     public function comment(){
         return $this->hasMany('App\Models\comment','idusers','idcomment');
     }
 
-    public function subcomment(){
-        return $this->hasMany('App\Models\subcomment','iduser','idsubcomment');
+    public function follow(){
+        return $this->hasMany('App\Models\follow','iduser','idfollow');
     }
 }

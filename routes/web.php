@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=>'admin'],function(){
+Route::group(['prefix'=>'admin', 'middleware'=>'login'],function(){
 	
 	Route::group(['prefix'=>'dashboard'],function(){
 		Route::get('/','adminController@getAdminDashboard');
@@ -30,21 +30,23 @@ Route::group(['prefix'=>'admin'],function(){
 	});
 
 	Route::group(['prefix'=>'post'],function(){
-		Route::get('list','postController@getList');
+		Route::get('list','postController@getListPost');
 		Route::get('create','postController@getCreate');
 		Route::post('create','postController@postCreate');
-		Route::get('update/{idtopic}','postController@getUpdate');
-		Route::post('update/{idtopic}','postController@postUpdate');
-		Route::get('delete/{idtopic}','postController@getDelete');
+		Route::get('update/{idpost}','postController@getUpdate');
+		Route::post('update/{idpost}','postController@postUpdate');
+		Route::get('delete/{idpost}','postController@getDelete');
 	});
 
 	Route::group(['prefix'=>'tag'],function(){
-		Route::get('list','tagController@getList');
-		Route::get('create','tagController@getCreate');
-		Route::post('create','tagController@postCreate');
-		Route::get('update/{idtag}','tagController@getUpdate');
+		Route::get('list','tagController@getListTag');
+		Route::post('add','tagController@postAdd');
 		Route::post('update/{idtag}','tagController@postUpdate');
 		Route::get('delete/{idtag}','tagController@getDelete');
+	});
+
+	Route::group(['prefix'=>'adve'],function(){
+		Route::get('list','adveController@getListAdve');
 	});
 
 	Route::group(['prefix'=>'user'],function(){
@@ -56,3 +58,7 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('delete/{iduser}','userController@getDelete');
 	});
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -15,8 +15,11 @@ class CreateAdvertisementTable extends Migration
     {
         Schema::dropIfExists('advertisement');
         Schema::create('advertisement', function (Blueprint $table) {
-            $table->increments('idadvertisement');
-            $table->string('urladvertisement');
+            $table->increments('idadve');
+            $table->string('des')->unique();
+            $table->string('ansindes');
+            $table->string('urladve');
+            $table->string('urlimg')->nullable();
             $table->timestamps();
         });
     }

@@ -11,7 +11,7 @@ class comment extends Model
     protected $primaryKey = 'idcomment';
 
     protected $fillable = [
-        'idcomment', 'iduser', 'contentcomment', 'like', 'dislike','status','created_at', 'updated_at',
+        'idcomment', 'iduser', 'idpost', 'contentcomment', 'parent','like', 'dislike','status','created_at', 'updated_at',
     ];
 
     public function post(){
@@ -21,13 +21,5 @@ class comment extends Model
     public function user(){
     	return $this->belongsTo('App\Models\comment', 'iduser', 'idcomment');
     }
-
-    // public function ratecomment(){
-    // 	return $this->hasMany('App\Models\ratecomment', 'idcomment', 'idratecomment');
-    // }
-
-    // public function reportcomment(){
-    // 	return $this->hasMany('App\Models\reportcomment', 'idcomment', 'idreportcomment');
-    // }
 
 }

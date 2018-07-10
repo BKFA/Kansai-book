@@ -15,7 +15,7 @@ function cutString($str, $num){
 			if($i <= 0) return substr($str, 0, $num);
 		}
 		$subs = substr($str, 0, $i);	
-		return $subs;
+		return $subs.' ...';
 	}
 	return $str;
 }

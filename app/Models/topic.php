@@ -15,7 +15,7 @@ class topic extends Model
     ];
 
     public function post(){
-    	return $this->hasMany('App\Models\post', 'idtopic', 'idpost');
+    	return $this->hasMany('App\Models\post', 'idpost', 'idtopic');
     }
 
     public function getTopic()
