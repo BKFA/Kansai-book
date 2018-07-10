@@ -76,7 +76,7 @@
 								<td>{{$us->iduser}}</td>
 								<td>{{$us->name}}</td>
 								<td>{{$us->username}}</td>
-								<td>{{$us->iduser}}</td>
+								<td>{{$us->email}}</td>
 								<td>{{$us->age}}</td>
 								<td>{{$us->job}}</td>
 								<td>

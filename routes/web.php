@@ -15,11 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=>'admin'],function(){
-	
-	Route::group(['prefix'=>'dashboard'],function(){
-		Route::get('/','adminController@getAdminDashboard');
-		
+Auth::routes();
+
+Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
+
+	Route::get('/dashboard', function() {
+		return view('admin.traffic');
 	});
 
 	Route::group(['prefix'=>'topic'],function(){
@@ -58,3 +59,5 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('delete/{iduser}','userController@getDelete');
 	});
 });
+
+
