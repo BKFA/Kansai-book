@@ -18,46 +18,52 @@ class topicController extends Controller
     	return view('admin.topic.create');
     }
 
-    // new create topic
+    // Create new topic
     public function postCreate(Request $request) {
         $this->validate($request,
             [
-                'nameTopic'=>'|unique:topic,nametopic',
+                'nametopic'=>'required|min:3|unique:topic,nametopic',
                
             ],
             [
-                'nameTopic.unique'=>'NAMETOPIC EXISTED',
+                'nametopic.required'=>'You have not filled out NAMETOPIC yet',
+                'nametopic.min'=>'NAMETOPIC must be at least 3 characters',
+                'nametopic.unique'=>'NAMETOPIC Existed',
             ]
         );
-        $createTopic=new topic;
-        $createTopic->nametopic=$request->NameTopic;
-        $createTopic->ansinametopic=changeTitle($request->NameTopic);
+        $createTopic = new topic;
+        $createTopic->nametopic = $request->nametopic;
+        $createTopic->ansinametopic = changeTitle($request->nametopic);
         $createTopic->save();
-        return redirect('admin/topic/list')->with('notify','Create successful : '.$request->NameTopic);
+
+        return redirect('admin/topic/list')->with('notify','Create successful : '.$request->nametopic);
     }
 
-    // Update a topic
+    // Update topic
     public function postUpdate(Request $request, $idtopic) {
         $this->validate($request,
             [
-                'nameTopic'=>'|unique:topic,nametopic',
+                'nametopic'=>'min:3|unique:topic,nametopic',
                
             ],
             [
-                'nameTopic.unique'=>'NAMETOPIC EXISTED',
+                'nametopic.min'=>'NAMETOPIC must be at least 3 characters',
+                'nametopic.unique'=>'NAMETOPIC Existed',
             ]
         );
         $updateTopic = topic::find($idtopic);
-        $updateTopic->nametopic=$request->NameTopic;
-        $updateTopic->ansinametopic=changeTitle($request->NameTopic); //convert unsigned name, changeTitle function have been defined in app\Function\string.php
+        $updateTopic->nametopic = $request->nametopic;
+        //convert nametopic to ansiname
+        $updateTopic->ansinametopic = changeTitle($request->nametopic); 
         $updateTopic->save();
-        return redirect('admin/topic/list')->with('notify','Update successful : '.$request->NameTopic); 
+        return redirect('admin/topic/list')->with('notify','Update successful : '.$request->nametopic); 
     }
 
-    // Delete a topic
+    // Delete topic
     public function getDelete($idtopic){
-        $deleteTopic= topic::find($idtopic);
-        $nameTopic=$deleteTopic->nametopic; // Get the topic delete
+        $deleteTopic = topic::find($idtopic);
+        //save nametopic before delete to show
+        $nameTopic = $deleteTopic->nametopic;
         $deleteTopic->delete();
         return redirect('admin/topic/list')->with('notify','Delete successful : '.$nameTopic);
     }

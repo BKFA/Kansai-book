@@ -4,6 +4,8 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="../libraryadmin/plugins/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="../libraryadmin/plugins/iCheck/all.css">
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <!-- Theme style -->
@@ -64,16 +66,21 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputUserName1">User Name</label>
-								<input name="username" type="text" class="form-control" id="exampleInputUserName1" placeholder="Enter User Name" required>
+								<input name="username" type="text" class="form-control" id="exampleInputUserName1" placeholder="Enter Username" required>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Email address</label>
+								<input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email" required>
 							</div>
 							<div class="form-group">
 								<label for="exampleInputPassword1">Password</label>
 								<input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password" required>
 							</div>
 							<div class="form-group">
-								<label for="exampleInputEmail1">Email address</label>
-								<input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required>
+								<label for="exampleInputPassword1">Confirm Password</label>
+								<input name="confirmpassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" required>
 							</div>
+							
 							<div class="form-group">
 								<label for="exampleInputAge1">Age</label>
 								<input name="age" type="text" class="form-control" id="exampleInputAge1" placeholder="Enter email">
@@ -84,8 +91,13 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputAuth1">Auth</label>
-								<input type="radio" name="auth" value="NomalUser" checked="checked"> Nomal User
-                                <input type="radio" name="auth" value="Admin"> Admin
+								<br>
+								<label>
+									<input type="radio" class="minimal-red" name="auth" value="0" checked="checked"> Nomal User
+								</label>
+								<label>
+									<input type="radio" class="minimal-red" name="auth" value="1"> Admin
+								</label>
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Point</label>
@@ -139,5 +151,16 @@
 <script src="../libraryadmin/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../libraryadmin/dist/js/demo.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="../libraryadmin/plugins/iCheck/icheck.min.js"></script>
+
+<script>
+	$(function() {
+		$('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+            checkboxClass: 'icheckbox_minimal-red',
+            radioClass: 'iradio_minimal-red'
+        })
+    })
+</script>
 
 @endsection

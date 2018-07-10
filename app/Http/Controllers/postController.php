@@ -37,7 +37,7 @@ class postController extends Controller
                'title.required' => 'You have not filled out Title yet',
                'description.required' => 'You have not filled out Description yet',
                'content.required' => 'You have not filled out Content yet',
-               'title.unique'=> 'The Title already exists'
+               'title.unique'=> 'TITLE Existed'
             ]
         );
 
@@ -68,7 +68,7 @@ class postController extends Controller
         $postCreate->status = 0;
 
         $postCreate->save();
-        return redirect('admin/post/list')->with('notify','Create successfully');
+        return redirect('admin/advertisement/list')->with('notify','Create successfully ' . $request->title);
     }
 
     public function getUpdate($idpost) {
@@ -82,7 +82,7 @@ class postController extends Controller
     public function postUpdate(Request $request, $idpost) {
         $post = post::find($idpost);
         if($request->topic != null) $post->idtopic = $request->topic;
-        if($request->user != null) $post->iduser = $request->userupload;
+        if($request->userupload != null) $post->iduser = $request->userupload;
         if($request->title != null) $post->title = $request->title;
         $post->ansititle = changeTitle($request->title);
         if($request->description != null) $post->description = $request->description;
@@ -104,7 +104,7 @@ class postController extends Controller
         }
         $post->save();
 
-        return redirect('admin/post/list')->with('notify','Update Successfully!');
+        return redirect('admin/post/list')->with('notify','Update Successfully ' . $request->title);
     }
 
     public function getDelete($idpost){

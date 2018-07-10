@@ -2,6 +2,7 @@
 
 @section('style')
 <!-- Font Awesome -->
+<link rel="stylesheet" href="../libraryadmin/plugins/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -17,7 +18,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Update Post</h1>
+                <h1 class="m-0 text-dark">Create New Advertisement</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -54,65 +55,34 @@
 					</div>
 					<!-- /.card-header -->
 					<!-- form start -->
-					<form action="admin/post/update/{{$post->idpost}}" method="POST" enctype="multipart/form-data">
+					<form action="admin/advertisement/create" method="POST" enctype="multipart/form-data">
 						<input type="hidden" name="_token" value="{{csrf_token()}}">
 						<div class="card-body">
 							<div class="form-group">
-								<label>Topic</label>
-								<select class="form-control select2" name="topic" style="width: 100%;">
-									@foreach ($topic as $t)
-			                        	<option
-											@if($post->topic->idtopic === $t->idtopic)
-												{{'selected'}}
-											@endif
-			                        		value="{{$t->idtopic}}">{{$t->nametopic}}
-			                        	</option>
-			                        @endforeach
-								</select>
+								<label>Name Advertisement</label>
+								<input class="form-control" name="namead" type="text" placeholder="Please enter Name Advertisement">
 							</div>
-							<div class="form-group">
-								<label>User Upload</label>
-								<select class="form-control select2" name="userupload" style="width: 100%;">
-									@foreach ($user as $u)
-			                        	<option
-											@if($post->user->iduser === $u->iduser)
-												{{'selected'}}
-											@endif
-			                        		value="{{$u->iduser}}">{{$u->username}}
-			                        	</option>
-			                        @endforeach
-								</select>
-							</div>
-							<div class="form-group">
-								<label>Title</label>
-								<input class="form-control" name="title" type="text" placeholder="Please enter Title" value="{{$post->title}}">
-							</div>
-							<div class="form-group">
-								<label>Description</label>
-								<textarea id="demo" name="description" name="description" class="form-control ckeditor" rows="1">{{$post->description}}</textarea>
-							</div>
-							<div class="form-group">
-								<label>Content Post</label>
-								<textarea id="demo" name="content" class="form-control ckeditor" rows="10">{{$post->contentpost}}</textarea>
-							</div>
-							
 							<div class="form-group">
 								<label>Image</label>
 								<div class="input-group">
 									<div class="custom-file">
-										<input type="file" class="custom-file-input" id="imgpost" name="imgpost">
-										<label class="custom-file-label">{{$post->urlimage}}</label>
+										<input type="file" class="custom-file-input" id="imgad" name="imgad">
+										<label class="custom-file-label">Choose image</label>
 									</div>
-									<div style="width: 100vw;" id="imgupload">
-										<img src="upload/images/imgpost/{{$post->urlimage}}" width="400px">
-                    				</div>
+									<div style="width: 100vw;" id="imgupload">	
+	                				</div>
 								</div>
+							</div>
+
+							<div class="form-group">
+								<label>URL Advertisement</label>
+								<input class="form-control" name="urlad" type="text" placeholder="Please enter URL Advertisement">
 							</div>
 						</div>
 						<!-- /.card-body -->
 
 						<div class="card-footer">
-							<button type="submit" class="btn btn-primary">Update <i class="fa fa-location-arrow"></i></button>
+							<button type="submit" class="btn btn-primary">Create <i class="fa fa-location-arrow"></i></button>
 							<button type="reset" class="btn btn-primary">Reset <i class="fa fa-refresh"></i></button>
 						</div>
 					</form>
@@ -135,8 +105,6 @@
 <script src="../libraryadmin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- FastClick -->
 <script src="../libraryadmin/plugins/fastclick/fastclick.js"></script>
-<!-- Select2 -->
-<script src="../libraryadmin/plugins/select2/select2.full.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../libraryadmin/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
@@ -144,10 +112,10 @@
 
 <script>
     $(document).ready(function(){
-        $("input[name=imgpost]").change(function(){
-        	$("#imgpost").html($("input[name=imgpost]").val());
+        $("input[name=imgad]").change(function(){
+        	$("#imgad").html($("input[name=imgad]").val());
         });
-        $("input[name=imgpost]").change(function(e) {
+        $("input[name=imgad]").change(function(e) {
 	    	var file = e.originalEvent.srcElement.files[e.originalEvent.srcElement.files.length-1];
 			var img = document.createElement("img");
 			var reader = new FileReader();

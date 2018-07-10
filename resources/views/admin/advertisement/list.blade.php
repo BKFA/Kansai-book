@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="../libraryadmin/dist/css/adminlte.min.css">
 <!-- Google Font: Source Sans Pro -->
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+<link rel="stylesheet" href="../libraryadmin/plugins/thumbnail/thumbnail.css">
 @endsection
 
 @section('content')
@@ -20,7 +21,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">List Users</h1>
+                <h1 class="m-0 text-dark">List Advertisements</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -35,64 +36,61 @@
 
 <!-- Main content -->
 <section class="content">
+	@if(count($errors) > 0)
+		<div class="alert alert-danger">
+			@foreach($errors->all() as $err)
+				{{$err}}<br>
+			@endforeach()
+		</div>
+	@endif
+	@if(session('notify'))
+		<div class="alert alert-success"> 
+			{{session('notify')}}
+		</div>
+	@endif
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card">
-					@if(count($errors) > 0)
-					<div class="alert alert-danger">
-						@foreach($errors->all() as $err)
-						{{$err}}<br>
-						@endforeach()
-					</div>
-					@endif
-					@if(session('notify'))
-					<div class="alert alert-success"> 
-						{{session('notify')}}
-					</div>
-					@endif
-					
 					<div class="card-body">
-						<table id="example1" class="table table-responsive table-bordered" >
+						<table id="example1" class="table table-bordered">
 							<thead>
 							<tr>
 								<th>ID</th>
-								<th>Name</th>
-								<th>User Name</th>
-								<th>Email</th>
-								<th>Age</th>
-								<th>Job</th>
-								<th>Auth</th>
-								<th>Edu</th>
-								<th>Address</th>
-								<th>JpLv</th>
-								<th>EngLv</th>
+								<th>Name Advertisement</th>
+								<th>Image</th>
+								<th>URL Advertisement</th>
 								<th>Update</th>
 								<th>Delete</th>
 							</tr>
 							</thead>
-							@foreach ($user as $us)
+							@php $i=0 @endphp
+							@foreach($advertisement as $ad)
 							<tr>
-								<td>{{$us->iduser}}</td>
-								<td>{{$us->name}}</td>
-								<td>{{$us->username}}</td>
-								<td>{{$us->iduser}}</td>
-								<td>{{$us->age}}</td>
-								<td>{{$us->job}}</td>
+								<td>@php echo ++$i; @endphp</td>
 								<td>
-									@if($us->idauth == 1)
-										{{'Admin'}}
-									@else
-										{{'Normal User'}}
-									@endif
+									<div class="thumbnail">
+										<h6>{{cutString($ad->nameadvertisement,20)}}</h6>
+										<p>{{$ad->nameadvertisement}}</p>
+									</div>
 								</td>
-								<td>{{$us->education}}</td>
-								<td>{{$us->address}}</td>
-								<td>{{$us->japanlv}}</td>
-								<td>{{$us->englv}}</td>
+								<td>
+									<div class="thumbnail">
+										<img src="upload/images/imgad/{{$ad->urlimage}}" width="60" height="40" >
+                                        <span>
+                                            <img src="upload/images/imgad/{{$ad->urlimage}}" with="200" height="150" title="Image {{$ad->urlimage}}">
+                                        </span>
+									</div>
+								</td>
+								<td>
+									<div class="thumbnail">
+										<h6>{{cutString($ad->urladvertisement,20)}}</h6>
+										<p>{{$ad->urladvertisement}}</p>
+									</div>
+								</td>
 								<td>
 									<div class="m-sm-auto">
-										<a href="admin/user/update/{{$us->iduser}}" title="Update">
+										<a href="admin/advertisement/update/{{$ad->idadvertisement}}" title="Update">
 											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
 											</button>
 										</a>
@@ -100,9 +98,9 @@
 								</td>            
 								<td>
 									<div class="m-sm-auto">
-										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter{{$us->iduser}}">Delete <h3 class="fa fa-edit nav-icon"></h3>	
+										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenterAd{{$ad->idadvertisement}}">Delete <h3 class="fa fa-edit nav-icon"></h3>	
 										</button>
-										@include('admin.user.delete')
+										@include('admin.advertisement.delete')
 									</div>
 								</td>
 							</tr>

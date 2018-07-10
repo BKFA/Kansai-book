@@ -4,108 +4,124 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\users;
+use App\Models\User;
 class userController extends Controller
 {
-    // display list user
+    // Display list user
     public function getList() {
-    	$user=users::all();
+    	$user = User::all();
     	return view('admin.user.list',['user'=>$user]);
     }
 
-    // call to view new create user
+    // Display form create user
     public function getCreate(){
     	return view('admin.user.create');
     }
 
-    // new create user
+    // Create new user
     public function postCreate(Request $request){
     	$this->validate($request,
             [
-                'username'=>'|max:30|unique:users,username', 
-                'password'=>'|min:8|max:32',
-                'email'=>'|email|unique:users,email',
-                'point'=>'|integer',
+                'name'=>'required|min:6|max:30',
+                'username'=>'required|min:6|max:32|unique:User,username', 
+                'password'=>'required|min:6|max:32',
+                'confirmpassword'=>'required|min:6|max:32|same:password',
+                'age'=>'required|integer',
+                'email'=>'required|unique:User,email',
+                'point'=>'required|integer',
             ],
             [
-                'username.max'=>'USERNAME IS NOT EXCEEDING 30 CHARECTERS',
-                'password.min'=>'PASSWORD MUST HAVE AT LEAST 8 CHARECTERS',
-                'password.max'=>'PASSWORD MUST HAVE AT MOST 32 CHARECTERS',
-                'username.unique'=>'USERNAME EXISTED',
-                'email.unique'=>'EMAIL EXISTED',
-                'point.integer'=>'POINT MUST BE NUMBER',
+                'name.min'=>'NAME must have at least 6 characters',
+                'name.max'=>'NAME must have at most 30 characters',
+                'username.min'=>'USERNAME must have at least 6 characters',
+                'username.max'=>'USERNAME must have at most 30 characters',
+                'username.unique'=>'USERNAME Existed',
+                'password.min'=>'PASSWORD must have at least 6 characters',
+                'password.max'=>'PASSWORD must have at most 32 characters',
+                'confirmpassword.min'=>'CONFIRM PASSWORD must have at least 6 characters',
+                'confirmpassword.max'=>'CONFIRM PASSWORD must have at most 32 characters',
+                'confirmpassword.same'=>'CONFIRM PASSWORD is not correct',
+                'age.integer'=>'AGE must be number',
+                'email.unique'=>'EMAIL Existed',
+                'point.integer'=>'POINT must be number',
             ]
         );
-    	$createUser = new users;
-    	$createUser->username=$request->username;
-    	$createUser->password=bcrypt($request->password);
-    	$createUser->email=$request->email;
-    	$createUser->name=$request->name;
-    	$createUser->age=$request->age;
-    	$createUser->job=$request->job;
-    	if($request->auth=="Admin"){
-    		$createUser->idauth=1;
-    	}
-    	else {
-    		$createUser->idauth=0;	
-    	}
-    	$createUser->point=$request->point;
-    	$createUser->education=$request->education;
-    	$createUser->address=$request->address;
-    	$createUser->japanlv=$request->japanlv;
-    	$createUser->englv=$request->englv;
+    	$createUser = new User;
+    	$createUser->username = $request->username;
+    	$createUser->password = bcrypt($request->password);
+    	$createUser->email = $request->email;
+    	$createUser->name = $request->name;
+    	$createUser->age = $request->age;
+    	$createUser->job = $request->job;
+    	$createUser->idauth = $request->auth;
+    	$createUser->point = $request->point;
+    	$createUser->education = $request->education;
+    	$createUser->address = $request->address;
+    	$createUser->japanlv = $request->japanlv;
+    	$createUser->englv = $request->englv;
     	$createUser->save();
 
     	return redirect('admin/user/create')->with('notify','Create Successful :'.$request->name);
 
     }
 
-    // call to view update a user
+    // Display form Update User
     public function getUpdate($iduser){
-    	$updateUser=users::find($iduser);
+    	$updateUser=User::find($iduser);
     	return view('admin.user.update',['updateUser'=>$updateUser]);
     }
 
-    // update a user
+    // Update User
     public function postUpdate(Request $request,$iduser){
         $this->validate($request,
             [
-                'username'=>'|max:30|',
-                'password'=>'|min:8|max:32',
-                'point'=>'|integer',
+                'name'=>'min:6|max:30',
+                'username'=>'min:6|max:32|unique:User,username', 
+                'password'=>'min:6|max:32',
+                'confirmpassword'=>'min:6|max:32|same:password',
+                'age'=>'integer',
+                'email'=>'unique:User,email',
+                'point'=>'integer',
             ],
             [
-                'username.max'=>'USERNAME IS NOT EXCEEDING 30 CHARECTERS',
-                'password.min'=>'PASSWORD MUST HAVE AT LEAST 8 CHARECTERS',
-                'password.max'=>'PASSWORD MUST HAVE AT MOST 32 CHARECTERS',
-                'point.integer'=>'POINT MUST BE NUMBER',
+                'name.min'=>'NAME must have at least 6 characters',
+                'name.max'=>'NAME must have at most 30 characters',
+                'username.min'=>'USERNAME must have at least 6 characters',
+                'username.max'=>'USERNAME must have at most 30 characters',
+                'username.unique'=>'USERNAME Existed',
+                'password.min'=>'PASSWORD must have at least 6 characters',
+                'password.max'=>'PASSWORD must have at most 32 characters',
+                'confirmpassword.min'=>'CONFIRM PASSWORD must have at least 6 characters',
+                'confirmpassword.max'=>'CONFIRM PASSWORD must have at most 32 characters',
+                'confirmpassword.same'=>'CONFIRM PASSWORD is not correct',
+                'age.integer'=>'AGE must be number',
+                'email.unique'=>'EMAIL Existed',
+                'point.integer'=>'POINT must be number',
             ]
         );
-    	$updateUser = users::find($iduser);
-    	$updateUser->username=$request->username;
-    	$updateUser->password=bcrypt($request->password);
-    	$updateUser->email=$request->email;
-    	$updateUser->name=$request->name;
-    	$updateUser->age=$request->age;
-    	$updateUser->job=$request->job;
-    	if($request->auth=="Admin"){
-    		$updateUser->idauth=1;
-    	}
-    	else $updateUser->idauth=0;
-    	$updateUser->point=$request->point;
-    	$updateUser->education=$request->education;
-    	$updateUser->address=$request->address;
-    	$updateUser->japanlv=$request->japanlv;
-    	$updateUser->englv=$request->englv;
+    	$updateUser = User::find($iduser);
+    	if($request->username != null) $updateUser->username = $request->username;
+    	if($request->password != null) $updateUser->password = bcrypt($request->password);
+    	if($request->email != null) $updateUser->email = $request->email;
+    	if($request->name != null) $updateUser->name = $request->name;
+    	if($request->age != null) $updateUser->age = $request->age;
+    	if($request->job != null) $updateUser->job = $request->job;
+    	if($request->idauth != null) $updateUser->idauth = $request->auth;
+    	if($request->point != null) $updateUser->point = $request->point;
+    	if($request->education != null) $updateUser->education = $request->education;
+    	if($request->address != null) $updateUser->address = $request->address;
+    	if($request->japanlv != null) $updateUser->japanlv = $request->japanlv;
+    	if($request->englv != null) $updateUser->englv = $request->englv;
     	$updateUser->save();
 
     	return redirect('admin/user/list')->with('notify','Update Successful :'.$request->name);
     }
 
-    //delete a user
+    // Delete user
     public function getDelete($iduser){
-    	$deleteUser=users::find($iduser);
-    	$nameUser=$deleteUser->name; // Get to nameuser delete
+    	$deleteUser=User::find($iduser);
+        // Save name user before delete to show
+    	$nameUser=$deleteUser->name;
     	$deleteUser->delete();
     	return redirect('admin/user/list')->with('notify','Delete Successful : '.$nameUser);
     }

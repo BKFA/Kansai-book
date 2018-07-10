@@ -59,8 +59,8 @@
 						<input type="hidden" name="_token" value="{{csrf_token()}}">
 						<div class="card-body">
 							<div class="form-group">
-								<label for="exampleInputNametopic">New Name Topic</label>
-								<input name="nameTopic" type="nametopic" class="form-control" id="exampleInputNameTopic" placeholder="Enter new name topic" required>
+								<label for="exampleInputNametopic">Name Topic</label>
+								<input name="nametopic" type="nametopic" class="form-control" id="exampleInputNameTopic" placeholder="Please enter name topic" required>
 							</div>
 						</div>
 						<!-- /.card-body -->

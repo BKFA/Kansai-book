@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class advertisement extends Model
 {
     //
-    protected $table = "advertisement"; 
+    protected $table = "advertisement";
+    protected $primaryKey= 'idadvertisement';
 }
