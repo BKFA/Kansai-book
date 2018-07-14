@@ -18,10 +18,6 @@
         "phpunit/phpunit": "^7.0"
     },
     "autoload": {
-        "files": [
-        "app/Function/string.php",
-         "app/Function/checkextension.php"
-        ],
         "classmap": [
             "database/seeds",
             "database/factories"
