@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.ico">
+    <title>BKFA | Kansaibook</title>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'> -->
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/list.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary" style="z-index: 1000; background: #1292d3 !important;">
+            <a class="navbar-brand" href="#" style="font-weight: bold;"><img src="img/ava.png" alt="Kansaibook" class="img-fluid ava"><span class="">ANSAIBOOK</span></a>
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <style>
+
+            </style>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><span class="fa fa-home"></span> Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="fa fa-pencil-square-o"></span> Answer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="fa fa-file-text-o"></span> Documents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="fa fa-question-circle-o"></span> Add Question</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" method="POST">
+                    <div class="input-group" style="padding: 3px;">
+                        <input class="form-control border-secondary search" data-action="grow" type="search" value="" placeholder="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sm btn-secondary" type="submit">
+                                <i class="fa fa-search" style="font-size: 20px; color: #fff;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <style>
+                .img-circle {
+                    border-radius: 50%;
+                }
+
+                .img-size-30 {
+                    width: 40px;
+                    height: auto;
+                    margin-top: 1px !important;
+                }
+
+                .img-size-40 {
+                    width: 40px;
+                    height: auto;
+                    margin-top: 10px !important;
+                }
+
+                .dropdown-menu-right {
+                    right: 0;
+                    left: auto;
+                }
+                </style>
+                <div class="dropdown">
+                    <a href="#" class="btn-sm justify-content-between align-items-center" data-toggle="dropdown"><img src="img/avatar.png" alt="User Avatar" class="img-size-30 img-circle ava"></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#"><span class="fa fa-user-circle-o"></span> Frofile</a>
+                        <a class="dropdown-item" href="#"><span class="fa fa-sign-out"></span> Log out</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="kc"></div>
+        <div class="bg-white py-1 mb-2 box-shadow" style="margin-left: -15px; ">
+            <nav class="nav d-flex justify-content-between">
+                <a class="p-2 text-muted" href="#">World</a>
+                <a class="p-2 text-muted" href="#">U.S.</a>
+                <a class="p-2 text-muted" href="#">Technology</a>
+                <a class="p-2 text-muted" href="#">Design</a>
+                <a class="p-2 text-muted" href="#">Culture</a>
+                <a class="p-2 text-muted" href="#">Business</a>
+                <a class="p-2 text-muted" href="#">Politics</a>
+                <a class="p-2 text-muted" href="#">Opinion</a>
+                <a class="p-2 text-muted" href="#">Science</a>
+                <a class="p-2 text-muted" href="#">Health</a>
+                <a class="p-2 text-muted" href="#">Style</a>
+                <div class="dropdown">
+                    <a class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" style="border: none; color: blue; background: none;">
+                        More
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--  <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+            <div class="col-md-6 px-0">
+                <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+                <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
+                <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+            </div>
+        </div> -->
+        <!--   <div class="row mb-2">
+            <div class="col-md-6">
+                <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">World</strong>
+                        <h3 class="mb-0">
+                <a class="text-dark" href="#">Featured post</a>
+              </h3>
+                        <div class="mb-1 text-muted">Nov 12</div>
+                        <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#">Continue reading</a>
+                    </div>
+                    <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-success">Design</strong>
+                        <h3 class="mb-0">
+                <a class="text-dark" href="#">Post title</a>
+              </h3>
+                        <div class="mb-1 text-muted">Nov 11</div>
+                        <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#">Continue reading</a>
+                    </div>
+                    <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <main role="main" class="container">
+        <div class="row content">
+            <div class="col-md-9 blog-main bg-white rounded box-shadow">
+               <ul class="breadcrumb pb-3 mb-4 border-bottom" style="background: none;">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">Page</li>
+                </ul>
+                <div class="blog-post">
+                    <h2 class="blog-post-title">Sample blog post</h2>
+                    <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+                    <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
+                    <hr>
+                    <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+                    <blockquote>
+                        <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </blockquote>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    <h2>Heading</h2>
+                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                    <h3>Sub-heading</h3>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    <pre><code>Example code block</code></pre>
+                    <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+                    <h3>Sub-heading</h3>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <ul>
+                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                        <li>Donec id elit non mi porta gravida at eget metus.</li>
+                        <li>Nulla vitae elit libero, a pharetra augue.</li>
+                    </ul>
+                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+                    <ol>
+                        <li>Vestibulum id ligula porta felis euismod semper.</li>
+                        <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+                        <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+                    </ol>
+                    <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+                </div>
+            </div>
+            <!-- /.blog-main -->
+            <aside class="col-md-3 blog-sidebar">
+                <div class="alert alert-heading rounded box-shadow" style="background: #f7f0e6 !important; font-size: 14px;">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Kansaibook</strong> la mot website ho tro hoc tieng nhat so mot Viet Nam!!!
+                </div>
+                <div class="my-3 p-3 bg-white rounded box-shadow">
+                    <h6 class="border-bottom border-gray pb-2 mb-0">Hot Post</h6>
+                    <style>
+                    .hot-post {
+                        margin-left: -20px;
+                    }
+
+                    .hot-post>li {
+                        padding: 2px;
+                    }
+                    </style>
+                    <ol class="hot-post">
+                        <li><a href="#">Stack Overflow homepage not.</a></li>
+                        <li><a href="#">Stack Overflow homepage not loading new questions new questions.</a></li>
+                        <li><a href="#">Stack Overflow homepage not loading new.</a></li>
+                        <li><a href="#">Stack Overflow homepage not loading new questions new questions new questions.</a></li>
+                        <li><a href="#">Stack Overflow.</a></li>
+                    </ol>
+                    <div class="row justify-content-center align-items-center">
+                        <button class="btn btn-outline-primary btn-sm">Read More <span class="fa fa-angle-double-right" style="font-size: 12px"></span></button>
+                    </div>
+                </div>
+                <div class="my-3 p-3 bg-white rounded box-shadow">
+                    <h6 class="border-bottom border-gray pb-2 mb-0">Hot Authors</h6>
+                    <div class="media text-muted pt-3 border-bottom">
+                        <img src="img/avatar.png" alt="User Avatar" class="mr-2  img-size-40 img-circle">
+                        <div class="media-body pb-3 mb-0 small lh-125 border-gray">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                                <strong class="text-gray-dark">Full Name</strong>
+                                <a href="#" class="btn btn-outline-primary btn-sm"><span class="fa fa-user-plus"></span> Follow</a>
+                            </div>
+                            <span class="d-block">@username</span>
+                        </div>
+                    </div>
+                    <div class="media text-muted pt-3 border-bottom">
+                        <img src="img/avatar.png" alt="User Avatar" class="mr-2  img-size-40 img-circle">
+                        <div class="media-body pb-3 mb-0 small lh-125 border-gray">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                                <strong class="text-gray-dark">Full Name</strong>
+                                <a href="#" class="btn btn-outline-primary btn-sm"><span class="fa fa-user-plus"></span> Follow</a>
+                            </div>
+                            <span class="d-block">@username</span>
+                        </div>
+                    </div>
+                    <div class="media text-muted pt-3 border-bottom">
+                        <img src="img/avatar.png" alt="User Avatar" class="mr-2  img-size-40 img-circle">
+                        <div class="media-body pb-3 mb-0 small lh-125 border-gray">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                                <strong class="text-gray-dark">Full Name</strong>
+                                <a href="#" class="btn btn-outline-primary btn-sm"><span class="fa fa-user-plus"></span> Follow</a>
+                            </div>
+                            <span class="d-block">@username</span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center">
+                        <small class="d-block text-right mt-3">
+                            <a href="#">All suggestions</a>
+                        </small>
+                    </div>
+                </div>
+                <div class="p-3 bg-white rounded box-shadow">
+                    <h4 class="border-bottom border-gray pb-2 mb-0">Tag</h4>
+                    <style>
+                    .footer_labels {
+                        margin: 10px 0 0 -40px;
+                    }
+
+                    .footer_labels li {
+                        display: inline-block;
+                        margin: 3px;
+                    }
+                    </style>
+                    <ul class="footer_labels">
+                        <li><a class="btn btn-outline-secondary btn-sm" href="#">PHP</a></li>
+                        <li><a class="btn btn-outline-secondary btn-sm" href="#">MySQL</a></li>
+                        <li><a class="btn btn-outline-secondary btn-sm" href="#">Laravel</a></li>
+                        <li><a class="btn btn-outline-secondary btn-sm" href="#">MongoDB</a></li>
+                        <li><a class="btn btn-outline-secondary btn-sm" href="#">NodeJS</a></li>
+                        <li><a class="btn btn-outline-secondary btn-sm" href="#">ASP.NET MVC</a></li>
+                        <li><a class="btn btn-outline-secondary btn-sm" href="#">VueJS</a></li>
+                        <li><a class="btn btn-outline-secondary btn-sm" href="#">NoSQL</a></li>
+                        <li><a class="btn btn-outline-secondary btn-sm" href="#">Java</a></li>
+                        <li><a class="btn btn-outline-secondary btn-sm" href="#">C / C++</a></li>
+                        <li><a class="btn btn-outline-secondary btn-sm" href="#">PyThon</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <!-- /.blog-sidebar -->
+        </div>
+        <!-- /.row -->
+    </main>
+    <!-- /.container -->
+    <style>
+    /*====================================================
+                    FOOTER
+======================================================*/
+
+    .footer {
+        padding: 70px 0;
+        background: #252525;
+    }
+
+    .footer .comp-desc-f p {
+        margin-top: 10px;
+        color: #ccc;
+        font-size: 15px;
+    }
+    /*Heading Fotoer*/
+
+    .heading-footer {
+        /*   text-align: left; */
+        position: relative;
+        margin-bottom: 30px;
+        padding-bottom: 2px;
+    }
+
+    .heading-footer:after {
+        left: 160px;
+        bottom: 0;
+        height: 1px;
+        width: 70px;
+        content: " ";
+        background: #fff;
+        position: absolute;
+    }
+
+    .heading-footer h2 {
+        color: #eee;
+        font-size: 18px;
+        text-transform: none;
+    }
+
+    .labels ul {
+        overflow: hidden;
+        margin-left: -40px;
+    }
+
+    .labels ul li a {
+        text-decoration: none;
+        color: #eee;
+        background: #
+    }
+
+    .footer_labels li {
+        display: inline-block;
+        margin: 3px;
+    }
+    /*Link link*/
+
+    .footer .link-list {
+        margin-bottom: 0;
+    }
+
+    .footer .link-list li {
+        padding: 3px 0px;
+        border-bottom: solid 1px #333;
+    }
+
+    .footer .link-list li:last-child {
+        padding-top: 0;
+        border-top: none;
+    }
+
+    .footer .link-list li a {
+        color: #ccc;
+        font-size: 15px;
+        margin-bottom: 3px;
+        display: inline-block;
+    }
+
+    .footer .link-list a:hover {
+        color: #fff;
+    }
+
+    .footer .link-list li small {
+        color: #555;
+        display: block;
+    }
+    /*Thumb list*/
+
+    .footer .thumb-list>li {
+        margin-bottom: 20px;
+    }
+
+    .footer .thumb-list>li:before,
+    .footer .thumb-list>li:after {
+        content: " ";
+        display: table;
+    }
+
+    .footer .thumb-list>li:after {
+        clear: both;
+    }
+
+    .footer .thumb-list>li img {
+        float: left;
+        width: 80px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .footer .thumb-list>li a {
+        color: #777;
+        display: block;
+        padding-bottom: 8px;
+    }
+
+    .footer .thumb-list>li a:hover {
+        color: #bbb;
+    }
+
+    .footer .thumb-list>li small {
+        color: #555;
+        font-size: 13px;
+    }
+
+    address.address-details-f,
+    address.address-details-f a {
+        color: #ddd;
+        font-size: 15px;
+    }
+
+    .social-icon-f li {
+        float: left;
+        margin: 10px;
+    }
+    /*footer bottom*/
+
+    #footer-bottom {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 30px 0;
+    }
+
+    #footer-copyrights p {
+        margin: 0;
+        font-size: 14px;
+        font-weight: normal;
+        color: #bbb;
+        text-align: center;
+    }
+
+    #footer-copyrights p a:last-child {
+        border-left: 2px solid #fff;
+        padding-left: 10px;
+        margin-left: 10px;
+    }
+
+    #goTop {
+        display: none;
+        width: 55px;
+        height: 55px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        line-height: 40px;
+        color: #fff;
+        font-size: 30px;
+        background: #3097d1;
+    }
+
+    #back-to-top a:hover {
+        background: #fff;
+        color: #3097d1;
+        border: 2px solid #3097d1;
+    }
+
+
+    @media (min-width: 1600px) {
+        address.address-details-f,
+        address.address-details-f a {
+            color: #ddd;
+            font-size: 17px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .footer .container {
+            width: 90%;
+        }
+        .heading-footer h2 {
+            color: #eee;
+            font-size: 18px;
+            margin-top: 50px;
+            text-transform: none;
+        }
+        .heading-footer {
+            text-align: left;
+            position: relative;
+            margin-bottom: 10px;
+            padding-bottom: 2px;
+        }
+    }
+    </style>
+    <footer>
+        <div id="footer">
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 text-center">
+                            <div class="heading-footer">
+                                <h2>Introduce</h2>
+                            </div>
+                            <ul class="list-unstyled comp-desc-f">
+                                <li>
+                                    <p>" KansaiBook luoon dem lai cho ban nhung chu de, cau hoi hay nhat, nhung noidung bai hoc co mot khong hai "</p>
+                                    <p>Dong sang lap BKFA Team</p>
+                                </li>
+                            </ul>
+                            <div class="logo-footer"><img src="img/logo.png" alt="" class="img-fluid"></div>
+                            <br>
+                        </div>
+                        <div class="col-md-4 col-sm-6 text-center">
+                            <div class="heading-footer">
+                                <h2>Liên Kết</h2>
+                            </div>
+                            <ul class="list-unstyled link-list">
+                                <li><a href="about.html">Giới thiệu</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="project.html">GitHub</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="careers.html">Group</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="faq.html">FAQ</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="contact.html">Contact us</a><i class="fa fa-angle-right"></i></li>
+                            </ul>
+                        </div>
+                        <!-- End Recent Blog Entries -->
+                        <style>
+                        /*Top Contacts*/
+
+                        header .topmenu ul {
+                            margin: 0;
+                        }
+
+                        header .topmenu .top-contacts {
+                            line-height: 25px;
+                        }
+
+                        header .topmenu .top-contacts li {
+                            color: #666;
+                            padding: 5px 0;
+                            font-size: 12px;
+                            margin-right: 15px;
+                            display: inline-block;
+                        }
+
+                        header .topmenu .top-contacts li a {
+                            color: #666;
+                        }
+
+                        header .topmenu .top-contacts i {
+                            color: #999;
+                            font-size: 13px;
+                            margin-right: 3px;
+                        }
+                        /*Top Data*/
+
+                        header .topmenu {
+                            padding: 0px;
+                        }
+
+                        header .topmenu .top-data li {
+                            padding: 5px 11px;
+                            margin-left: -4px;
+                            display: inline-block;
+                            border-right: solid 1px #eee;
+                        }
+
+                        header .topmenu .top-data li:first-child {
+                            margin-left: 0;
+                            border-left: solid 1px #eee;
+                        }
+
+                        header .topmenu .top-data li a {
+                            font-size: 12px;
+                        }
+
+                        header .topmenu .top-data li a:hover {
+                            text-decoration: none;
+                        }
+
+                        .top-social {
+                            height: 25px;
+                            line-height: 25px;
+                            text-align: center;
+                            width: 25px;
+                            border-radius: 50%;
+                            background: #fff;
+                        }
+
+                        .top-data li i.top-social.fa-facebook,
+                        .social-icon-f li i.top-social.fa-facebook {
+                            border: 2px solid #4267b2;
+                            color: #4267b2;
+                        }
+
+                        .top-data li i.top-social.fa-facebook:hover,
+                        .social-icon-f li i.top-social.fa-facebook:hover {
+                            background: #4267b2;
+                            color: #fff;
+                        }
+
+                        .top-data li i.top-social.fa-twitter,
+                        .social-icon-f li i.top-social.fa-twitter {
+                            border: 2px solid #4AB3F4;
+                            color: #4AB3F4;
+                        }
+
+                        .top-data li i.top-social.fa-twitter:hover,
+                        .social-icon-f li i.top-social.fa-twitter:hover {
+                            background: #4AB3F4;
+                            color: #fff;
+                        }
+
+                        .top-data li i.top-social.fa-google-plus,
+                        .social-icon-f li i.top-social.fa-google-plus {
+                            border: 2px solid #e24343;
+                            color: #e24343;
+                        }
+
+                        .top-data li i.top-social.fa-google-plus:hover,
+                        .social-icon-f li i.top-social.fa-google-plus:hover {
+                            background: #e24343;
+                            color: #fff;
+                        }
+
+                        .top-data li a:hover {
+                            color: #555;
+                        }
+
+                        .top-data {
+                            margin-left: 130px;
+                        }
+                        </style>
+                        <!-- Latest Tweets -->
+                        <div class="col-md-4 col-sm-6 text-center">
+                            <div class="heading-footer">
+                                <h2>Liên lạc</h2></div>
+                            <address class="address-details-f">
+                                Số 1, Đại Cồ Việt, Đại học Bách Khoa Hà Nội
+                                <br> BKFA Team
+                                <br> Phone: (+84) 96 105 6808
+                                <br> Email: <a href="mailto:Email: bkfa.com@gmail.com" class=""> bkfa.com@gmail.com</a>
+                            </address>
+                            <ul class="list-inline social-icon-f top-data">
+                                <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
+                                <li><a href="#" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
+                                <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- End Latest Tweets -->
+                    </div>
+                </div>
+                <!--/container -->
+            </div>
+        </div>
+        <div id="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="footer-copyrights">
+                            <p>Copyrights &copy; 2018 All Rights Reserved by BKFA Team.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="back-to-top">
+            <a href="#" id="goTop" class="btn btn-sm btn-green"> <i class="fa fa-angle-up"></i></a>
+        </div>
+    </footer>
+    <!-- Footer -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>
+    window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"><\/script>')
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
+    <script>
+    Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+    });
+    $(function() {
+        'use strict'
+
+        $('[data-toggle="offcanvas"]').on('click', function() {
+            $('.offcanvas-collapse').toggleClass('open')
+        })
+    })
+    $(document).ready(function() {
+        $(document).on("focus", '[data-action="grow"]', function() {
+            $(window).width() > 1200 && $(this).animate({ width: 300 })
+        });
+
+        $(document).on("blur", '[data-action="grow"]', function() {
+            if ($(window).width() > 1200) {
+                $(this).animate({ width: 190 })
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>
