@@ -23,11 +23,11 @@ class userController extends Controller
     	$this->validate($request,
             [
                 'name'=>'required|min:6|max:30',
-                'username'=>'required|min:6|max:32|unique:User,username', 
+                'username'=>'required|min:6|max:32|unique:users,username', 
                 'password'=>'required|min:6|max:32',
                 'confirmpassword'=>'required|min:6|max:32|same:password',
                 'age'=>'required|integer',
-                'email'=>'required|unique:User,email',
+                'email'=>'required|unique:users,email',
                 'point'=>'required|integer',
             ],
             [
