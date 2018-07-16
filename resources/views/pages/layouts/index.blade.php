@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <base href="{{asset('')}}">
+
     <link rel="icon" href="../librarypages/img/favicon.ico">
     <title>BKFA | Kansaibook</title>
     <!-- Bootstrap core CSS -->
@@ -38,7 +39,6 @@
     </main>
 
     @include('pages.layouts.footer')
-    
     <div id="fb-root"></div>
     <script>
         (function(d, s, id) {
@@ -54,6 +54,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
     <script>
     window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"><\/script>')
     </script>
@@ -63,24 +64,24 @@
     <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
     <script>
-    $(function() {
-        'use strict'
+      $(function() {
+          'use strict'
 
-        $('[data-toggle="offcanvas"]').on('click', function() {
-            $('.offcanvas-collapse').toggleClass('open')
-        })
-    })
-    $(document).ready(function() {
-        $(document).on("focus", '[data-action="grow"]', function() {
-            $(window).width() > 1200 && $(this).animate({ width: 300 })
-        });
+          $('[data-toggle="offcanvas"]').on('click', function() {
+              $('.offcanvas-collapse').toggleClass('open')
+          })
+      })
+      $(document).ready(function() {
+          $(document).on("focus", '[data-action="grow"]', function() {
+              $(window).width() > 1200 && $(this).animate({ width: 300 })
+          });
 
-        $(document).on("blur", '[data-action="grow"]', function() {
-            if ($(window).width() > 1200) {
-                $(this).animate({ width: 190 })
-            }
-        });
-    });
+          $(document).on("blur", '[data-action="grow"]', function() {
+              if ($(window).width() > 1200) {
+                  $(this).animate({ width: 190 })
+              }
+          });
+      });
     </script>
     @yield('script')
 </body>

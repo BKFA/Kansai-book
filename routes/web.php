@@ -18,6 +18,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 	Route::get('/dashboard', function() {
 		return view('admin.traffic');
+
 	});
 
 	Route::group(['prefix'=>'topic'],function(){
