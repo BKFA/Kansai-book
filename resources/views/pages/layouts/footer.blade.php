@@ -13,7 +13,7 @@
                                 <p>Dong sang lap BKFA Team</p>
                             </li>
                         </ul>
-                        <div class="logo-footer"><img src="img/logo.png" alt="" class="img-fluid"></div>
+                        <div class="logo-footer"><img src="../librarypages/img/logo.png" alt="" class="img-fluid"></div>
                         <br>
                     </div>
                     <div class="col-md-4 col-sm-6 text-center">

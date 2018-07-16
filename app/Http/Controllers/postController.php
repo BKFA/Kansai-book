@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\topic;
 use App\Models\post;
-use App\Models\User;
+use App\User;
 
 class postController extends Controller
 {
@@ -68,7 +68,7 @@ class postController extends Controller
         $postCreate->status = 0;
 
         $postCreate->save();
-        return redirect('admin/advertisement/list')->with('notify','Create successfully ' . $request->title);
+        return redirect('admin/post/list')->with('notify','Create successfully ' . $request->title);
     }
 
     public function getUpdate($idpost) {

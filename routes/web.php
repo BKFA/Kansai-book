@@ -11,16 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
 
+Auth::routes();
 
-Route::group(['prefix'=>'admin'],function(){
-	
-	Route::group(['prefix'=>'dashboard'],function(){
-		Route::get('/','adminController@getAdminDashboard');
-		
+Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
+
+	Route::get('/dashboard', function() {
+		return view('admin.traffic');
+
 	});
 
 	Route::group(['prefix'=>'topic'],function(){
@@ -59,3 +57,8 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('delete/{iduser}','userController@getDelete');
 	});
 });
+
+Route::get('/','pagesController@getHome');
+Route::get('posts/{idpost}/{ansititle}.html','pagesController@getPosts');
+Route::get('posts/create','pagesController@getCreatePost');
+Route::post('posts/create','pagesController@postCreatePost');
