@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
@@ -60,4 +57,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 	});
 });
 
-
+Route::get('/','pagesController@getHome');
+Route::get('posts/{idpost}/{ansititle}.html','pagesController@getPosts');
+Route::get('posts/create','pagesController@getCreatePost');
+Route::post('posts/create','pagesController@postCreatePost');

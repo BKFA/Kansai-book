@@ -68,7 +68,7 @@ class postController extends Controller
         $postCreate->status = 0;
 
         $postCreate->save();
-        return redirect('admin/advertisement/list')->with('notify','Create successfully ' . $request->title);
+        return redirect('admin/post/list')->with('notify','Create successfully ' . $request->title);
     }
 
     public function getUpdate($idpost) {

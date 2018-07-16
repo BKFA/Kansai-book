@@ -20,7 +20,7 @@ class adminLoginMiddleware
             $user = Auth::user();
             if ($user->idauth == 1)
                 return $next($request);
-            else return redirect('/login')->with('notify','Must be Admin to login');
+            else return redirect('/')->with('notify','Must be Admin to login');
         }
         else
             return redirect('/login')->with('notify','Account or password is incorrect');
