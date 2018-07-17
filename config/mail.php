@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,13 @@ return [
     */
 
     'from' => [
+<<<<<<< HEAD
         'address' => env('MAIL_FROM_ADDRESS', 'zxtinkerxz1@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'Thai dep trai'),
+=======
+        'address' => env('MAIL_FROM_ADDRESS', 'bkfa.com@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'KansaiBook.com - NO REPLY'),
+>>>>>>> 01a5b072e1a41dbb993797a47d7193e164382e2a
     ],
 
     /*
@@ -117,6 +122,14 @@ return [
 
         'paths' => [
             resource_path('views/vendor/mail'),
+        ],
+    ],
+
+    'stream' => [
+        'ssl' => [
+        'allow_self_signed' => true,
+        'verify_peer' => false,
+        'verify_peer_name' => false,
         ],
     ],
 

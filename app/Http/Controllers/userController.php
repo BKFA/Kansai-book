@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
+use App\User;
 class userController extends Controller
 {
     // Display list user
@@ -106,7 +106,7 @@ class userController extends Controller
     	if($request->name != null) $updateUser->name = $request->name;
     	if($request->age != null) $updateUser->age = $request->age;
     	if($request->job != null) $updateUser->job = $request->job;
-    	if($request->idauth != null) $updateUser->idauth = $request->auth;
+    	if($request->auth != null) $updateUser->idauth = $request->auth;
     	if($request->point != null) $updateUser->point = $request->point;
     	if($request->education != null) $updateUser->education = $request->education;
     	if($request->address != null) $updateUser->address = $request->address;

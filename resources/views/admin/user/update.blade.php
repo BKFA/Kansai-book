@@ -84,7 +84,7 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputAge1">Age</label>
-								<input name="age" value="{{$updateUser->age}}" type="text" class="form-control" id="exampleInputAge1" placeholder="Enter email">
+								<input name="age" value="{{$updateUser->age}}" type="text" class="form-control" id="exampleInputAge1" placeholder="Enter age">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputJob1">Job</label>
@@ -95,7 +95,7 @@
 								<br>
 								<label>
 									<input
-										type="radio" class="minimal-red" name="auth" value="0"
+										type="radio" class="iradio_minimal-red" name="auth" value="0"
 										@if ($updateUser->idauth == 0)	
 			                            	{{"checked"}}
 			                            @endif
@@ -103,7 +103,7 @@
 								</label>
 								<label>
 									<input 
-										type="radio" class="minimal-red" name="auth" value="1"
+										type="radio" class="iradio_minimal-red" name="auth" value="1"
 										@if ($updateUser->idauth == 1)	
 			                            	{{"checked"}}
 			                            @endif
@@ -171,13 +171,6 @@
 <script src="../libraryadmin/plugins/iCheck/icheck.min.js"></script>
 
 <script>
-	$(function() {
-		$('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-            checkboxClass: 'icheckbox_minimal-red',
-            radioClass: 'iradio_minimal-red'
-        })
-    });
-
     $(document).ready(function(){
 		$("#changePassword").change(function(){
 			if($(this).is(":checked")) {

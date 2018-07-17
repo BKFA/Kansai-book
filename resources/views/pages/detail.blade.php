@@ -2,14 +2,20 @@
 
 @section('content')
 
-<div class="col-md-9 blog-main bg-white rounded box-shadow">
-    <ul class="breadcrumb pb-3 mb-4 border-bottom" style="background: none;">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active">Page</li>
-    </ul>
+<div class="col-md-6 blog-main bg-white rounded box-shadow">
     <div class="blog-post">
-        <h2 class="blog-post-title">Sample blog post</h2>
-        
+
+        <h2 class="blog-post-title">{{ $post->title }}</h2>
+        <p class="blog-post-meta">{{ $post->created_at }} by <a href="#">{{{ $post->user->name }}}</a></p>
+        <p>{!! $post->contentpost !!}</p>
+        <hr>
+    </div>
+
+    <div class="fb-comments" 
+        data-href="https://developers.facebook.com/docs/plugins/comments#bkfa{{ $post->idpost }}" 
+        data-width="100%" 
+        data-numposts="5">
+
     </div>
 </div>
 
