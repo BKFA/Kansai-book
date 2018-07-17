@@ -9,6 +9,14 @@
         <p class="blog-post-meta">{{ $post->created_at }} by <a href="#">{{{ $post->user->name }}}</a></p>
         <p>{!! $post->contentpost !!}</p>
         <hr>
+        <p><a href="/posts/update/{{ $post->idpost }}/{{ $post->ansititle }}">Update!</a>
+
+            @if(auth::check())
+                @if(auth::user()->iduser==$post->iduser)
+                    <a href="posts/delete/{{$post->idpost}}">  Delete!</a>
+                @endif
+            @endif
+        </p>
     </div>
 
     <div class="fb-comments" 

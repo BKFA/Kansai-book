@@ -27,7 +27,7 @@
         @include('pages.layouts.header') 
     </div>
     <div class="kc"></div>
-    <main role="main" class="container">
+    <main role="main" class="container" >
         <div class="row content">
             @include('pages.layouts.advertisement')
             @yield('content')

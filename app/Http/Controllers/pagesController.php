@@ -85,4 +85,51 @@ class pagesController extends Controller
         $postCreate->save();
         return redirect('/')->with('notify','Create successfully ' . $request->title);
     }
+
+    function getUpdatePost($idpost) {
+        $post = post::find($idpost);
+        $topicPost = topic::all();
+        return view('pages.updatecreatepost', ['post'=>$post], ['topicPost'=>$topicPost]);
+    }
+
+    function postUpdatePost(Request $request, $idpost) {
+
+        $post = post::find($idpost);
+        if($request->topic != null) $post->idtopic = $request->topic;
+        if($request->userupload != null) $post->iduser = $request->userupload;
+        if($request->title != null) $post->title = $request->title;
+        $post->ansititle = changeTitle($request->title);
+        if($request->description != null) $post->description = $request->description;
+        if($request->content != null) $post->contentpost = $request->content;
+
+        if($request->hasFile('imgpost')){
+            $img = $request->file('imgpost');
+            $ext = $img->getClientOriginalExtension();
+            if(!checkExtensionImage($ext)) {
+                return redirect("admin/post/update/$idpost")->with('error','DO NOT SUPPORT THIS FORMAT!');
+            }
+            $urlimage =  substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190); 
+            while(file_exists('upload/images/imgpost/' . $urlimage)) {
+                $urlimage = substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190);
+            }
+            $img->move('upload/images/imgpost', $urlimage);
+            if($post->urlimage != 'default.jpg' && file_exists('upload/images/imgpost/' . $post->urlimage)) unlink('upload/images/imgpost/' . $post->urlimage);
+            $post->urlimage = $urlimage;
+        }
+        $post->save();
+
+        return redirect('admin/post/list')->with('notify','Update Successfully ' . $request->title);
+    }
+
+     public function getDelete($idpost){
+        $post = post::find($idpost);
+        if($post->iduser != Auth::user()->iduser) {
+            return redirect('/')->with('notify', 'Delete Successfully ');
+        }
+        $urlimage = $post->urlimage;
+        if($urlimage != 'default.jpg' && file_exists('upload/images/imgpost/' . $urlimage)) unlink('upload/images/imgpost/' . $urlimage);
+        $name = cutString($post->title, 40);
+        $post->delete();
+        return redirect('/')->with('notify', 'Delete Successfully ' . $name);
+    }
 }

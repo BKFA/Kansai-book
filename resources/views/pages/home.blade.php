@@ -8,6 +8,18 @@
     <h3 class="pb-3 mb-4 border-bottom row justify-content-center align-items-center">
        Posts
     </h3>
+    @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $err)
+            {{$err}}<br>
+            @endforeach()
+        </div>
+        @endif
+        @if(session('notify'))
+        <div class="alert alert-success"> 
+            {{session('notify')}}
+        </div>
+    @endif
     @foreach($post as $p)
         <div class="blog-post">
             <h5><a href="/posts/{{ $p['idpost'] }}/{{ $p['ansititle'] }}.html">{{$p->title}}</a></h5>
