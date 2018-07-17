@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+Route::get('/', 'pagesController@getHome');
+Route::get('/detail/{ansititle}','pagesController@detailPost');
+Route::get('/search/{content}','pagesController@searchIndex');
+Route::get('search-like/{content}','pagesController@searchLike');
+Route::get('/testmail', 'testMailController@test');
+Route::post('/testmail', 'testMailController@hanldeMail');
+
+Route::auth();
 
 
 Route::group(['prefix'=>'admin'],function(){
@@ -59,3 +64,7 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('delete/{iduser}','userController@getDelete');
 	});
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

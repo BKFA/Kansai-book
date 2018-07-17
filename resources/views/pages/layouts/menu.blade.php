@@ -11,23 +11,18 @@
             <li class="nav-item">
                 <a class="nav-link active" href="#"><span class="fa fa-home"></span> Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><span class="fa fa-pencil-square-o"></span> Answer</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><span class="fa fa-file-text-o"></span> Documents</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Topics</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    @foreach($topic_all as $topic)
+                    <a class="dropdown-item" href="list/{{$topic->idtopic}}">{{$topic->nametopic}}</a>
+                    @endforeach
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><span class="fa fa-question-circle-o"></span> Add Question</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
+            
         </ul>
         <form class="form-inline my-2 my-lg-0" method="POST">
             <div class="input-group" style="padding: 3px;">

@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 
 class post extends Model
 {
-    //
+    use Searchable;
+
     protected $table = "post";
     protected $primaryKey = "idpost";
 
@@ -25,6 +27,8 @@ class post extends Model
     public function comment(){
         return $this->hasMany('App\Models\comment','idpost','idcomment');
     }
+
+    
 
     // public function ratepost(){
     // 	return $this->hasMany('App\Models\ratepost', 'idpost', 'idratepost');
