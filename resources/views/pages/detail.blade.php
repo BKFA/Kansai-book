@@ -7,6 +7,18 @@
 
         <h2 class="blog-post-title">{{ $post->title }}</h2>
         <p class="blog-post-meta">{{ $post->created_at }} by <a href="#">{{{ $post->user->name }}}</a></p>
+        @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $err)
+            {{$err}}<br>
+            @endforeach()
+        </div>
+        @endif
+        @if(session('notify'))
+        <div class="alert alert-success"> 
+            {{session('notify')}}
+        </div>
+        @endif
         <p>{!! $post->contentpost !!}</p>
         <hr>
         <p><a href="/posts/update/{{ $post->idpost }}/{{ $post->ansititle }}">Update!</a>

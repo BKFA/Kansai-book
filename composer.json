@@ -10,15 +10,10 @@
         "algolia/algoliasearch-client-php": "^1.27",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.6.*",
-<<<<<<< HEAD
         "laravel/scout": "^4.0",
         "laravel/tinker": "^1.0",
-        "true/punycode": "~2.0"
-=======
         "swiftmailer/swiftmailer": "6.0.*",
-        "laravel/scout": "^4.0",
-        "laravel/tinker": "^1.0"
->>>>>>> 01a5b072e1a41dbb993797a47d7193e164382e2a
+        "true/punycode": "~2.0"
     },
     "require-dev":
     {

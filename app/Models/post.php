@@ -28,14 +28,4 @@ class post extends Model
         return $this->hasMany('App\Models\comment','idpost','idcomment');
     }
 
-    
-
-    // public function ratepost(){
-    // 	return $this->hasMany('App\Models\ratepost', 'idpost', 'idratepost');
-    // }
-
-    // public function reportpost(){
-    // 	return $this->hasMany('App\Models\reportpost', 'idpost', 'idreportpost');
-    // }
-
 }

@@ -70,8 +70,8 @@ Route::post('posts/create','pagesController@postCreatePost');
 Route::get('posts/update/{idpost}/{ansititle}','pagesController@getUpdatePost');
 Route::post('posts/update/{idpost}/{ansititle}','pagesController@postUpdatePost');
 Route::get('posts/delete/{idpost}','pagesController@getDelete');
+
+
 // Route::get('/detail/{ansititle}','pagesController@detailPost');
-// Route::get('/search/{content}','pagesController@searchIndex');
-// Route::get('search-like/{content}','pagesController@searchLike');
-Route::get('/testmail', 'testMailController@test');
-Route::post('/testmail', 'testMailController@hanldeMail');
+Route::get('/search/{content}','pagesController@searchIndex');
+Route::get('search-like/{content}','pagesController@searchLike');
