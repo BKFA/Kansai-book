@@ -58,7 +58,20 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 	});
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/','pagesController@getHome');
 Route::get('posts/{idpost}/{ansititle}.html','pagesController@getPosts');
 Route::get('posts/create','pagesController@getCreatePost');
 Route::post('posts/create','pagesController@postCreatePost');
+
+Route::get('posts/update/{idpost}/{ansititle}','pagesController@getUpdatePost');
+Route::post('posts/update/{idpost}/{ansititle}','pagesController@postUpdatePost');
+Route::get('posts/delete/{idpost}','pagesController@getDelete');
+
+
+// Route::get('/detail/{ansititle}','pagesController@detailPost');
+Route::get('/search/{content}','pagesController@searchIndex');
+Route::get('search-like/{content}','pagesController@searchLike');

@@ -28,4 +28,14 @@
             <li><a class="btn btn-outline-secondary btn-sm" href="#">PyThon</a></li>
         </ul>
     </div>
+    @if(isset($postupdate))
+        <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0">danh sách người sửa bài</h6>
+        <ol class="hot-post">
+            @foreach($postupdate as $up)
+                <li><a href="#">{{$up->title}}</a> By <a href="#">{{$up->iduser}}</a></li>
+            @endforeach
+        </ol>
+    </div>
+    @endif
 </aside>

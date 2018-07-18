@@ -159,6 +159,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        //full text search
+        Laravel\Scout\ScoutServiceProvider::class,
 
     ],
 

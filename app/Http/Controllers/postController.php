@@ -12,6 +12,7 @@ class postController extends Controller
     public function getList() {
     	$topic = topic::all();
     	$post = post::orderBy('idpost','DESC')->get();
+
     	return view('admin.post.list', ['post'=>$post]);
     }
 
@@ -53,7 +54,7 @@ class postController extends Controller
             $img = $request->file('imgpost');
             $ext = $img->getClientOriginalExtension();
             if(!checkExtensionImage($ext)) {
-                return redirect('admin/post/create')->with('error', 'DO NOT SUPPORT THIS FORMAT!');
+                return redirect('admin//post/create')->with('error','DO NOT SUPPORT THIS FORMAT!');
             }
             $urlimage =  substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190);
             while(file_exists('upload/images/imgpost/' . $urlimage)) {
@@ -92,7 +93,7 @@ class postController extends Controller
             $img = $request->file('imgpost');
             $ext = $img->getClientOriginalExtension();
             if(!checkExtensionImage($ext)) {
-                return redirect('admin/update/post/$idpost')->with('error','DO NOT SUPPORT THIS FORMAT!');
+                return redirect("admin/post/update/$idpost")->with('error','DO NOT SUPPORT THIS FORMAT!');
             }
             $urlimage =  substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190); 
             while(file_exists('upload/images/imgpost/' . $urlimage)) {
