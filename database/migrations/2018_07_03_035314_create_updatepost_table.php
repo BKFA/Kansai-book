@@ -15,15 +15,17 @@ class CreateUpdatepostTable extends Migration
     {
         Schema::dropIfExists('updatepost');
         Schema::create('updatepost', function (Blueprint $table) {
-            $table->increments('idupdatepost');
-            $table->integer('idpost')->unsigned();
-            $table->foreign('idpost')->references('idpost')->on('post')->onDelete('cascade');
-            $table->integer('iduser')->unsigned();
-            $table->foreign('iduser')->references('iduser')->on('users')->onDelete('cascade');
+            $table->increments('id');
+            $table->integer('post_id')->unsigned();
+            $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('topic_id')->unsigned();
+            $table->foreign('topic_id')->references('id')->on('topic')->onDelete('cascade');
             $table->string('title');
             $table->string('ansititle')->unique();
             $table->string('description');
-            $table->longText('contentupdatepost');
+            $table->longText('content');
             $table->string('urlimage')->nullable();
             $table->integer('view')->default(0);
             $table->integer('status')->default(1);

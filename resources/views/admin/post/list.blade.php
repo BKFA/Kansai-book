@@ -78,8 +78,8 @@
 								</td>
 								<td>
 									<div class="thumbnail">
-										<h6>{{cutString($p->topic->nametopic,20)}}</h6>
-										<p>{{$p->topic->nametopic}}</p>
+										<h6>{{cutString($p->topic->name,20)}}</h6>
+										<p>{{$p->topic->name}}</p>
 									</div>
 								</td>
 								<td>
@@ -96,12 +96,12 @@
 								</td>
 								<td>
 									<div class="mrg-top-15">
-										<button type="button" title="See More" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal1{{$p->idpost}}">
+										<button type="button" title="See More" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal1{{$p->id}}">
 											{{cutString($p->description, 20)}} ... <h3 class="fa fa-eye nav-icon"></h3>	
 										</button>
 
                                         <!-- Modal -->
-										<div class="modal fade" id="myModal1{{$p->idpost}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+										<div class="modal fade" id="myModal1{{$p->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 										    <div class="modal-dialog modal-dialog-centered" role="document">
 										        <div class="modal-content">
 										            <div class="modal-header">
@@ -122,12 +122,12 @@
 								</td>
 								<td>
 									<div class="mrg-top-15">
-										<button type="button" title="See More" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal2{{$p->idpost}}">
-											{{cutString($p->contentpost, 20)}} ... <h3 class="fa fa-eye nav-icon"></h3>	
+										<button type="button" title="See More" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal2{{$p->id}}">
+											{{cutString($p->content, 20)}} ... <h3 class="fa fa-eye nav-icon"></h3>	
 										</button>
 
                                         <!-- Modal -->
-										<div class="modal fade" id="myModal2{{$p->idpost}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+										<div class="modal fade" id="myModal2{{$p->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 										    <div class="modal-dialog modal-dialog-centered" role="document">
 										        <div class="modal-content">
 										            <div class="modal-header">
@@ -138,7 +138,7 @@
 										            </div>
 										            <div class="modal-body">
 										                <div class="container" align="left">
-										                    <h6>{{$p->contentpost}}</h6>
+										                    <h6>{{$p->content}}</h6>
 										                </div>
 										            </div>
 										        </div>
@@ -162,7 +162,7 @@
 								
 								<td>
 									<div class="m-sm-auto">
-										<a href="admin/post/update/{{$p->idpost}}" title="Update">
+										<a href="admin/post/update/{{$p->id}}" title="Update">
 											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
 											</button>
 										</a>

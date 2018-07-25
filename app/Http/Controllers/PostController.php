@@ -3,21 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\topic;
-use App\Models\post;
-use App\User;
+use App\Models\Topic;
+use App\Models\Post;
+use App\Models\User;
 
-class postController extends Controller
+class PostController extends Controller
 {
     public function getList() {
-    	$topic = topic::all();
-    	$post = post::orderBy('idpost','DESC')->get();
+    	$topic = Topic::all();
+    	$post = Post::orderBy('id','DESC')->get();
 
     	return view('admin.post.list', ['post'=>$post]);
     }
 
     public function getCreate() {
-    	$topic = topic::all();
+    	$topic = Topic::all();
     	$user = User::all();
     	return view('admin.post.create', ['topic'=>$topic], ['user'=>$user]);
     }
@@ -42,19 +42,19 @@ class postController extends Controller
             ]
         );
 
-        $postCreate = new post;
-        $postCreate->idtopic = $request->topic;
-        $postCreate->iduser = $request->userupload;
+        $postCreate = new Post;
+        $postCreate->topic_id = $request->topic;
+        $postCreate->user_id = $request->userupload;
         $postCreate->title = $request->title;
         $postCreate->ansititle = changeTitle($request->title);
         $postCreate->description = $request->description;
-        $postCreate->contentpost = $request->content;
+        $postCreate->content = $request->content;
 
         if($request->hasFile('imgpost')){
             $img = $request->file('imgpost');
             $ext = $img->getClientOriginalExtension();
             if(!checkExtensionImage($ext)) {
-                return redirect('admin//post/create')->with('error','DO NOT SUPPORT THIS FORMAT!');
+                return redirect('admin/post/create')->with('error','DO NOT SUPPORT THIS FORMAT!');
             }
             $urlimage =  substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190);
             while(file_exists('upload/images/imgpost/' . $urlimage)) {
@@ -72,28 +72,28 @@ class postController extends Controller
         return redirect('admin/post/list')->with('notify','Create successfully ' . $request->title);
     }
 
-    public function getUpdate($idpost) {
-    	$topic = topic::all();
+    public function getUpdate($id) {
+    	$topic = Topic::all();
     	$user = User::all();
-    	$post = post::find($idpost);
+    	$post = Post::find($id);
 
     	return view('admin.post.update', ['post'=>$post, 'topic'=>$topic, 'user'=>$user]);
     }
 
-    public function postUpdate(Request $request, $idpost) {
-        $post = post::find($idpost);
-        if($request->topic != null) $post->idtopic = $request->topic;
-        if($request->userupload != null) $post->iduser = $request->userupload;
+    public function postUpdate(Request $request, $id) {
+        $post = Post::find($id);
+        if($request->topic != null) $post->topic_id = $request->topic;
+        if($request->userupload != null) $post->user_id = $request->userupload;
         if($request->title != null) $post->title = $request->title;
         $post->ansititle = changeTitle($request->title);
         if($request->description != null) $post->description = $request->description;
-        if($request->content != null) $post->contentpost = $request->content;
+        if($request->content != null) $post->content = $request->content;
 
         if($request->hasFile('imgpost')){
             $img = $request->file('imgpost');
             $ext = $img->getClientOriginalExtension();
             if(!checkExtensionImage($ext)) {
-                return redirect("admin/post/update/$idpost")->with('error','DO NOT SUPPORT THIS FORMAT!');
+                return redirect("admin/post/update/$id")->with('error','DO NOT SUPPORT THIS FORMAT!');
             }
             $urlimage =  substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190); 
             while(file_exists('upload/images/imgpost/' . $urlimage)) {
@@ -108,8 +108,8 @@ class postController extends Controller
         return redirect('admin/post/list')->with('notify','Update Successfully ' . $request->title);
     }
 
-    public function getDelete($idpost){
-        $post = post::find($idpost);
+    public function getDelete($id){
+        $post = post::find($id);
         $urlimage = $post->urlimage;
  
         if($urlimage != 'default.jpg' && file_exists('upload/images/imgpost/' . $urlimage)) unlink('upload/images/imgpost/' . $urlimage);

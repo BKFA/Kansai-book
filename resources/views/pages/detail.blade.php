@@ -19,20 +19,20 @@
             {{session('notify')}}
         </div>
         @endif
-        <p>{!! $post->contentpost !!}</p>
+        <p>{!! $post->content !!}</p>
         <hr>
-        <p><a href="/posts/update/{{ $post->idpost }}/{{ $post->ansititle }}">Update!</a>
+        <p><a href="/posts/update/{{ $post->id }}/{{ $post->ansititle }}">Update!</a>
 
             @if(auth::check())
                 @if(auth::user()->iduser==$post->iduser)
-                    <a href="posts/delete/{{$post->idpost}}">  Delete!</a>
+                    <a href="posts/delete/{{$post->id}}">  Delete!</a>
                 @endif
             @endif
         </p>
     </div>
 
     <div class="fb-comments" 
-        data-href="https://developers.facebook.com/docs/plugins/comments#bkfa{{ $post->idpost }}" 
+        data-href="https://developers.facebook.com/docs/plugins/comments#bkfa{{ $post->id }}" 
         data-width="100%" 
         data-numposts="5">
 

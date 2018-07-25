@@ -15,15 +15,15 @@ class CreatePostTable extends Migration
     {
         Schema::dropIfExists('post');
         Schema::create('post', function (Blueprint $table) {
-            $table->increments('idpost');
-            $table->integer('idtopic')->unsigned();
-            $table->foreign('idtopic')->references('idtopic')->on('topic')->onDelete('cascade');
-            $table->integer('iduser')->unsigned();
-            $table->foreign('iduser')->references('iduser')->on('users')->onDelete('cascade');
+            $table->increments('id');
+            $table->integer('topic_id')->unsigned();
+            $table->foreign('topic_id')->references('id')->on('topic')->onDelete('cascade');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title');
             $table->string('ansititle')->unique();
             $table->string('description');
-            $table->longText('contentpost');
+            $table->longText('content');
             $table->string('urlimage')->nullable();
             $table->integer('view')->default(0);
             $table->integer('status')->default(1);

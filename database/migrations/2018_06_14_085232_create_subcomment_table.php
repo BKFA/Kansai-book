@@ -14,11 +14,11 @@ class CreateSubcommentTable extends Migration
     public function up()
     {
         Schema::create('subcomment', function (Blueprint $table) {
-            $table->increments('idsubcomment');
-            $table->integer('iduser')->unsigned();
-            $table->foreign('iduser')->references('iduser')->on('users')->onDelete('cascade');
-            $table->integer('idcomment')->unsigned();
-            $table->foreign('idcomment')->references('idcomment')->on('comment')->onDelete('cascade');
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('comment_id')->unsigned();
+            $table->foreign('comment_id')->references('id')->on('comment')->onDelete('cascade');
             $table->string('contentsubcomment');
             $table->integer('status')->default(1);
             $table->timestamps();

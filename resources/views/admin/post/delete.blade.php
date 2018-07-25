@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body">
                 <div class="container" align="right">
-                    <a href="admin/post/delete/{{$p->idpost}}" title="Delete">
+                    <a href="admin/post/delete/{{$p->id}}" title="Delete">
                         <button type="button" class="btn btn-primary">Submit</button>
                     </a>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\advertisement;
+use App\Models\Advertisement;
 
-class advertisementController extends Controller
+class AdvertisementController extends Controller
 {
     // Display list advertisement
     public function getList() {
-        $advertisement = advertisement::all();
+        $advertisement = Advertisement::all();
         return view('admin.advertisement.list',['advertisement'=>$advertisement]);
     }
 
@@ -22,20 +22,20 @@ class advertisementController extends Controller
     public function postCreate(Request $request) {
         $this->validate($request,
             [
-                'namead'=>'required|min:3|unique:advertisement,nameadvertisement',
+                'name'=>'required|min:3|unique:advertisement,name',
                 'urlad'=>'required|min:10',
                
             ],
             [
-                'namead.required'=>'You have not filled out NAME ADVERTISEMENT yet',
-                'namead.min'=>'NAME ADVERTISEMENT must be at least 3 characters',
-                'namead.unique'=>'NAME ADVERTISEMENT Existed',
+                'name.required'=>'You have not filled out NAME ADVERTISEMENT yet',
+                'name.min'=>'NAME ADVERTISEMENT must be at least 3 characters',
+                'name.unique'=>'NAME ADVERTISEMENT Existed',
                 'urlad.required'=>'You have not filled out URL ADVERTISEMENT yet',
                 'urlad.min'=>'URL ADVERTISEMENT must be at least 10 characters and started by http:// or https://',
             ]
         );
-        $postCreate = new advertisement;
-        $postCreate->nameadvertisement = $request->namead;
+        $postCreate = new Advertisement;
+        $postCreate->name = $request->name;
         $postCreate->urladvertisement = $request->urlad;
 
         if($request->hasFile('imgad')){
@@ -55,59 +55,59 @@ class advertisementController extends Controller
         }
         $postCreate->save();
 
-        return redirect('admin/advertisement/list')->with('notify','Create successful : ' . $request->namead);
+        return redirect('admin/advertisement/list')->with('notify','Create successful : ' . $request->name);
     }
 
     // Display form update advertisement
-    public function getUpdate($idadvertisement) {
-    	$advertisement = advertisement::find($idadvertisement);
+    public function getUpdate($id) {
+    	$advertisement = Advertisement::find($id);
 
     	return view('admin.advertisement.update', ['advertisement'=>$advertisement]);
     }
 
     // Update advertisement
-    public function postUpdate(Request $request, $idadvertisement) {
-    	$postUpdate = advertisement::find($idadvertisement);
+    public function postUpdate(Request $request, $id) {
+    	$postUpdate = Advertisement::find($id);
         $this->validate($request,
             [
-                'namead'=>'required|min:3',
+                'name'=>'required|min:3',
                 'urlad'=>'required|min:10',
                
             ],
             [
-                'namead.required'=>'You have not filled out NAME ADVERTISEMENT yet',
-                'namead.min'=>'NAME ADVERTISEMENT must be at least 3 characters',
+                'name.required'=>'You have not filled out NAME ADVERTISEMENT yet',
+                'name.min'=>'NAME ADVERTISEMENT must be at least 3 characters',
                 'urlad.required'=>'You have not filled out URL ADVERTISEMENT yet',
                 'urlad.min'=>'URL ADVERTISEMENT must be at least 10 characters and started by http:// or https://',
             ]
         );
         
-        if($request->namead != null) $postUpdate->nameadvertisement = $request->namead;
+        if($request->name != null) $postUpdate->name = $request->name;
         if($request->urlad != null) $postUpdate->urladvertisement = $request->urlad;
         if($request->hasFile('imgad')){
             $img = $request->file('imgad');
             $ext = $img->getClientOriginalExtension();
             if(!checkExtensionImage($ext)) {
-                return redirect('admin/update/post/$idpost')->with('error','DO NOT SUPPORT THIS FORMAT!');
+                return redirect('admin/update/advertisement/$id')->with('error','DO NOT SUPPORT THIS FORMAT!');
             }
             $urlimage =  substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190); 
             while(file_exists('upload/images/imgad/' . $urlimage)) {
                 $urlimage = substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190);
             }
             $img->move('upload/images/imgad', $urlimage);
-            if($postUpdate->urlimage != 'default.jpg' && file_exists('upload/images/imgad/' . $post->urlimage)) unlink('upload/images/imgad/' . $postUpdate->urlimage);
+            if($postUpdate->urlimage != 'default.jpg' && file_exists('upload/images/imgad/' . $advertisement->urlimage)) unlink('upload/images/imgad/' . $postUpdate->urlimage);
             $postUpdate->urlimage = $urlimage;
         }
 
         $postUpdate->save();
-        return redirect('admin/advertisement/list')->with('notify','Update successful : '.$request->namead); 
+        return redirect('admin/advertisement/list')->with('notify','Update successful : '.$request->name); 
     }
 
     // Delete advertisement
-    public function getDelete($idadvertisement){
-        $deleteAdvertisement = advertisement::find($idadvertisement);
+    public function getDelete($id){
+        $deleteAdvertisement = Advertisement::find($id);
         //save nametopic before delete to show
-        $nameAd = $deleteAdvertisement->nameadvertisement;
+        $nameAd = $deleteAdvertisement->name;
         $urlimage = $deleteAdvertisement->urlimage;
         if($urlimage != 'default.jpg' && file_exists('upload/images/imgad/' . $urlimage)) unlink('upload/images/imgad/' . $urlimage);
         $deleteAdvertisement->delete();

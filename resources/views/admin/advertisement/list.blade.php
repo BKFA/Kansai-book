@@ -70,8 +70,8 @@
 								<td>@php echo ++$i; @endphp</td>
 								<td>
 									<div class="thumbnail">
-										<h6>{{cutString($ad->nameadvertisement,20)}}</h6>
-										<p>{{$ad->nameadvertisement}}</p>
+										<h6>{{cutString($ad->name,20)}}</h6>
+										<p>{{$ad->name}}</p>
 									</div>
 								</td>
 								<td>
@@ -90,7 +90,7 @@
 								</td>
 								<td>
 									<div class="m-sm-auto">
-										<a href="admin/advertisement/update/{{$ad->idadvertisement}}" title="Update">
+										<a href="admin/advertisement/update/{{$ad->id}}" title="Update">
 											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
 											</button>
 										</a>
@@ -98,7 +98,7 @@
 								</td>            
 								<td>
 									<div class="m-sm-auto">
-										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenterAd{{$ad->idadvertisement}}">Delete <h3 class="fa fa-edit nav-icon"></h3>	
+										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenterAd{{$ad->id}}">Delete <h3 class="fa fa-edit nav-icon"></h3>	
 										</button>
 										@include('admin.advertisement.delete')
 									</div>

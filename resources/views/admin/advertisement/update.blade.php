@@ -55,7 +55,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="admin/advertisement/update/{{$advertisement->idadvertisement}}" method="POST" enctype="multipart/form-data">
+                    <form action="admin/advertisement/update/{{$advertisement->id}}" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="card-body">
                             <div class="form-group">

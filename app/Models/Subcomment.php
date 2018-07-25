@@ -4,17 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class subcomment extends Model
+class Subcomment extends Model
 {
     //
     protected $table = "subcomment";
 
     public function comment(){
-    	return $this->belongsTo('App\Models\subcomment', 'idcomment', 'idsubcomment');
+    	return $this->belongsTo('App\Models\Subcomment', 'idcomment', 'idsubcomment');
     }
 
     public function user(){
-    	return $this->belongsTo('App\Models\subcomment', 'iduser', 'idsubcomment');
+    	return $this->belongsTo('App\Models\Subcomment', 'iduser', 'idsubcomment');
     }
 
     // public function ratesubcomment(){
