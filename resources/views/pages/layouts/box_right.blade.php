@@ -11,7 +11,7 @@
             @endforeach
         </ol>
     </div>
-    
+
     <div class="p-3 bg-white rounded box-shadow">
         <h4 class="border-bottom border-gray pb-2 mb-0">Tag</h4>
         <ul class="footer_labels">
@@ -33,9 +33,12 @@
         <h6 class="border-bottom border-gray pb-2 mb-0">danh sách người sửa bài</h6>
         <ol class="hot-post">
             @foreach($postupdate as $up)
-                <li><a href="#">{{$up->title}}</a> By <a href="#">{{$up->iduser}}</a></li>
+                <li><a href="#">{{$up->title}}</a> By <a href="#">{{$up->user->name}}</a></li>
             @endforeach
         </ol>
+        <div style="text-align: center;">
+            {{ $postupdate->links() }}
+        </div>
     </div>
     @endif
 </aside>

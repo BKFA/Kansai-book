@@ -28,7 +28,7 @@ class PagesController extends Controller
     public function getPosts($id)
     {
         $post = Post::find($id);
-        $postupdate = Updatepost::where('id', $id)->get();
+        $postupdate = updatepost::where('post_id', $id)->paginate(10);
 
         return view('pages.detail', ['post' => $post, 'postupdate' => $postupdate]);
     }
@@ -161,7 +161,7 @@ class PagesController extends Controller
                 $request,
                 [
                     'topic' => 'required',
-                    'title' => 'required|unique:Post,title',
+                    'title' => 'required',
                     'description' => 'required',
                     'content' => 'required',
                 ],
@@ -170,7 +170,6 @@ class PagesController extends Controller
                     'title.required' => 'You have not filled out Title yet',
                     'description.required' => 'You have not filled out Description yet',
                     'content.required' => 'You have not filled out Content yet',
-                    'title.unique' => 'TITLE Existed',
                 ]
             );
             $postCreate = new Updatepost;
