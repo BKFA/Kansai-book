@@ -2,33 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Topic;
+use Illuminate\Http\Request;
 
 class TopicController extends Controller
 {
     // Display list topic
-    public function getList() {
+    public function getList()
+    {
         $topic = Topic::all();
-        return view('admin.topic.list',['topic'=>$topic]);
+
+        return view('admin.topic.list', ['topic' => $topic]);
     }
 
     // Call to view new create topic
-    public function getCreate() {
-    	return view('admin.topic.create');
+    public function getCreate()
+    {
+
+        return view('admin.topic.create');
     }
 
     // Create new topic
-    public function postCreate(Request $request) {
+    public function postCreate(Request $request)
+    {
         $this->validate($request,
             [
-                'name'=>'required|min:3|unique:topic,name',
-               
+                'name' => 'required|min:3|unique:topic,name',
+
             ],
             [
-                'name.required'=>'You have not filled out NAMETOPIC yet',
-                'name.min'=>'NAMETOPIC must be at least 3 characters',
-                'name.unique'=>'NAMETOPIC Existed',
+                'name.required' => 'You have not filled out NAMETOPIC yet',
+                'name.min' => 'NAMETOPIC must be at least 3 characters',
+                'name.unique' => 'NAMETOPIC Existed',
             ]
         );
         $createTopic = new Topic;
@@ -36,36 +41,40 @@ class TopicController extends Controller
         $createTopic->ansiname = changeTitle($request->name);
         $createTopic->save();
 
-        return redirect('admin/topic/list')->with('notify','Create successful : '.$request->name);
+        return redirect('admin/topic/list')->with('notify', 'Create successful : ' . $request->name);
     }
 
     // Update topic
-    public function postUpdate(Request $request, $idtopic) {
+    public function postUpdate(Request $request, $idtopic)
+    {
         $this->validate($request,
             [
-                'name'=>'min:3|unique:topic,name',
-               
+                'name' => 'min:3|unique:topic,name',
+
             ],
             [
-                'name.min'=>'NAMETOPIC must be at least 3 characters',
-                'name.unique'=>'NAMETOPIC Existed',
+                'name.min' => 'NAMETOPIC must be at least 3 characters',
+                'name.unique' => 'NAMETOPIC Existed',
             ]
         );
         $updateTopic = Topic::find($idtopic);
         $updateTopic->name = $request->name;
         //convert name to ansiname
-        $updateTopic->ansiname = changeTitle($request->name); 
+        $updateTopic->ansiname = changeTitle($request->name);
         $updateTopic->save();
-        return redirect('admin/topic/list')->with('notify','Update successful : '.$request->name); 
+
+        return redirect('admin/topic/list')->with('notify', 'Update successful : ' . $request->name);
     }
 
     // Delete topic
-    public function getDelete($idtopic){
+    public function getDelete($idtopic)
+    {
         $deleteTopic = Topic::find($idtopic);
         //save name before delete to show
         $nameTopic = $deleteTopic->name;
         $deleteTopic->delete();
-        return redirect('admin/topic/list')->with('notify','Delete successful : '.$nameTopic);
+
+        return redirect('admin/topic/list')->with('notify', 'Delete successful : ' . $nameTopic);
     }
 
 }
