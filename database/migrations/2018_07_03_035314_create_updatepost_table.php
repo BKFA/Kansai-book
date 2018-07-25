@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUpdatepostTable extends Migration
 {
@@ -23,7 +23,7 @@ class CreateUpdatepostTable extends Migration
             $table->integer('topic_id')->unsigned();
             $table->foreign('topic_id')->references('id')->on('topic')->onDelete('cascade');
             $table->string('title');
-            $table->string('ansititle')->unique();
+            $table->string('ansititle');
             $table->string('description');
             $table->longText('content');
             $table->string('urlimage')->nullable();
