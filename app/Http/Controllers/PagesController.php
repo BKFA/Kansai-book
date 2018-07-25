@@ -198,7 +198,7 @@ class PagesController extends Controller
             }
             $postCreate->view = 0;
             $postCreate->status = 0;
-            $this->dispatch(new SendMail(Auth::user(), $user, "posts/$post->idpost/$post->ansititle.html"));
+            $this->dispatch(new SendMail(Auth::user(), $user, "posts/$id/$post->ansititle.html"));
             $postCreate->save();
 
             return redirect("posts/$post->id/$post->ansititle.html")->with('notify', 'send update successfully ' . $request->title);

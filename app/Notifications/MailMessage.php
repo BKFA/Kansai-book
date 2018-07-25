@@ -45,9 +45,9 @@ class MailMessage extends Notification
     public function toMail($notifiable)
     {
         return (new Mail)
-            ->line('thank you for suggest.')
+            ->line('somebody was Feedback your post.')
             ->action('chi tiết', url("$this->url"))
-            ->line('Thank you so much!');
+            ->line('Thank you for using our application!');
     }
 
     /**

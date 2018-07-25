@@ -3,21 +3,23 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Messages\MailMessage as Mail;
 use Illuminate\Notifications\Notification;
 
 class MailMessageToAuth extends Notification
 {
     use Queueable;
 
+    protected $url;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($url)
     {
-        //
+        $this->url = $url;
     }
 
     /**
@@ -39,10 +41,10 @@ class MailMessageToAuth extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-            ->line('somebody was Feedback your post.')
-            ->action('Notification Action', url('/'))
-            ->line('Thank you for using our application!');
+        return (new Mail)
+            ->line('thank you for suggest.')
+            ->action('chi tiết', url("$this->url"))
+            ->line('Thank you so much!');
     }
 
     /**
