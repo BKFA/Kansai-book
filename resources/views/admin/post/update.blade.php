@@ -54,7 +54,7 @@
 					</div>
 					<!-- /.card-header -->
 					<!-- form start -->
-					<form action="admin/post/update/{{$post->idpost}}" method="POST" enctype="multipart/form-data">
+					<form action="admin/post/update/{{$post->id}}" method="POST" enctype="multipart/form-data">
 						<input type="hidden" name="_token" value="{{csrf_token()}}">
 						<div class="card-body">
 							<div class="form-group">
@@ -62,10 +62,10 @@
 								<select class="form-control select2" name="topic" style="width: 100%;">
 									@foreach ($topic as $t)
 			                        	<option
-											@if($post->topic->idtopic === $t->idtopic)
+											@if($post->topic->id === $t->id)
 												{{'selected'}}
 											@endif
-			                        		value="{{$t->idtopic}}">{{$t->nametopic}}
+			                        		value="{{$t->id}}">{{$t->name}}
 			                        	</option>
 			                        @endforeach
 								</select>
@@ -75,10 +75,10 @@
 								<select class="form-control select2" name="userupload" style="width: 100%;">
 									@foreach ($user as $u)
 			                        	<option
-											@if($post->user->iduser === $u->iduser)
+											@if($post->user->id === $u->id)
 												{{'selected'}}
 											@endif
-			                        		value="{{$u->iduser}}">{{$u->username}}
+			                        		value="{{$u->id}}">{{$u->username}}
 			                        	</option>
 			                        @endforeach
 								</select>
@@ -93,7 +93,7 @@
 							</div>
 							<div class="form-group">
 								<label>Content Post</label>
-								<textarea id="demo" name="content" class="form-control ckeditor" rows="10">{{$post->contentpost}}</textarea>
+								<textarea id="demo" name="content" class="form-control ckeditor" rows="10">{{$post->content}}</textarea>
 							</div>
 							
 							<div class="form-group">

@@ -15,7 +15,7 @@ class CreateSystemTable extends Migration
     {
         Schema::dropIfExists('system');
         Schema::create('system', function (Blueprint $table) {
-            $table->increments('idsystem');
+            $table->increments('id');
             $table->string('urllogo');
             $table->string('urlslide');
             $table->timestamps();

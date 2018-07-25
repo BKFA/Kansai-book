@@ -4,14 +4,14 @@
 
 @section('content')
 <div class="col-md-6 blog-main bg-white rounded box-shadow">
-    <form action="posts/update/{{$post->idpost}}/{{$post->ansititle}}" method="POST" enctype="multipart/form-data">
+    <form action="posts/update/{{$post->id}}/{{$post->ansititle}}" method="POST" enctype="multipart/form-data">
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
 		<div class="card-body">
 			<div class="form-group">
 				<label>Topic</label>				
 				<select class="form-control select2" name="topic" style="width: 100%;">
 					@foreach ($topicPost as $tp)
-                    	<option value="{{$tp->idtopic}}">{{$tp->nametopic}}</option>
+                    	<option value="{{$tp->id}}">{{$tp->name}}</option>
                     @endforeach
 				</select>
 			</div>
@@ -25,7 +25,7 @@
 			</div>
 			<div class="form-group">
 				<label>Content Post</label>
-				<textarea id="demo" name="content" class="form-control ckeditor" rows="10">{{$post->contentpost}}</textarea>
+				<textarea id="demo" name="content" class="form-control ckeditor" rows="10">{{$post->content}}</textarea>
 			</div>
 			<div class="form-group">
 				<label>Image</label>

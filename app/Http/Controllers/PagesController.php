@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\topic;
-use App\Models\post;
-use App\User;
-use App\Models\updatepost;
+use App\Models\Topic;
+use App\Models\Post;
+use App\Models\User;
+use App\Models\Updatepost;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Mail;
 
-class pagesController extends Controller
+class PagesController extends Controller
 {
 	function __construct() {
 		$topPost = post::orderBy('view','DESC')->take(10)->get();
@@ -19,24 +19,24 @@ class pagesController extends Controller
 	}
 
     function getHome() {
-    	$post = post::paginate(10);
+    	$post = Post::paginate(10);
     	return view('pages.home',['post'=>$post]);
     }
 
-    function getPosts($idpost) {
-    	$post = post::find($idpost);
-        $postupdate = updatepost::where('idpost', $idpost)->get();
+    function getPosts($id) {
+    	$post = Post::find($id);
+        $postupdate = Updatepost::where('id', $id)->get();
     	return view('pages.detail',['post'=>$post, 'postupdate'=>$postupdate]);
     }
 
-    function getPostsUser($iduser) {
-    	$user = User::find($iduser);
-    	$post = post::where('iduser',$iduser)->get();
+    function getPostsUser($id) {
+    	$user = User::find($id);
+    	$post = Post::where('id',$id)->get();
     	return view('pages.postsuser',['user'=>$user, 'post'=>$post]);
     }
 
     function getCreatePost() {
-    	$topicPost = topic::all();
+    	$topicPost = Topic::all();
     	return view('pages.createpost', ['topicPost'=>$topicPost]);
     }
 
@@ -46,7 +46,7 @@ class pagesController extends Controller
             $request, 
             [
                'topic' => 'required',
-               'title' => 'required|unique:post,title',
+               'title' => 'required|unique:Post,title',
                'description' => 'required',
                'content' => 'required'
             ],
@@ -59,13 +59,13 @@ class pagesController extends Controller
             ]
         );
 
-        $postCreate = new post;
-        $postCreate->idtopic = $request->topic;
-        $postCreate->iduser = Auth::user()->iduser;
+        $postCreate = new Post;
+        $postCreate->topic_id = $request->topic;
+        $postCreate->user_id = Auth::user()->id;
         $postCreate->title = $request->title;
         $postCreate->ansititle = changeTitle($request->title);
         $postCreate->description = $request->description;
-        $postCreate->contentpost = $request->content;
+        $postCreate->content = $request->content;
 
         if($request->hasFile('imgpost')){
             $img = $request->file('imgpost');
@@ -89,30 +89,30 @@ class pagesController extends Controller
         return redirect('/')->with('notify','Create successfully ' . $request->title);
     }
 
-    function getUpdatePost($idpost) {
-        $post = post::find($idpost);
-        $topicPost = topic::all();
+    function getUpdatePost($id) {
+        $post = Post::find($id);
+        $topicPost = Topic::all();
         return view('pages.updatecreatepost', ['post'=>$post], ['topicPost'=>$topicPost]);
     }
 
-    function postUpdatePost(Request $request, $idpost) {
+    function postUpdatePost(Request $request, $id) {
 
-        $post = post::find($idpost);
+        $post = Post::find($id);
         //-----------------------------------------
-        if($post->iduser == Auth::user()->iduser) {
+        if($post->user_id == Auth::user()->id) {
 
-            if($request->topic != null) $post->idtopic = $request->topic;
-            if($request->userupload != null) $post->iduser = $request->userupload;
+            if($request->topic != null) $post->topic_id = $request->topic;
+            if($request->userupload != null) $post->user_id = $request->userupload;
             if($request->title != null) $post->title = $request->title;
             $post->ansititle = changeTitle($request->title);
             if($request->description != null) $post->description = $request->description;
-            if($request->content != null) $post->contentpost = $request->content;
+            if($request->content != null) $post->content = $request->content;
 
             if($request->hasFile('imgpost')){
                 $img = $request->file('imgpost');
                 $ext = $img->getClientOriginalExtension();
                 if(!checkExtensionImage($ext)) {
-                    return redirect("admin/post/update/$idpost")->with('error','DO NOT SUPPORT THIS FORMAT!');
+                    return redirect("admin/post/update/$id")->with('error','DO NOT SUPPORT THIS FORMAT!');
                 }
                 $urlimage =  substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190); 
                 while(file_exists('upload/images/imgpost/' . $urlimage)) {
@@ -132,7 +132,7 @@ class pagesController extends Controller
                 $request, 
                 [
                    'topic' => 'required',
-                   'title' => 'required|unique:post,title',
+                   'title' => 'required|unique:Post,title',
                    'description' => 'required',
                    'content' => 'required'
                 ],
@@ -144,14 +144,14 @@ class pagesController extends Controller
                    'title.unique'=> 'TITLE Existed'
                 ]
             );
-                $postCreate = new updatepost;
-                $postCreate->idtopic = $request->topic;
-                $postCreate->iduser = Auth::user()->iduser;
-                $postCreate->idpost = $idpost;
+                $postCreate = new Updatepost;
+                $postCreate->topic_id = $request->topic;
+                $postCreate->user_id = Auth::user()->id;
+                $postCreate->id = $id;
                 $postCreate->title = $request->title;
                 $postCreate->ansititle = changeTitle($request->title);
                 $postCreate->description = $request->description;
-                $postCreate->contentupdatepost = $request->content;
+                $postCreate->content = $request->content;
 
                 if($request->hasFile('imgpost')){
                     $img = $request->file('imgpost');
@@ -180,16 +180,16 @@ class pagesController extends Controller
                     $message->to(Auth::user()->email, 'Visitor')->subject('Feedback!');
                     $message->from('bkfa.com@gmail.com','Admin Kansai Book');
                 });
-                return redirect("posts/$post->idpost/$post->ansititle.html")->with('notify','send update successfully ' . $request->title);
+                return redirect("posts/$post->id/$post->ansititle.html")->with('notify','send update successfully ' . $request->title);
         }//end else
         //-----------------------------------------
         
     }
 
 
-     public function getDelete($idpost){
-        $post = post::find($idpost);
-        if(!isset($post)||$post->iduser != Auth::user()->iduser) {
+     public function getDelete($id){
+        $post = Post::find($id);
+        if(!isset($post)||$post->user_id != Auth::user()->id) {
             return redirect('/')->with('notify', 'you is not a creator it');
         }
         $urlimage = $post->urlimage;

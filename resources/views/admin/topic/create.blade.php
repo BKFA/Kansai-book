@@ -60,7 +60,7 @@
 						<div class="card-body">
 							<div class="form-group">
 								<label for="exampleInputNametopic">Name Topic</label>
-								<input name="nametopic" type="nametopic" class="form-control" id="exampleInputNameTopic" placeholder="Please enter name topic" required>
+								<input name="name" type="nametopic" class="form-control" id="exampleInputNameTopic" placeholder="Please enter name topic" required>
 							</div>
 						</div>
 						<!-- /.card-body -->

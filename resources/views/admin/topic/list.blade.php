@@ -64,19 +64,19 @@
 							</thead>
 							@foreach($topic as $tp)
 							<tr>
-								<td>{{$tp->idtopic}}</td>
-								<td>{{$tp->nametopic}}</td>
-								<td>{{$tp->ansinametopic}}</td>
+								<td>{{$tp->id}}</td>
+								<td>{{$tp->name}}</td>
+								<td>{{$tp->ansiname}}</td>
 								<td>
 									<div class="m-sm-auto">
-										<button type="button" title="Update" class="btn btn-block btn-warning btn-sm" data-toggle="modal" data-target="#UpdateModal{{$tp->idtopic}}">Update <h3 class="fa fa-edit nav-icon"></h3>	
+										<button type="button" title="Update" class="btn btn-block btn-warning btn-sm" data-toggle="modal" data-target="#UpdateModal{{$tp->id}}">Update <h3 class="fa fa-edit nav-icon"></h3>	
 										</button>
 										 @include('admin.topic.update')
 									</div>
 								</td>            
 								<td>
 									<div class="m-sm-auto">
-										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter{{$tp->idtopic}}">Delete <h3 class="fa fa-edit nav-icon"></h3>	
+										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter{{$tp->id}}">Delete <h3 class="fa fa-edit nav-icon"></h3>	
 										</button>
 										@include('admin.topic.delete')
 									</div>

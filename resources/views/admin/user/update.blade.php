@@ -58,7 +58,7 @@
 					</div>
 					<!-- /.card-header -->
 					<!-- form start -->
-					<form action="admin/user/update/{{$updateUser->iduser}}" method="POST" enctype="multipart/form-data">
+					<form action="admin/user/update/{{$updateUser->id}}" method="POST" enctype="multipart/form-data">
 						<input type="hidden" name="_token" value="{{csrf_token()}}">
 						<div class="card-body">
 							<div class="form-group">
@@ -96,7 +96,7 @@
 								<label>
 									<input
 										type="radio" class="iradio_minimal-red" name="auth" value="0"
-										@if ($updateUser->idauth == 0)	
+										@if ($updateUser->role == 0)	
 			                            	{{"checked"}}
 			                            @endif
 									> Nomal User
@@ -104,7 +104,7 @@
 								<label>
 									<input 
 										type="radio" class="iradio_minimal-red" name="auth" value="1"
-										@if ($updateUser->idauth == 1)	
+										@if ($updateUser->role == 1)	
 			                            	{{"checked"}}
 			                            @endif
 			                        > Admin

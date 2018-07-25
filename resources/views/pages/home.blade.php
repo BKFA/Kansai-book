@@ -22,7 +22,7 @@
     @endif
     @foreach($post as $p)
         <div class="blog-post">
-            <h5><a href="/posts/{{ $p['idpost'] }}/{{ $p['ansititle'] }}.html">{{$p->title}}</a></h5>
+            <h5><a href="/posts/{{ $p['id'] }}/{{ $p['ansititle'] }}.html">{{$p->title}}</a></h5>
             <p class="blog-post-meta" style="font-size: small;">{{$p->created_at}} by <a href="#">{{$p->user->name}}</a></p>
             <p>{!! $p->description !!}</p>
             <hr>

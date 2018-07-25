@@ -15,12 +15,12 @@ class CreateCommentTable extends Migration
     {
         Schema::dropIfExists('comment');
         Schema::create('comment', function (Blueprint $table) {
-            $table->increments('idcomment');
-            $table->integer('iduser')->unsigned();
-            $table->foreign('iduser')->references('iduser')->on('users')->onDelete('cascade');
-            $table->integer('idpost')->unsigned();
-            $table->foreign('idpost')->references('idpost')->on('post')->onDelete('cascade');
-            $table->string('contentcomment');
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('post_id')->unsigned();
+            $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
+            $table->string('content');
             $table->integer('status')->default(1);
             $table->timestamps();
         });

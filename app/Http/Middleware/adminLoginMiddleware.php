@@ -18,7 +18,7 @@ class adminLoginMiddleware
     {
         if(Auth::check()) {
             $user = Auth::user();
-            if ($user->idauth == 1)
+            if ($user->role == 1)
                 return $next($request);
             else return redirect('/')->with('notify','Must be Admin to login');
         }

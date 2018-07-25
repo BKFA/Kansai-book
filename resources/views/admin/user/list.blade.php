@@ -73,7 +73,7 @@
 							</thead>
 							@foreach ($user as $us)
 							<tr>
-								<td>{{$us->iduser}}</td>
+								<td>{{$us->id}}</td>
 								<td>{{$us->name}}</td>
 								<td>{{$us->username}}</td>
 								<td>{{$us->email}}</td>
@@ -92,7 +92,7 @@
 								<td>{{$us->englv}}</td>
 								<td>
 									<div class="m-sm-auto">
-										<a href="admin/user/update/{{$us->iduser}}" title="Update">
+										<a href="admin/user/update/{{$us->id}}" title="Update">
 											<button type="button" class="btn btn-block btn-warning btn-sm">Update <h3 class="fa fa-edit nav-icon"></h3>	
 											</button>
 										</a>
@@ -100,7 +100,7 @@
 								</td>            
 								<td>
 									<div class="m-sm-auto">
-										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter{{$us->iduser}}">Delete <h3 class="fa fa-edit nav-icon"></h3>	
+										<button type="button" title="Delete" class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter{{$us->id}}">Delete <h3 class="fa fa-edit nav-icon"></h3>	
 										</button>
 										@include('admin.user.delete')
 									</div>

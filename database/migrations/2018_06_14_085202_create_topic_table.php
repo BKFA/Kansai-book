@@ -15,9 +15,9 @@ class CreateTopicTable extends Migration
     {
         Schema::dropIfExists('topic');
         Schema::create('topic', function (Blueprint $table) {
-            $table->increments('idtopic');
-            $table->string('nametopic')->unique();
-            $table->string('ansinametopic')->nullable();
+            $table->increments('id');
+            $table->string('name')->unique();
+            $table->string('ansiname')->nullable();
             $table->timestamps();
         });
     }

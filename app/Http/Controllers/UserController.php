@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\User;
-class userController extends Controller
+use App\Models\User;
+
+class UserController extends Controller
 {
     // Display list user
     public function getList() {
@@ -53,7 +54,7 @@ class userController extends Controller
     	$createUser->name = $request->name;
     	$createUser->age = $request->age;
     	$createUser->job = $request->job;
-    	$createUser->idauth = $request->auth;
+    	$createUser->role = $request->auth;
     	$createUser->point = $request->point;
     	$createUser->education = $request->education;
     	$createUser->address = $request->address;
@@ -66,17 +67,17 @@ class userController extends Controller
     }
 
     // Display form Update User
-    public function getUpdate($iduser){
-    	$updateUser=User::find($iduser);
+    public function getUpdate($id){
+    	$updateUser = User::find($id);
     	return view('admin.user.update',['updateUser'=>$updateUser]);
     }
 
     // Update User
-    public function postUpdate(Request $request,$iduser){
+    public function postUpdate(Request $request,$id){
         $this->validate($request,
             [
                 'name'=>'min:6|max:30',
-                'username'=>'min:6|max:32|unique:User,username', 
+                'username'=>'min:6|max:32|unique:users,username', 
                 'password'=>'min:6|max:32',
                 'confirmpassword'=>'min:6|max:32|same:password',
                 'age'=>'integer',
@@ -99,14 +100,14 @@ class userController extends Controller
                 'point.integer'=>'POINT must be number',
             ]
         );
-    	$updateUser = User::find($iduser);
+    	$updateUser = User::find($id);
     	if($request->username != null) $updateUser->username = $request->username;
     	if($request->password != null) $updateUser->password = bcrypt($request->password);
     	if($request->email != null) $updateUser->email = $request->email;
     	if($request->name != null) $updateUser->name = $request->name;
     	if($request->age != null) $updateUser->age = $request->age;
     	if($request->job != null) $updateUser->job = $request->job;
-    	if($request->auth != null) $updateUser->idauth = $request->auth;
+    	if($request->auth != null) $updateUser->role = $request->auth;
     	if($request->point != null) $updateUser->point = $request->point;
     	if($request->education != null) $updateUser->education = $request->education;
     	if($request->address != null) $updateUser->address = $request->address;
@@ -118,8 +119,8 @@ class userController extends Controller
     }
 
     // Delete user
-    public function getDelete($iduser){
-    	$deleteUser=User::find($iduser);
+    public function getDelete($id){
+    	$deleteUser=User::find($id);
         // Save name user before delete to show
     	$nameUser=$deleteUser->name;
     	$deleteUser->delete();

@@ -62,7 +62,7 @@
 								<label>Topic</label>
 								<select class="form-control select2" name="topic" style="width: 100%;">
 									@foreach ($topic as $t)
-			                        	<option value="{{$t->idtopic}}">{{$t->nametopic}}</option>
+			                        	<option value="{{$t->id}}">{{$t->name}}</option>
 			                        @endforeach
 								</select>
 							</div>
@@ -70,7 +70,7 @@
 								<label>User Upload</label>
 								<select class="form-control select2" name="userupload" style="width: 100%;">
 									@foreach ($user as $u)
-			                        	<option value="{{$u->iduser}}">{{$u->name}}</option>
+			                        	<option value="{{$u->id}}">{{$u->name}}</option>
 			                        @endforeach
 								</select>
 							</div>

@@ -60,7 +60,7 @@
 						<div class="card-body">
 							<div class="form-group">
 								<label>Name Advertisement</label>
-								<input class="form-control" name="namead" type="text" placeholder="Please enter Name Advertisement">
+								<input class="form-control" name="name" type="text" placeholder="Please enter Name Advertisement">
 							</div>
 							<div class="form-group">
 								<label>Image</label>
