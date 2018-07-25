@@ -12,7 +12,7 @@
 				<label>Topic</label>
 				<select class="form-control select2" name="topic" style="width: 100%;">
 					@foreach ($topicPost as $tp)
-                    	<option value="{{$tp->idtopic}}">{{$tp->nametopic}}</option>
+                    	<option value="{{$tp->id}}">{{$tp->name}}</option>
                     @endforeach
 				</select>
 			</div>
